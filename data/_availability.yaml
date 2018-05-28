@@ -1,0 +1,17 @@
+---
+module:
+    Anatomy: [NL]
+    Basic Engineering: [Tau, NL]
+    Bureaucrazy: [Tau]
+    Combat Basics: [Tau, SoB]
+    Defensive Tactics: [Tau] 
+    First Aid: [NL, Moi]
+    Intermediate Combat: [Tau]
+    International Relations: [NL]
+    Space Navigation: [Tau, NL, SoB, Moi]
+    Special Ops: [SoB]
+course:
+    Basic Ship Technology: [Tau, NL, SoB, Moi]
+    Advanced Ship Technology: [Moi]
+    Basic Ship Handling: [SoB, NL]
+    Advanced Ship Handling: [NL]

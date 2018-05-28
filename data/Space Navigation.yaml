@@ -1,0 +1,48 @@
+---
+- availability:
+  - Tau
+  - NL
+  - SoB
+  - Moi
+  cost: '200'
+  description: Introduction to Spaceship Operations
+  level: 1
+  module: Space Navigation
+  time: 100 Segments
+  title: Introduction to Spaceship Operations
+- availability:
+  - Tau
+  - NL
+  - SoB
+  - Moi
+  cost: '2800'
+  description: Basic Space Navigation
+  level: 2
+  module: Space Navigation
+  prerequisites: Introduction to Spaceship Operations
+  time: 700 Segments
+  title: Basic Space Navigation
+- availability:
+  - Tau
+  - NL
+  - SoB
+  - Moi
+  description: Advanced Space Navigation
+  level: 3
+  module: Space Navigation
+  prerequisites:
+  - Introduction to Spaceship Operations
+  - Basic Space Navigation
+  title: Advanced Space Navigation
+- availability:
+  - Tau
+  - NL
+  - SoB
+  - Moi
+  description: Space Docking
+  level: 4
+  module: Space Navigation
+  prerequisites:
+  - Introduction to Spaceship Operations
+  - Advanced Space Navigation
+  title: Space Docking

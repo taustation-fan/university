@@ -1,0 +1,39 @@
+---
+- availability:
+  - Tau
+  - NL
+  cost: '20'
+  description: Learn basic engineering concepts
+  level: 1
+  module: Basic Engineering
+  title: Introduction to Engineering
+- availability:
+  - Tau
+  - NL
+  cost: '400'
+  description: Learn to repair simple items
+  level: 2
+  module: Basic Engineering
+  prerequisites: Introduction to Engineering
+  time: 100 Segments
+  title: Item repair 1
+- availability:
+  - Tau
+  - NL
+  cost: '4200'
+  description: Item Repair Specialist
+  level: 3
+  module: Basic Engineering
+  prerequisites: Item Repair 1
+  time: 700 Segments
+  title: Item repair 2
+- availability:
+  - Tau
+  - NL
+  cost: '16800'
+  description: Item Repair Mastery
+  level: 4
+  module: Basic Engineering
+  prerequisites: Item Repair 2
+  time: 2100 Segments
+  title: Item repair 3

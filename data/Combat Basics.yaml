@@ -1,0 +1,73 @@
+---
+- availability:
+  - Tau
+  - SoB
+  cost: '20'
+  description: Learn the basics of hand-to-hand combat
+  level: 1
+  module: Combat Basics
+  title: Combat
+- availability:
+  - Tau
+  - SoB
+  description: Allows use of all close combat weapons
+  level: 2
+  module: Combat Basics
+  prerequisites: Combat
+  title: Close Combat Basics
+- availability:
+  - Tau
+  - SoB
+  description: Allows use of all ranged combat weapons
+  level: 2
+  module: Combat Basics
+  prerequisites: Combat
+  title: Ranged Combat Basics
+- availability:
+  - Tau
+  - SoB
+  description: Basic handgun usage
+  level: 3
+  module: Combat Basics
+  prerequisites: Ranged Combat Basics
+  title: Handgun Specialist
+- availability:
+  - Tau
+  - SoB
+  description: Learn knife fighting techniques
+  level: 3
+  module: Combat Basics
+  prerequisites: Close Combat Basics
+  title: Knife Specialist
+- availability:
+  - Tau
+  - SoB
+  description: Learn how to shoot a rifle effectively
+  level: 3
+  module: Combat Basics
+  prerequisites: Ranged Combat Basics
+  title: Rifle Specialist
+- availability:
+  - Tau
+  - SoB
+  description: Learn how to handle short-barrel rifles
+  level: 3
+  module: Combat Basics
+  prerequisites: Ranged Combat Basics
+  title: Short barrel rifle Specialist
+- availability:
+  - Tau
+  - SoB
+  description: Learn how to wield a shotgun
+  level: 3
+  module: Combat Basics
+  prerequisites: Ranged Combat Basics
+  title: Shotgun Specialist
+- availability:
+  - Tau
+  - SoB
+  description: 'The most delicate of specialties: sniping'
+  level: 3
+  module: Combat Basics
+  prerequisites: Ranged Combat Basics
+  title: Sniper rifle Specialist

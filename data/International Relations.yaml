@@ -1,0 +1,59 @@
+---
+- availability:
+  - NL
+  cost: '200'
+  description: Introduction to psychology and social skills
+  level: 1
+  module: International Relations
+  time: 100 Segments
+  title: Social Skills
+- availability:
+  - NL
+  cost: '2800'
+  description: Understand Gaule history and motivations
+  level: 2
+  module: International Relations
+  prerequisites: Social Skills
+  time: 700 Segments
+  title: Introduction to Gaule
+- availability:
+  - NL
+  cost: '2800'
+  description: Understand Consortium history and motivations
+  level: 2
+  module: International Relations
+  prerequisites: Social Skills
+  time: 700 Segments
+  title: Introduction to the Consortium
+- availability:
+  - NL
+  cost: '8400'
+  description: Learn how to improve your reputation with the Consortium
+  level: 3
+  module: International Relations
+  prerequisites: Introduction to the Consortium
+  time: 1400 Segments
+  title: Consortium Reputation
+- availability:
+  - NL
+  cost: '8400'
+  description: Learn how to improve your reputation with the Gaule Protectorate
+  level: 3
+  module: International Relations
+  prerequisites: Introduction to Gaule
+  time: 1400 Segments
+  title: Gaule Reputation
+- availability:
+  - NL
+  description: Learn the mysteries of Consortium psychology
+  level: 4
+  module: International Relations
+  prerequisites: Consortium Reputation
+  title: Consortium Psychology
+- availability:
+  - NL
+  description: Learn the mysteries of Gaule psychology
+  level: 4
+  module: International Relations
+  prerequisites: Gaule Reputation
+  title: Gaule Psychology

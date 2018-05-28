@@ -1,0 +1,70 @@
+---
+- availability:
+  - Tau
+  cost: '2800'
+  description: Unlock 3-slot combat belt, with basic grenades and stims use
+  level: 2
+  module: Intermediate Combat
+  prerequisites: Combat
+  time: 700 Segments
+  title: Combat Utilities 1
+- availability:
+  - Tau
+  description: Effective use of grenades, smoke bomds and explosives in combat
+  level: 3
+  module: Intermediate Combat
+  prerequisites: Combat Utilities 1
+  title: Advanced Grenades
+- availability:
+  - Tau
+  description: Effective agility stim use during combat
+  level: 3
+  module: Intermediate Combat
+  prerequisites: Combat Utilities 1
+  title: Combat Stims—Agility
+- availability:
+  - Tau
+  description: Effective stamina stim use during combat
+  level: 3
+  module: Intermediate Combat
+  prerequisites: Combat Utilities 1
+  title: Combat Stims—Stamina
+- availability:
+  - Tau
+  description: Effective strength stim use during combat
+  level: 3
+  module: Intermediate Combat
+  prerequisites: Combat Utilities 1
+  title: Combat Stims—Strength
+- availability:
+  - Tau
+  cost: '4200'
+  description: Unlock 4th combat belt slot
+  level: 3
+  module: Intermediate Combat
+  prerequisites: Combat Utilities 1
+  time: 700 Segments
+  title: Combat Utilities 2
+- availability:
+  - Tau
+  cost: '5600'
+  description: Unlock 5th combat belt slot
+  level: 4
+  module: Intermediate Combat
+  prerequisites: Combat Utilities 2
+  time: 700 Segments
+  title: Combat Utilities 3
+- availability:
+  - Tau
+  description: Unlock 6th combat belt slot
+  level: 5
+  module: Intermediate Combat
+  prerequisites: Combat Utilities 3
+  title: Combat Utilities 4
+- availability:
+  - Tau
+  description: Unlock 7th combat belt slot
+  level: 6
+  module: Intermediate Combat
+  prerequisites: Combat Utilities 4
+  title: Combat Utilities 5

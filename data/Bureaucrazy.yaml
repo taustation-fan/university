@@ -1,0 +1,66 @@
+---
+- availability:
+  - Tau
+  description: Introduction to Business
+  level: 1
+  module: Bureaucrazy
+  title: Introduction to Business
+- availability:
+  - Tau
+  description: Bureaucracy for Beginners
+  level: 2
+  module: Bureaucrazy
+  prerequisites: Introduction to Business
+  title: Bureaucracy for Beginners
+- availability:
+  - Tau
+  cost: '2800'
+  description: Learn how to reduce taxes and fees
+  level: 2
+  module: Bureaucrazy
+  prerequisites: Introduction to Business
+  time: 700 segments
+  title: Tax and Fees
+- availability:
+  - Tau
+  description: Building Enterprises
+  level: 3
+  module: Bureaucrazy
+  prerequisites: Bureaucracy for Beginners
+  title: Building Enterprises
+- availability:
+  - Tau
+  description: Accounting
+  level: 4
+  module: Bureaucrazy
+  prerequisites:
+  - Bureaucracy for Beginners
+  - Building Enterprises
+  title: Accounting
+- availability:
+  - Tau
+  description: Human Resources
+  level: 4
+  module: Bureaucrazy
+  prerequisites:
+  - Bureaucracy for Beginners
+  - Building Enterprises
+  title: Human Resources
+- availability:
+  - Tau
+  description: Logistics
+  level: 4
+  module: Bureaucrazy
+  prerequisites:
+  - Bureaucracy for Beginners
+  - Building Enterprises
+  title: Logistics
+- availability:
+  - Tau
+  description: Management
+  level: 4
+  module: Bureaucrazy
+  prerequisites:
+  - Bureaucracy for Beginners
+  - Building Enterprises
+  title: Management

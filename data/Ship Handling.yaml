@@ -1,0 +1,36 @@
+---
+- availability:
+  - SoB
+  - NL
+  cost: '16800'
+  description: Basic Ship Handling
+  level: 4
+  module: Ship Handling
+  prerequisites:
+  - Introduction to Spaceship Operations
+  - Basic Space Navigation
+  - Basic Ship Technology
+  time: 2100 segments
+  title: Basic Ship Handling
+- availability:
+  - NL
+  description: Advanced Ship Handling
+  level: 5
+  module: Ship Handling
+  prerequisites:
+  - Introduction to Spaceship Operations
+  - Basic Space Navigation
+  - Advanced Ship Technology
+  - Basic Ship Handling
+  - Advanced Ship Technology
+  title: Advanced Ship Handling
+- coming_soon: 1
+  description: Master Ship Handling
+  level: 6
+  module: Ship Handling
+  prerequisites:
+  - Introduction to Spaceship Operations
+  - Basic Space Navigation
+  - Advanced Ship Handling
+  - Master Ship Technology
+  title: Master Ship Handling
