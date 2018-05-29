@@ -6,7 +6,7 @@
   level: 2
   module: Special Ops
   prerequisites: Combat
-  time: 700 segments
+  time: 700
   title: Special Ops—Critical 1
 - availability:
   - SoB
@@ -15,7 +15,7 @@
   level: 2
   module: Special Ops
   prerequisites: Combat
-  time: 700 segments
+  time: 700
   title: Special Ops—Damage 1
 - availability:
   - SoB
@@ -24,7 +24,7 @@
   level: 3
   module: Special Ops
   prerequisites: Special Ops—Critical 1
-  time: 1400 segments
+  time: 1400
   title: Special Ops—Critical 2
 - availability:
   - SoB
@@ -33,7 +33,7 @@
   level: 3
   module: Special Ops
   prerequisites: Special Ops—Damage 1
-  time: 1400 segments
+  time: 1400
   title: Special Ops—Damage 2
 - availability:
   - SoB
