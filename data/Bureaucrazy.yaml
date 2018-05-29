@@ -5,8 +5,7 @@
   level: 1
   module: Bureaucrazy
   title: Introduction to Business
-- availability:
-  - Tau
+- coming_soon: 1
   description: Bureaucracy for Beginners
   level: 2
   module: Bureaucrazy
@@ -21,15 +20,13 @@
   prerequisites: Introduction to Business
   time: 700
   title: Tax and Fees
-- availability:
-  - Tau
+- coming_soon: 1
   description: Building Enterprises
   level: 3
   module: Bureaucrazy
   prerequisites: Bureaucracy for Beginners
   title: Building Enterprises
-- availability:
-  - Tau
+- coming_soon: 1
   description: Accounting
   level: 4
   module: Bureaucrazy
@@ -37,8 +34,7 @@
   - Bureaucracy for Beginners
   - Building Enterprises
   title: Accounting
-- availability:
-  - Tau
+- coming_soon: 1
   description: Human Resources
   level: 4
   module: Bureaucrazy
@@ -46,8 +42,7 @@
   - Bureaucracy for Beginners
   - Building Enterprises
   title: Human Resources
-- availability:
-  - Tau
+- coming_soon: 1
   description: Logistics
   level: 4
   module: Bureaucrazy
@@ -55,8 +50,7 @@
   - Bureaucracy for Beginners
   - Building Enterprises
   title: Logistics
-- availability:
-  - Tau
+- coming_soon: 1
   description: Management
   level: 4
   module: Bureaucrazy
