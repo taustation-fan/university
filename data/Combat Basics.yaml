@@ -47,7 +47,7 @@
   module: Combat Basics
   prerequisites: Ranged Combat Basics
   title: Short barrel rifle Specialist
-- coming_soon:
+- coming_soon: 1
   description: Learn how to wield a shotgun
   level: 3
   module: Combat Basics
