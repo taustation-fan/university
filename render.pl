@@ -14,6 +14,13 @@ my %translate = (
     time    => 'duration',
 );
 
+sub slug {
+    my $name = shift;
+    my $slug = lc $name;
+    $slug =~ s/[^a-z]+/-/g;
+    return "course-$slug";
+}
+
 sub munge_course {
     my $c = shift;
     my $av = (delete $c->{availability}) || [];
@@ -26,7 +33,10 @@ sub munge_course {
     }
     $c->{duration} //= '';
     $c->{cost} //= '';
-    $c->{prerequisites} //= '(none)';
+    my $p = $c->{prerequisites} // [];
+    $p = [$p] unless ref($p);
+    $c->{prerequisites} = [map +{ name => $_, slug => slug($_) }, @$p];
+    $c->{slug} = slug($c->{course});
     return $c;
 }
 

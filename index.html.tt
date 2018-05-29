@@ -55,6 +55,7 @@
                 <th class="rotate">Level             </th>
                 <th class="rotate">Prerequisites     </th>
                 <th class="rotate">Duration          </th>
+                <th class="rotate">Cost              </th>
                 <th class="rotate">Tau               </th>
                 <th class="rotate">Nouveau Limoges   </th>
                 <th class="rotate">Moissan           </th>
@@ -64,12 +65,18 @@
         <tbody>
             [% FOR row IN courses; %]
                 [% IF !row.coming_soon; THEN %]
-                    <tr>
+                    <tr id="[% row.slug | html %]">
                         <td>[% row.module | html %]</td>
                         <td>[% row.course | html %]</td>
                         <td>[% row.level  | html %]</td>
-                        <td>[% row.prerequisites.join(', ') | html %]</td>
+                        <td>
+                            [% FOR p IN row.prerequisites; %]
+                                [% p.name | html %]
+                                <!-- <a href="#[% p.slug %]">[% p.name |html %]</a> -->
+                            [% END %]
+                        </td>
                         <td>[% row.duration | html %]</td>
+                        <td>[% row.cost | html %]</td>
                         <td>[% IF row.tau; THEN %]<i class="fas fa-check"></i>[% END; %]</td>
                         <td>[% IF row.nl ; THEN %]<i class="fas fa-check"></i>[% END; %]</td>
                         <td>[% IF row.moi; THEN %]<i class="fas fa-check"></i>[% END; %]</td>
