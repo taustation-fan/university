@@ -1,7 +1,8 @@
-<html>
+﻿<html>
   <head>
     <meta charset="utf-8" /> 
     <title>Tau Station University Courses</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <style>
         .rotate {
             transform: rotate(-90deg);
@@ -52,7 +53,6 @@
                 <th class="rotate">Module            </th>
                 <th class="rotate">Course            </th>
                 <th class="rotate">Level             </th>
-                <th class="rotate">Description       </th>
                 <th class="rotate">Prerequisites     </th>
                 <th class="rotate">Duration          </th>
                 <th class="rotate">Tau               </th>
@@ -62,6 +62,22 @@
             </tr>
         </thead>
         <tbody>
+            [% FOR row IN courses; %]
+                [% IF !row.coming_soon; THEN %]
+                    <tr>
+                        <td>[% row.module | html %]</td>
+                        <td>[% row.course | html %]</td>
+                        <td>[% row.level  | html %]</td>
+                        <td>[% row.prerequisites.join(', ') | html %]</td>
+                        <td>[% row.duration | html %]</td>
+                        <td>[% IF row.tau; THEN %]<i class="fas fa-check"></i>[% END; %]</td>
+                        <td>[% IF row.nl ; THEN %]<i class="fas fa-check"></i>[% END; %]</td>
+                        <td>[% IF row.moi; THEN %]<i class="fas fa-check"></i>[% END; %]</td>
+                        <td>[% IF row.sob; THEN %]<i class="fas fa-check"></i>[% END; %]</td>
+
+                    </tr>
+                [% END; %]
+            [% END %]
         </tbody>
     </table>
 

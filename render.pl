@@ -5,14 +5,9 @@ use utf8;
 
 use YAML::XS qw(LoadFile);
 use JSON::XS qw(encode_json);
-use Data::Dumper;
+use Template;
 
-my %univs = (
-    SoB => 'spirit-of-botswana',
-    Moi => 'moissan',
-    Tau => 'tau',
-    NL  => 'nouveau-limoges',
-);
+use Data::Dumper;
 
 my %translate = (
     title   => 'course',
@@ -23,12 +18,9 @@ sub munge_course {
     my $c = shift;
     my $av = (delete $c->{availability}) || [];
     for my $u (@$av) {
-        my $university = $univs{$u}
-            or die "Cannot resolve University '$u' (known are: "
-                . (join ', ', sort keys %univs) . ")\n";
-        $c->{$university} = 1;
+        $c->{lc $u} = 1;
     }
-    $c->{$_} //= 0 for values %univs;
+    $c->{$_} //= 0 for qw(tau nl sob moi);
     for my $k (sort keys %translate) {
         $c->{ $translate{$k} } = delete $c->{$k};
     }
@@ -47,7 +39,14 @@ for my $filename (glob 'data/*.yaml') {
 
 @all_courses = map munge_course($_), @all_courses;
 
+my $template = Template->new();
+
 open my $out, '>', 'assets/univ-data.json'
     or die "Cannot write to file assets/univ-data.json: $!";
 print $out encode_json(\@all_courses), "\n";
 close $out;
+
+$template->process('index.html.tt', { courses => \@all_courses }, 'index.html')
+    or die $template->error;
+
+say $template;
