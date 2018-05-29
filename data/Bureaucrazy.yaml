@@ -14,7 +14,7 @@
   title: Bureaucracy for Beginners
 - availability:
   - Tau
-  cost: '2800'
+  cost: 2800
   description: Learn how to reduce taxes and fees
   level: 2
   module: Bureaucrazy

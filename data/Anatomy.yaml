@@ -1,7 +1,7 @@
 ---
 - availability:
   - NL
-  cost: '8400'
+  cost: 8400
   description: Learn healthcare basics to improve stat regeration time
   level: 2
   module: Anatomy
@@ -10,7 +10,7 @@
   title: Healthcare Basics
 - availability:
   - NL
-  cost: '8400'
+  cost: 8400
   description: Learn the basics of self-surgery and spend less time in the sickbay
   level: 2
   module: Anatomy
@@ -19,7 +19,7 @@
   title: Self Surgery
 - availability:
   - NL
-  cost: '12600'
+  cost: 12600
   description: Become a healthcare specialist for even better stat regeneration
   level: 3
   module: Anatomy
@@ -28,7 +28,7 @@
   title: Healthcare Specialist
 - availability:
   - NL
-  cost: '12600'
+  cost: 12600
   description: Become a self-surgery specialist
   level: 3
   module: Anatomy
@@ -37,7 +37,7 @@
   title: Self Surgery Specialist
 - availability:
   - NL
-  cost: '22400'
+  cost: 22400
   description: Healthcare mastery provides the ultimate in stat regeneration
   level: 4
   module: Anatomy
@@ -46,7 +46,7 @@
   title: Healthcare Mastery
 - availability:
   - NL
-  cost: '22400'
+  cost: 22400
   description: Gain mastery at self-surgery
   level: 4
   module: Anatomy

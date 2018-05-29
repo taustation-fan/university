@@ -1,7 +1,7 @@
 ---
 - availability:
   - Tau
-  cost: '2800'
+  cost: 2800
   description: Improve your chances against grenades and other thrown weapons
   level: 2
   module: Defensive Tactics
@@ -10,7 +10,7 @@
   title: Dodge
 - availability:
   - Tau
-  cost: '2800'
+  cost: 2800
   description: Learn the basics of evasive tactics
   level: 2
   module: Defensive Tactics
@@ -19,7 +19,7 @@
   title: Evasive Tactics Specialist
 - availability:
   - Tau
-  cost: '8400'
+  cost: 8400
   description: Learn how to avoid damage from energy weapon attacks
   level: 3
   module: Defensive Tactics
@@ -28,7 +28,7 @@
   title: Armor specialization, energy
 - availability:
   - Tau
-  cost: '8400'
+  cost: 8400
   description: Learn how to avoid damage from impact weapon attacks
   level: 3
   module: Defensive Tactics
@@ -37,7 +37,7 @@
   title: Armor specialization, impact
 - availability:
   - Tau
-  cost: '8400'
+  cost: 8400
   description: Learn how to avoid damage from piercing weapon attacks
   level: 3
   module: Defensive Tactics

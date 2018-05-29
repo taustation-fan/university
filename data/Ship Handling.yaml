@@ -2,7 +2,7 @@
 - availability:
   - SoB
   - NL
-  cost: '16800'
+  cost: 16800
   description: Basic Ship Handling
   level: 4
   module: Ship Handling

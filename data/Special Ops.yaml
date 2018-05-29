@@ -1,7 +1,7 @@
 ---
 - availability:
   - SoB
-  cost: '2800'
+  cost: 2800
   description: Learn the basics of making critical hits
   level: 2
   module: Special Ops
@@ -10,7 +10,7 @@
   title: Special Ops—Critical 1
 - availability:
   - SoB
-  cost: '2800'
+  cost: 2800
   description: Learn the basics of increasing critical hit damage
   level: 2
   module: Special Ops
@@ -19,7 +19,7 @@
   title: Special Ops—Damage 1
 - availability:
   - SoB
-  cost: '8400'
+  cost: 8400
   description: Improve your skill at making critical hits
   level: 3
   module: Special Ops
@@ -28,7 +28,7 @@
   title: Special Ops—Critical 2
 - availability:
   - SoB
-  cost: '8400'
+  cost: 8400
   description: Critical hit damage specialist
   level: 3
   module: Special Ops
@@ -37,19 +37,19 @@
   title: Special Ops—Damage 2
 - availability:
   - SoB
-  cost: '16800'
+  cost: 16800
   description: Master of critical hits
   level: 4
   module: Special Ops
   prerequisites: Special Ops—Critical 2
-  time: 2100 Segments
+  time: 2100
   title: Special Ops—Critical 3
 - availability:
   - SoB
-  cost: '16800'
+  cost: 16800
   description: Critical hit damage master
   level: 4
   module: Special Ops
   prerequisites: Special Ops—Damage 2
-  time: 2100 Segments
+  time: 2100
   title: Special Ops—Damage 3

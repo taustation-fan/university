@@ -1,7 +1,7 @@
 ---
 - availability:
   - NL
-  cost: '200'
+  cost: 200
   description: Introduction to psychology and social skills
   level: 1
   module: International Relations
@@ -9,7 +9,7 @@
   title: Social Skills
 - availability:
   - NL
-  cost: '2800'
+  cost: 2800
   description: Understand Gaule history and motivations
   level: 2
   module: International Relations
@@ -18,7 +18,7 @@
   title: Introduction to Gaule
 - availability:
   - NL
-  cost: '2800'
+  cost: 2800
   description: Understand Consortium history and motivations
   level: 2
   module: International Relations
@@ -27,7 +27,7 @@
   title: Introduction to the Consortium
 - availability:
   - NL
-  cost: '8400'
+  cost: 8400
   description: Learn how to improve your reputation with the Consortium
   level: 3
   module: International Relations
@@ -36,7 +36,7 @@
   title: Consortium Reputation
 - availability:
   - NL
-  cost: '8400'
+  cost: 8400
   description: Learn how to improve your reputation with the Gaule Protectorate
   level: 3
   module: International Relations

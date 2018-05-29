@@ -4,7 +4,7 @@
   - NL
   - SoB
   - Moi
-  cost: '8400'
+  cost: 8400
   description: Basic Ship Technology
   level: 3
   module: Ship Technology
@@ -13,8 +13,9 @@
   - Basic Space Navigation
   time: 1400
   title: Basic Ship Technology
-- coming_soon: 1
-  cost: '16800'
+- availability:
+   - Moi
+  cost: 16800
   description: Advanced Ship Technology
   level: 4
   module: Ship Technology

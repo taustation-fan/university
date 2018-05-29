@@ -1,7 +1,7 @@
 ---
 - availability:
   - Tau
-  cost: '2800'
+  cost: 2800
   description: Unlock 3-slot combat belt, with basic grenades and stims use
   level: 2
   module: Intermediate Combat
@@ -38,7 +38,7 @@
   title: Combat Stims—Strength
 - availability:
   - Tau
-  cost: '4200'
+  cost: 4200
   description: Unlock 4th combat belt slot
   level: 3
   module: Intermediate Combat
@@ -47,7 +47,7 @@
   title: Combat Utilities 2
 - availability:
   - Tau
-  cost: '5600'
+  cost: 5600
   description: Unlock 5th combat belt slot
   level: 4
   module: Intermediate Combat

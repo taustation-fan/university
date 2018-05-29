@@ -2,7 +2,7 @@
 - availability:
   - NL
   - Moi
-  cost: '20'
+  cost: 20
   description: Learn the basics of first aid
   level: 1
   module: First Aid
@@ -11,7 +11,7 @@
 - availability:
   - NL
   - Moi
-  cost: '40'
+  cost: 40
   description: Learn the basics of medical stim usage
   level: 2
   module: First Aid
@@ -21,7 +21,7 @@
 - availability:
   - NL
   - Moi
-  cost: '4200'
+  cost: 4200
   description: Medical stim specialist
   level: 3
   module: First Aid
@@ -31,7 +31,7 @@
 - availability:
   - NL
   - Moi
-  cost: '11200'
+  cost: 11200
   description: Agility stim Master
   level: 4
   module: First Aid
@@ -41,7 +41,7 @@
 - availability:
   - NL
   - Moi
-  cost: '11200'
+  cost: 11200
   description: Intelligence stim Master
   level: 4
   module: First Aid
@@ -51,7 +51,7 @@
 - availability:
   - NL
   - Moi
-  cost: '11200'
+  cost: 11200
   description: Social stim Master
   level: 4
   module: First Aid
@@ -61,7 +61,7 @@
 - availability:
   - NL
   - Moi
-  cost: '11200'
+  cost: 11200
   description: Stamina stim Master
   level: 4
   module: First Aid
@@ -71,7 +71,7 @@
 - availability:
   - NL
   - Moi
-  cost: '11200'
+  cost: 11200
   description: Strength stim Master
   level: 4
   module: First Aid

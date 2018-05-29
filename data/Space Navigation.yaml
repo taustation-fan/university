@@ -4,7 +4,7 @@
   - NL
   - SoB
   - Moi
-  cost: '200'
+  cost: 200
   description: Introduction to Spaceship Operations
   level: 1
   module: Space Navigation
@@ -15,21 +15,23 @@
   - NL
   - SoB
   - Moi
-  cost: '2800'
+  cost: 2800
   description: Basic Space Navigation
   level: 2
   module: Space Navigation
   prerequisites: Introduction to Spaceship Operations
   time: 700
   title: Basic Space Navigation
-- description: Advanced Space Navigation
+- coming_soon: 1
+  description: Advanced Space Navigation
   level: 3
   module: Space Navigation
   prerequisites:
   - Introduction to Spaceship Operations
   - Basic Space Navigation
   title: Advanced Space Navigation
-- description: Space Docking
+- coming_soon: 1
+  description: Space Docking
   level: 4
   module: Space Navigation
   prerequisites:

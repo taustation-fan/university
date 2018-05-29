@@ -2,7 +2,7 @@
 - availability:
   - Tau
   - NL
-  cost: '20'
+  cost: 20
   description: Learn basic engineering concepts
   level: 1
   module: Basic Engineering
@@ -10,7 +10,7 @@
 - availability:
   - Tau
   - NL
-  cost: '400'
+  cost: 400
   description: Learn to repair simple items
   level: 2
   module: Basic Engineering
@@ -20,7 +20,7 @@
 - availability:
   - Tau
   - NL
-  cost: '4200'
+  cost: 4200
   description: Item Repair Specialist
   level: 3
   module: Basic Engineering
@@ -30,7 +30,7 @@
 - availability:
   - Tau
   - NL
-  cost: '16800'
+  cost: 16800
   description: Item Repair Mastery
   level: 4
   module: Basic Engineering
