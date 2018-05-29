@@ -6,7 +6,7 @@
   description: Learn the basics of first aid
   level: 1
   module: First Aid
-  time: 10 Segments
+  time: 10
   title: First Aid
 - availability:
   - NL
@@ -16,7 +16,7 @@
   level: 2
   module: First Aid
   prerequisites: First Aid
-  time: 10 Segments
+  time: 10
   title: Medical Stims
 - availability:
   - NL
@@ -26,7 +26,7 @@
   level: 3
   module: First Aid
   prerequisites: Medical Stims
-  time: 700 Segments
+  time: 700
   title: Medical Stims Specialization
 - availability:
   - NL
@@ -36,7 +36,7 @@
   level: 4
   module: First Aid
   prerequisites: Medical Stims Specialization
-  time: 1400 Segments
+  time: 1400
   title: Medical Stims Mastery-Agility
 - availability:
   - NL
@@ -46,7 +46,7 @@
   level: 4
   module: First Aid
   prerequisites: Medical Stims Specialization
-  time: 1400 Segments
+  time: 1400
   title: Medical Stims Mastery-Intelligence
 - availability:
   - NL
@@ -56,7 +56,7 @@
   level: 4
   module: First Aid
   prerequisites: Medical Stims Specialization
-  time: 1400 Segments
+  time: 1400
   title: Medical Stims Mastery-Social
 - availability:
   - NL
@@ -66,7 +66,7 @@
   level: 4
   module: First Aid
   prerequisites: Medical Stims Specialization
-  time: 1400 Segments
+  time: 1400
   title: Medical Stims Mastery-Stamina
 - availability:
   - NL
@@ -76,5 +76,5 @@
   level: 4
   module: First Aid
   prerequisites: Medical Stims Specialization
-  time: 1400 Segments
+  time: 1400
   title: Medical Stims Mastery-Strength

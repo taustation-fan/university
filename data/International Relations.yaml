@@ -5,7 +5,7 @@
   description: Introduction to psychology and social skills
   level: 1
   module: International Relations
-  time: 100 Segments
+  time: 100
   title: Social Skills
 - availability:
   - NL
@@ -14,7 +14,7 @@
   level: 2
   module: International Relations
   prerequisites: Social Skills
-  time: 700 Segments
+  time: 700
   title: Introduction to Gaule
 - availability:
   - NL
@@ -23,7 +23,7 @@
   level: 2
   module: International Relations
   prerequisites: Social Skills
-  time: 700 Segments
+  time: 700
   title: Introduction to the Consortium
 - availability:
   - NL
@@ -32,7 +32,7 @@
   level: 3
   module: International Relations
   prerequisites: Introduction to the Consortium
-  time: 1400 Segments
+  time: 1400
   title: Consortium Reputation
 - availability:
   - NL
@@ -41,7 +41,7 @@
   level: 3
   module: International Relations
   prerequisites: Introduction to Gaule
-  time: 1400 Segments
+  time: 1400
   title: Gaule Reputation
 - availability:
   - NL

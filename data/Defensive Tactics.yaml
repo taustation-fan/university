@@ -6,7 +6,7 @@
   level: 2
   module: Defensive Tactics
   prerequisites: Combat
-  time: 700 Segments
+  time: 700
   title: Dodge
 - availability:
   - Tau
@@ -15,7 +15,7 @@
   level: 2
   module: Defensive Tactics
   prerequisites: Combat
-  time: 700 Segments
+  time: 700
   title: Evasive Tactics Specialist
 - availability:
   - Tau
@@ -24,7 +24,7 @@
   level: 3
   module: Defensive Tactics
   prerequisites: Evasive Tactics Specialist
-  time: 1400 Segments
+  time: 1400
   title: Armor specialization, energy
 - availability:
   - Tau
@@ -33,7 +33,7 @@
   level: 3
   module: Defensive Tactics
   prerequisites: Evasive Tactics Specialist
-  time: 1400 Segments
+  time: 1400
   title: Armor specialization, impact
 - availability:
   - Tau
@@ -42,7 +42,7 @@
   level: 3
   module: Defensive Tactics
   prerequisites: Evasive Tactics Specialist
-  time: 1400 Segments
+  time: 1400
   title: Armor specialization, piercing
 - availability:
   - Tau

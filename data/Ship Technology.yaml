@@ -11,7 +11,7 @@
   prerequisites:
   - Introduction to Spaceship Operations
   - Basic Space Navigation
-  time: 1400 Segments
+  time: 1400
   title: Basic Ship Technology
 - coming_soon: 1
   cost: '16800'
@@ -22,7 +22,7 @@
   - Introduction to Spaceship Operations
   - Basic Space Navigation
   - Basic Ship Technology
-  time: 2100 Segments
+  time: 2100
   title: Advanced Ship Technology1
 - coming_soon: 1
   description: Master Ship Technology

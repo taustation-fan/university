@@ -6,7 +6,7 @@
   level: 2
   module: Anatomy
   prerequisites: First Aid
-  time: 2100 Segments
+  time: 2100
   title: Healthcare Basics
 - availability:
   - NL
@@ -15,7 +15,7 @@
   level: 2
   module: Anatomy
   prerequisites: First Aid
-  time: 2100 Segments
+  time: 2100
   title: Self Surgery
 - availability:
   - NL
@@ -24,7 +24,7 @@
   level: 3
   module: Anatomy
   prerequisites: Healthcare Basics
-  time: 2100 Segments
+  time: 2100
   title: Healthcare Specialist
 - availability:
   - NL
@@ -33,7 +33,7 @@
   level: 3
   module: Anatomy
   prerequisites: Self Surgery
-  time: 2100 Segments
+  time: 2100
   title: Self Surgery Specialist
 - availability:
   - NL
@@ -42,7 +42,7 @@
   level: 4
   module: Anatomy
   prerequisites: Healthcare Specialist
-  time: 2800 Segments
+  time: 2800
   title: Healthcare Mastery
 - availability:
   - NL
@@ -51,5 +51,5 @@
   level: 4
   module: Anatomy
   prerequisites: Self Surgery Specialist
-  time: 2800 Segments
+  time: 2800
   title: Self Surgery Mastery

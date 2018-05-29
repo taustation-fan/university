@@ -15,7 +15,7 @@
   level: 2
   module: Basic Engineering
   prerequisites: Introduction to Engineering
-  time: 100 Segments
+  time: 100
   title: Item repair 1
 - availability:
   - Tau
@@ -25,7 +25,7 @@
   level: 3
   module: Basic Engineering
   prerequisites: Item Repair 1
-  time: 700 Segments
+  time: 700
   title: Item repair 2
 - availability:
   - Tau
@@ -35,5 +35,5 @@
   level: 4
   module: Basic Engineering
   prerequisites: Item Repair 2
-  time: 2100 Segments
+  time: 2100
   title: Item repair 3

@@ -8,7 +8,7 @@
   description: Introduction to Spaceship Operations
   level: 1
   module: Space Navigation
-  time: 100 Segments
+  time: 100
   title: Introduction to Spaceship Operations
 - availability:
   - Tau
@@ -20,26 +20,16 @@
   level: 2
   module: Space Navigation
   prerequisites: Introduction to Spaceship Operations
-  time: 700 Segments
+  time: 700
   title: Basic Space Navigation
-- availability:
-  - Tau
-  - NL
-  - SoB
-  - Moi
-  description: Advanced Space Navigation
+- description: Advanced Space Navigation
   level: 3
   module: Space Navigation
   prerequisites:
   - Introduction to Spaceship Operations
   - Basic Space Navigation
   title: Advanced Space Navigation
-- availability:
-  - Tau
-  - NL
-  - SoB
-  - Moi
-  description: Space Docking
+- description: Space Docking
   level: 4
   module: Space Navigation
   prerequisites:

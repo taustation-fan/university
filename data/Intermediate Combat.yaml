@@ -6,7 +6,7 @@
   level: 2
   module: Intermediate Combat
   prerequisites: Combat
-  time: 700 Segments
+  time: 700
   title: Combat Utilities 1
 - availability:
   - Tau
@@ -43,7 +43,7 @@
   level: 3
   module: Intermediate Combat
   prerequisites: Combat Utilities 1
-  time: 700 Segments
+  time: 700
   title: Combat Utilities 2
 - availability:
   - Tau
@@ -52,7 +52,7 @@
   level: 4
   module: Intermediate Combat
   prerequisites: Combat Utilities 2
-  time: 700 Segments
+  time: 700
   title: Combat Utilities 3
 - availability:
   - Tau
