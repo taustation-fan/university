@@ -4,14 +4,11 @@
     <title>Tau Station University Courses</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <style>
-        .rotate {
-            transform: rotate(-90deg);
-            transform-origin: center center;
-            text-align: center
+        .univ, .centered {
+            text-align: center;
         }
         th {
-            padding-top: 2em;
-            padding-bottom: 4em;
+            padding: 2ex;
         }
         tr {
             text-align: left;
@@ -50,16 +47,16 @@
     <table id="univ">
         <thead>
             <tr>
-                <th class="rotate">Module            </th>
-                <th class="rotate">Course            </th>
-                <th class="rotate">Level             </th>
-                <th class="rotate">Prerequisites     </th>
-                <th class="rotate">Duration          </th>
-                <th class="rotate">Cost              </th>
-                <th class="rotate">Tau               </th>
-                <th class="rotate">Nouveau Limoges   </th>
-                <th class="rotate">Moissan           </th>
-                <th class="rotate">Spirit of Botswana</th>
+                <th                 >Module            </th>
+                <th                 >Course            </th>
+                <th class="centered">Level             </th>
+                <th                 >Prerequisites     </th>
+                <th class="centered">Duration          </th>
+                <th class="centered">Cost              </th>
+                <th class="univ">Tau               </th>
+                <th class="univ">NL                </th>
+                <th class="univ">Moi               </th>
+                <th class="univ">SoB               </th>
             </tr>
         </thead>
         <tbody>
