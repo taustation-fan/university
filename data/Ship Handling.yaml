@@ -14,6 +14,7 @@
   title: Basic Ship Handling
 - availability:
   - NL
+  cost: 28000
   description: Advanced Ship Handling
   level: 5
   module: Ship Handling
@@ -23,6 +24,7 @@
   - Advanced Ship Technology
   - Basic Ship Handling
   - Advanced Ship Technology
+  time: 2800
   title: Advanced Ship Handling
 - coming_soon: 1
   description: Master Ship Handling
