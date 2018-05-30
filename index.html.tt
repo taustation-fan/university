@@ -134,6 +134,12 @@
                 </tr>
             </tbody>
         </table>
+        <div id="course_details_prerequisites_container">
+            <h3>Prerequisites</h3>
+            <ul id="course_details_prerequisites">
+            </ul>
+        </div>
+
         <p><a href="#" class="button course_details_close">Close</a></p>
     </div>
 

@@ -17,7 +17,7 @@ my %translate = (
 sub slug {
     my $name = shift;
     my $slug = lc $name;
-    $slug =~ s/[^a-z]+/-/g;
+    $slug =~ s/[^a-z0-9]+/-/g;
     return "course-$slug";
 }
 
