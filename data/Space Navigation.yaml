@@ -27,7 +27,6 @@
   level: 3
   module: Space Navigation
   prerequisites:
-  - Introduction to Spaceship Operations
   - Basic Space Navigation
   title: Advanced Space Navigation
 - coming_soon: 1
@@ -35,6 +34,5 @@
   level: 4
   module: Space Navigation
   prerequisites:
-  - Introduction to Spaceship Operations
   - Advanced Space Navigation
   title: Space Docking

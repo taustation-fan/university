@@ -7,8 +7,6 @@
   level: 4
   module: Ship Handling
   prerequisites:
-  - Introduction to Spaceship Operations
-  - Basic Space Navigation
   - Basic Ship Technology
   time: 2100
   title: Basic Ship Handling
@@ -19,9 +17,6 @@
   level: 5
   module: Ship Handling
   prerequisites:
-  - Introduction to Spaceship Operations
-  - Basic Space Navigation
-  - Advanced Ship Technology
   - Basic Ship Handling
   - Advanced Ship Technology
   time: 2800
@@ -31,8 +26,6 @@
   level: 6
   module: Ship Handling
   prerequisites:
-  - Introduction to Spaceship Operations
-  - Basic Space Navigation
   - Advanced Ship Handling
   - Master Ship Technology
   title: Master Ship Handling

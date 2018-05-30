@@ -9,7 +9,6 @@
   level: 3
   module: Ship Technology
   prerequisites:
-  - Introduction to Spaceship Operations
   - Basic Space Navigation
   time: 1400
   title: Basic Ship Technology
@@ -20,7 +19,6 @@
   level: 4
   module: Ship Technology
   prerequisites:
-  - Introduction to Spaceship Operations
   - Basic Space Navigation
   - Basic Ship Technology
   time: 2100
@@ -30,7 +28,5 @@
   level: 5
   module: Ship Technology
   prerequisites:
-  - Introduction to Spaceship Operations
-  - Basic Space Navigation
   - Advanced Ship Technology
   title: Master Ship Technology
