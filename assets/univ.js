@@ -84,4 +84,10 @@ $(document).ready(function() {
         }
     });
     $('.course-link').click(show_details);
+    $(document).keyup(function(e) {
+        if (e.keyCode == 27) {
+            // ESCape key pressed => hide popup
+            $('#course_details').hide();
+        }
+    });
 });
