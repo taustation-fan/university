@@ -6,6 +6,7 @@ use utf8;
 use YAML::XS qw(LoadFile);
 use JSON::XS qw(encode_json);
 use Template;
+use Encode qw(decode_utf8);
 
 use Data::Dumper;
 
@@ -59,7 +60,7 @@ my $template = Template->new();
 
 my %vars = (
     courses => \@all_courses,
-    courses_json => encode_json(\%courses),
+    courses_json => decode_utf8 encode_json(\%courses),
 );
 
 $template->process('index.html.tt', \%vars, 'index.html')

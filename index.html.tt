@@ -106,6 +106,7 @@
 
     <script type="text/javascript" src="assets/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="assets/jquery.dynatable.js"></script>
+    <script type="text/javascript" src="assets/toposort.js"></script>
     <script type="text/javascript" src="assets/univ.js"></script>
     <script type="text/javascript">
         document.univ_courses = [% courses_json %];
@@ -134,10 +135,11 @@
                 </tr>
             </tbody>
         </table>
+
         <div id="course_details_prerequisites_container">
-            <h3>Prerequisites</h3>
-            <ul id="course_details_prerequisites">
-            </ul>
+            <h3>All Prerequisites</h3>
+            <p>Transitive prerequisites sorted in the order you can take the courses:</p>
+            <ul id="course_details_all_prerequisites"></ul>
         </div>
 
         <p><a href="#" class="button course_details_close">Close</a></p>
