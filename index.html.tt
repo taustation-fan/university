@@ -81,18 +81,17 @@
                         <td><a href="#" class="course-link" data-slug="[% row.slug %]">[% row.course | html %]</a></td>
                         <td>[% row.level  | html %]</td>
                         <td>
-                          <ul>
                             [% IF row.prerequisites.size == 1; THEN %]
                                 [% p = row.prerequisites.0 %]
                                 <a href="#" class="course-link" data-slug="[% p.slug %]">[% p.name | html %]</a>
                             [% ELSIF row.prerequisites.size > 1; THEN %]
+                              <ul>
                                 [% FOR p IN row.prerequisites; %]
-                                    <li>
-                                        <a href="#" class="course-link" data-slug="[% p.slug %]">[% p.name | html %]</a>
+                                    <li><a href="#" class="course-link" data-slug="[% p.slug %]">[% p.name | html %]</a>
                                     </li>
                                 [% END %]
+                              </ul>
                             [% END %]
-                          </ul>
                         </td>
                         <td>[% row.duration | html %]</td>
                         <td>[% row.cost | html %]</td>
