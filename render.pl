@@ -48,15 +48,21 @@ for my $filename (glob 'data/*.yaml') {
 }
 
 @all_courses = map munge_course($_), @all_courses;
+my %courses;
+for (@all_courses) {
+    $courses{$_->{slug}} = $_;
+}
 
 my $template = Template->new();
 
-open my $out, '>', 'assets/univ-data.json'
-    or die "Cannot write to file assets/univ-data.json: $!";
-print $out encode_json(\@all_courses), "\n";
-close $out;
 
-$template->process('index.html.tt', { courses => \@all_courses }, 'index.html')
+
+my %vars = (
+    courses => \@all_courses,
+    courses_json => encode_json(\%courses),
+);
+
+$template->process('index.html.tt', \%vars, 'index.html')
     or die $template->error;
 
 say $template;

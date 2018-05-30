@@ -22,17 +22,31 @@
         }
         table td, table th {
           border: 1px solid #000000;
+          padding: 1ex;
         }
         table thead {
           background: #DBDBDB;
           border-bottom: 0.5px solid #000000;
         }
-/*
-        table thead th {
-          font-weight: bold;
-          text-align: left;
+        #course_details {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            padding: 2em;
+            margin: 2em;
+            background-color: lightgray;
         }
-*/
+        .button {
+          text-decoration: none;
+          background-color: #EEEEEE;
+          color: #333333;
+          padding: 2px 6px 2px 6px;
+          border-top: 1px solid #CCCCCC;
+          border-right: 1px solid #333333;
+          border-bottom: 1px solid #333333;
+          border-left: 1px solid #CCCCCC;
+        }
 
 
     </style>
@@ -64,13 +78,16 @@
                 [% IF !row.coming_soon; THEN %]
                     <tr id="[% row.slug | html %]">
                         <td>[% row.module | html %]</td>
-                        <td>[% row.course | html %]</td>
+                        <td><a href="#" class="course-link" data-slug="[% row.slug %]">[% row.course | html %]</a></td>
                         <td>[% row.level  | html %]</td>
                         <td>
+                          <ul>
                             [% FOR p IN row.prerequisites; %]
-                                [% p.name | html %]
-                                <!-- <a href="#[% p.slug %]">[% p.name |html %]</a> -->
+                                <li>
+                                    <a href="#" class="course-link" data-slug="[% p.slug %]">[% p.name | html %]</a>
+                                </li>
                             [% END %]
+                          </ul>
                         </td>
                         <td>[% row.duration | html %]</td>
                         <td>[% row.cost | html %]</td>
@@ -90,7 +107,35 @@
     <script type="text/javascript" src="assets/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="assets/jquery.dynatable.js"></script>
     <script type="text/javascript" src="assets/univ.js"></script>
+    <script type="text/javascript">
+        document.univ_courses = [% courses_json %];
+    </script>
     
+    <div id="course_details" style="display: none">
+        <h2 id="course_details_name"></h2>
+        <p id="course_details_description"></p>
+        <table>
+            <tbody>
+                <tr>
+                    <th>Level</th>
+                    <td id="course_details_level"></td>
+                </tr>
+                <tr>
+                    <th>Duration</th>
+                    <td><span id="course_details_duration"> Segments</td>
+                </tr>
+                <tr>
+                    <th>Cost</th>
+                    <td><span id="course_details_cost"> Credits</td>
+                </tr>
+                <tr>
+                    <th>Available at</th id="course_details_universities"></td>
+                    <td id="course_details_universities"></td>
+                </tr>
+            </tbody>
+        </table>
+        <p><a href="#" class="button course_details_close">Close</a></p>
+    </div>
 
   </body>
 </html>
