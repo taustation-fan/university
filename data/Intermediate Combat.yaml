@@ -8,29 +8,25 @@
   prerequisites: Combat
   time: 700
   title: Combat Utilities 1
-- availability:
-  - Tau
+- coming_soon: 1
   description: Effective use of grenades, smoke bomds and explosives in combat
   level: 3
   module: Intermediate Combat
   prerequisites: Combat Utilities 1
   title: Advanced Grenades
-- availability:
-  - Tau
+- coming_soon: 1
   description: Effective agility stim use during combat
   level: 3
   module: Intermediate Combat
   prerequisites: Combat Utilities 1
   title: Combat Stims—Agility
-- availability:
-  - Tau
+- coming_soon: 1
   description: Effective stamina stim use during combat
   level: 3
   module: Intermediate Combat
   prerequisites: Combat Utilities 1
   title: Combat Stims—Stamina
-- availability:
-  - Tau
+- coming_soon: 1
   description: Effective strength stim use during combat
   level: 3
   module: Intermediate Combat
