@@ -123,11 +123,11 @@
                 </tr>
                 <tr>
                     <th>Duration</th>
-                    <td><span id="course_details_duration"> Segments</td>
+                    <td><span id="course_details_duration"></span> Segments</td>
                 </tr>
                 <tr>
                     <th>Cost</th>
-                    <td><span id="course_details_cost"> Credits</td>
+                    <td><span id="course_details_cost"></span> Credits</td>
                 </tr>
                 <tr>
                     <th>Available at</th id="course_details_universities"></td>
