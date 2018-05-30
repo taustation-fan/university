@@ -46,6 +46,11 @@ $(document).ready(function() {
         },
         dataset: {
             perPageDefault: 200,
+            sortTypes: {
+                'level': 'number',
+                'duration': 'number',
+                'cost': 'number'
+            }
         }
     });
     $('.course-link').click(show_details);
