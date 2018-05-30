@@ -82,10 +82,15 @@
                         <td>[% row.level  | html %]</td>
                         <td>
                           <ul>
-                            [% FOR p IN row.prerequisites; %]
-                                <li>
-                                    <a href="#" class="course-link" data-slug="[% p.slug %]">[% p.name | html %]</a>
-                                </li>
+                            [% IF row.prerequisites.size == 1; THEN %]
+                                [% p = row.prerequisites.0 %]
+                                <a href="#" class="course-link" data-slug="[% p.slug %]">[% p.name | html %]</a>
+                            [% ELSIF row.prerequisites.size > 1; THEN %]
+                                [% FOR p IN row.prerequisites; %]
+                                    <li>
+                                        <a href="#" class="course-link" data-slug="[% p.slug %]">[% p.name | html %]</a>
+                                    </li>
+                                [% END %]
                             [% END %]
                           </ul>
                         </td>
