@@ -63,7 +63,6 @@ my %vars = (
     courses_json => decode_utf8 encode_json(\%courses),
 );
 
-$template->process('index.html.tt', \%vars, 'index.html')
+$template->process('index.html.tt', \%vars, 'index.html', { binmode => ':utf8' })
     or die $template->error;
 
-say $template;
