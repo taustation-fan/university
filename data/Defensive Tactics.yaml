@@ -46,10 +46,12 @@
   title: Armor specialization, piercing
 - availability:
   - Tau
+  cost: 4200
   description: Master the art of evasive tactics
   level: 3
   module: Defensive Tactics
   prerequisites: Evasive Tactics Specialist
+  time: 700
   title: Evasive Tactics Master
 - availability:
   - Tau
