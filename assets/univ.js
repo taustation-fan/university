@@ -131,6 +131,8 @@ $(document).ready(function() {
                 'cost': 'number'
             }
         }
+    }).bind('dynatable:afterProcess', function() {
+        $('.course-link').click(show_details);
     });
     $('.course-link').click(show_details);
     $(document).keyup(function(e) {
