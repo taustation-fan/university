@@ -23,38 +23,75 @@
   module: Combat Basics
   prerequisites: Combat
   title: Ranged Combat Basics
-- coming_soon: 1
+
+- availability:
+  - Tau
+  - SoB
+  cost: 4200
+  description: Learn club fighting techniques
+  duration: 700
+  level: 3
+  module: Combat Basics
+  prerequisites: Close Combat Basics
+  title: Club Specialist
+
+- availability:
+  - Tau
+  - SoB
+  cost: 4200
   description: Basic handgun usage
+  duration: 700
   level: 3
   module: Combat Basics
   prerequisites: Ranged Combat Basics
   title: Handgun Specialist
-- coming_soon: 1
+
+- availability:
+  - Tau
+  - SoB
+  cost: 4200
   description: Learn knife fighting techniques
+  duration: 700
   level: 3
   module: Combat Basics
   prerequisites: Close Combat Basics
   title: Knife Specialist
-- coming_soon: 1
+- availability:
+  - Tau
+  - SoB
+  cost: 4200
   description: Learn how to shoot a rifle effectively
+  duration: 700
   level: 3
   module: Combat Basics
   prerequisites: Ranged Combat Basics
   title: Rifle Specialist
-- coming_soon: 1
+- availability:
+  - Tau
+  - SoB
+  cost: 4200
   description: Learn how to handle short-barrel rifles
+  duration: 700
   level: 3
   module: Combat Basics
   prerequisites: Ranged Combat Basics
   title: Short barrel rifle Specialist
-- coming_soon: 1
+- availability:
+    - Tau
+    - SoB
+  cost: 4200
   description: Learn how to wield a shotgun
+  duration: 700
   level: 3
   module: Combat Basics
   prerequisites: Ranged Combat Basics
   title: Shotgun Specialist
-- coming_soon: 1
+- availability:
+    - Tau
+    - SoB
   description: 'The most delicate of specialties: sniping'
+  cost: 4200
+  duration: 700
   level: 3
   module: Combat Basics
   prerequisites: Ranged Combat Basics
