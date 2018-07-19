@@ -1,5 +1,29 @@
 "use strict";
 
+function course_slug(name) {
+    var slug = name.toLowerCase().replace( /[^a-z0-9]+/g, '-' );
+    return 'course-' + slug;
+}
+
+function process_education_input() {
+    var candidates = $('#education-input').val().split(/[\n\t+]/);
+    var courses = [];
+    candidates.forEach(function(c) {
+        var trimmed = c.trim();
+        if (!trimmed.match(/^\d\d\d\.\d\d\/\s*GCT/)){
+            courses.push(trimmed)
+        }
+    });
+    // console.log(courses);
+    courses.forEach(function(c) {
+        console.log('Course: ', c)
+        var slug = course_slug(c);
+        var selector = '#done-' + slug;
+        console.log('Selector: ', selector);
+        $(selector).html('<i class="fas fa-check"></i>');
+    });
+}
+
 function topo_sorted_slugs() {
     if (document.univ_courses_sorted) {
         return document.univ_courses_sorted;
@@ -135,6 +159,7 @@ $(document).ready(function() {
         $('.course-link').click(show_details);
     });
     $('.course-link').click(show_details);
+    $('.education-input-button').click(process_education_input);
     $(document).keyup(function(e) {
         if (e.keyCode == 27) {
             // ESCape key pressed => hide popup

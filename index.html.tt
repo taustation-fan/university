@@ -71,12 +71,13 @@
                 <th class="univ">NL                </th>
                 <th class="univ">Moi               </th>
                 <th class="univ">SoB               </th>
+                <th class="centered">Done</th>
             </tr>
         </thead>
         <tbody>
             [% FOR row IN courses; %]
                 [% IF !row.coming_soon; THEN %]
-                    <tr id="[% row.slug | html %]">
+                    <tr>
                         <td>[% row.module | html %]</td>
                         <td><a href="#" class="course-link" data-slug="[% row.slug %]">[% row.course | html %]</a></td>
                         <td>[% row.level  | html %]</td>
@@ -99,7 +100,7 @@
                         <td>[% IF row.nl ; THEN %]<i class="fas fa-check"></i>[% END; %]</td>
                         <td>[% IF row.moi; THEN %]<i class="fas fa-check"></i>[% END; %]</td>
                         <td>[% IF row.sob; THEN %]<i class="fas fa-check"></i>[% END; %]</td>
-
+                        <td><span id="done-[% row.slug %]"></span></td>
                     </tr>
                 [% END; %]
             [% END %]
@@ -107,6 +108,10 @@
     </table>
 
     <p>Source and data is <a href="https://github.com/taustation-fan/university">on GitHub</a>.</p>
+
+    <textarea id="education-input" placeholder="Paste the contents of the Education section of your character page here">
+    </textarea>
+    <button id="education-input-button">Apply</input>
 
     <script type="text/javascript" src="assets/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="assets/jquery.dynatable.js"></script>
