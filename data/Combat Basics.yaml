@@ -29,7 +29,7 @@
   - SoB
   cost: 4200
   description: Learn club fighting techniques
-  duration: 700
+  time: 700
   level: 3
   module: Combat Basics
   prerequisites: Close Combat Basics
@@ -40,7 +40,7 @@
   - SoB
   cost: 4200
   description: Basic handgun usage
-  duration: 700
+  time: 700
   level: 3
   module: Combat Basics
   prerequisites: Ranged Combat Basics
@@ -51,7 +51,7 @@
   - SoB
   cost: 4200
   description: Learn knife fighting techniques
-  duration: 700
+  time: 700
   level: 3
   module: Combat Basics
   prerequisites: Close Combat Basics
@@ -61,7 +61,7 @@
   - SoB
   cost: 4200
   description: Learn how to shoot a rifle effectively
-  duration: 700
+  time: 700
   level: 3
   module: Combat Basics
   prerequisites: Ranged Combat Basics
@@ -71,7 +71,7 @@
   - SoB
   cost: 4200
   description: Learn how to handle short-barrel rifles
-  duration: 700
+  time: 700
   level: 3
   module: Combat Basics
   prerequisites: Ranged Combat Basics
@@ -81,7 +81,7 @@
     - SoB
   cost: 4200
   description: Learn how to wield a shotgun
-  duration: 700
+  time: 700
   level: 3
   module: Combat Basics
   prerequisites: Ranged Combat Basics
@@ -91,7 +91,7 @@
     - SoB
   description: 'The most delicate of specialties: sniping'
   cost: 4200
-  duration: 700
+  time: 700
   level: 3
   module: Combat Basics
   prerequisites: Ranged Combat Basics

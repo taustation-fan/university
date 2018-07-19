@@ -2,7 +2,7 @@
 - availability: [SoB]
   cost: 16800
   description: Master the use of knives for maximum damage
-  duration: 2100
+  time: 2100
   level: 4
   module: Advanced Combat
   prerequisites: Knife Specialist
@@ -10,7 +10,7 @@
 - availability: [SoB]
   cost: 16800
   description: Master the use of rifles for maximum damage
-  duration: 2100
+  time: 2100
   level: 4
   module: Advanced Combat
   prerequisites: Rifle Specialist
@@ -18,7 +18,7 @@
 - availability: [SoB]
   cost: 16800
   description: Master the use of clubs for maximum damage
-  duration: 2100
+  time: 2100
   level: 4
   module: Advanced Combat
   prerequisites: Club Specialist
@@ -26,7 +26,7 @@
 - availability: [SoB]
   cost: 16800
   description: Master the use of short barrel rifles for maximum damage
-  duration: 2100
+  time: 2100
   level: 4
   module: Advanced Combat
   prerequisites: Short barrel rifle Specialist
@@ -34,7 +34,7 @@
 - availability: [SoB]
   cost: 16800
   description: Master the use of hand guns for maximum damage
-  duration: 2100
+  time: 2100
   level: 4
   module: Advanced Combat
   prerequisites: Handgun Specialist
@@ -42,7 +42,7 @@
 - availability: [SoB]
   cost: 16800
   description: Master the use of shotguns for maximum damage
-  duration: 2100
+  time: 2100
   level: 4
   module: Advanced Combat
   prerequisites: Shotgun Specialist
@@ -50,7 +50,7 @@
 - availability: [SoB]
   cost: 16800
   description: Master the use of sniper rifles for maximum damage
-  duration: 2100
+  time: 2100
   level: 4
   module: Advanced Combat
   prerequisites: Sniper rifle Specialist
