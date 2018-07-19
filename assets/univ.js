@@ -116,24 +116,40 @@ function show_details() {
 }
 
 $(document).ready(function() {
-    $('#univ').dynatable({
-        table: {
-            defaultColumnIdStyle: 'dashed',
+    $('#univ').tablesorter({
+        theme: 'blue',
+        headers: {
+            2: {sorter: 'digit', filter: false},
+            4: {sorter: 'digit'},
+            5: {sorter: 'digit'}
         },
-        features: {
-            paginate: false
-        },
-        dataset: {
-            perPageDefault: 200,
-            sortTypes: {
-                'level': 'number',
-                'duration': 'number',
-                'cost': 'number'
-            }
+        widgets: ["zebra", "filter"],
+        ignoreCase: true,
+        widgetOptions: {
+            filter_columnFilters : false,
+            filter_columnAnyMatch: true,
+            filter_external: '.search',
+            filter_filteredRow : 'filtered',
+            filter_liveSearch : true,
+            filter_matchType : { 'input': 'match', 'select': 'match' },
+            filter_placeholder: { search : 'Search...' },
+            filter_saveFilters : true,
+            
         }
-    }).bind('dynatable:afterProcess', function() {
-        $('.course-link').click(show_details);
     });
+
+    $('.checksearch').on('change', function() {
+        var filter = [];
+        $('.checksearch').each(function() {
+            var $s = $(this);
+            if ($s.prop('checked')) {
+                filter[$s.data('col')] = '✔';
+            }
+        });
+        $('#univ').trigger('search', [ filter ]);
+
+    });
+
     $('.course-link').click(show_details);
     $(document).keyup(function(e) {
         if (e.keyCode == 27) {
