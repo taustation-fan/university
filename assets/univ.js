@@ -1,5 +1,42 @@
 "use strict";
 
+function course_slug(name) {
+    var slug = name.toLowerCase().replace( /[^a-z0-9]+/g, '-' );
+    return 'course-' + slug;
+}
+
+var courses_done = {};
+
+function process_education_input() {
+    var candidates = $('#education-input').val().split(/[\n\t+]/);
+    var courses = [];
+    candidates.forEach(function(c) {
+        var trimmed = c.trim();
+        if (!trimmed.match(/^\d\d\d\.\d\d\/\s*GCT/)){
+            courses.push(trimmed)
+        }
+    });
+    courses.forEach(function(c) {
+        var slug = course_slug(c);
+        $('#' + slug).find('.done').html('✔');
+        courses_done[slug] = true;
+    });
+    $('#univ').trigger('updateAll');
+}
+
+function get_filter(mode) {
+    if (mode === 'all') {
+        return '';
+    }
+    else if (mode == 'open') {
+        return '!✔';
+    }
+    else if (mode == 'done') {
+        return '✔';
+    }
+}
+
+
 function topo_sorted_slugs() {
     if (document.univ_courses_sorted) {
         return document.univ_courses_sorted;
@@ -116,25 +153,51 @@ function show_details() {
 }
 
 $(document).ready(function() {
-    $('#univ').dynatable({
-        table: {
-            defaultColumnIdStyle: 'dashed',
+    $('#univ').tablesorter({
+        theme: 'blue',
+        headers: {
+            2: {sorter: 'digit', filter: false},
+            4: {sorter: 'digit'},
+            5: {sorter: 'digit'}
         },
-        features: {
-            paginate: false
-        },
-        dataset: {
-            perPageDefault: 200,
-            sortTypes: {
-                'level': 'number',
-                'duration': 'number',
-                'cost': 'number'
+        widgets: ["zebra", "filter"],
+        ignoreCase: true,
+        widgetOptions: {
+            filter_columnFilters : false,
+            filter_columnAnyMatch: true,
+            filter_external: '.search',
+            filter_filteredRow : 'filtered',
+            filter_liveSearch : true,
+            filter_matchType : { 'input': 'match', 'select': 'match' },
+            filter_placeholder: { search : 'Search...' },
+            filter_saveFilters : true,
+            filter_functions: {
+                10: {
+                    all: function() { return true },
+                    done: get_filter('done'),
+                    open: get_filter('open'),
+                }
             }
+            
         }
-    }).bind('dynatable:afterProcess', function() {
-        $('.course-link').click(show_details);
     });
+
+    $('.checksearch, #donedeps').on('change', function() {
+        var filter = [];
+        $('.checksearch').each(function() {
+            var $s = $(this);
+            if ($s.prop('checked')) {
+                filter[$s.data('col')] = '✔';
+            }
+        });
+        var doneness = $('#donedeps').prop('value');
+        filter[10] = get_filter(doneness);
+        $('#univ').trigger('search', [ filter ]);
+
+    });
+
     $('.course-link').click(show_details);
+    $('#education-input-button').click(process_education_input)
     $(document).keyup(function(e) {
         if (e.keyCode == 27) {
             // ESCape key pressed => hide popup

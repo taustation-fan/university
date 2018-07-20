@@ -2,8 +2,10 @@
   <head>
     <meta charset="utf-8" /> 
     <title>Tau Station University Courses</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <style>
+        .tablesorter .filtered {
+            display: none;
+        }
         .univ, .centered {
             text-align: center;
         }
@@ -58,6 +60,15 @@
     <p>See <a href="https://taustation.space">Tau Station, official website</a>
        and <a href="https://tauguide.de/">Tau guide</a> for context.</p>
 
+    <p>
+        Search: <input class="search" data-column="0,1" type="search"> (Matches module and course)<br>
+        Show: <select id="donedeps">
+            <option value="all" selected=1>all</option>
+            <option value="open">courses I have not done yet</option>
+            <option value="done">courses I have finished</option>
+        </select> (you can paste your <a href="#education-input">completed courses below</a>)
+    </p>
+
     <table id="univ">
         <thead>
             <tr>
@@ -67,10 +78,15 @@
                 <th                 >Prerequisites     </th>
                 <th class="centered">Duration          </th>
                 <th class="centered">Cost              </th>
-                <th class="univ">Tau               </th>
-                <th class="univ">NL                </th>
-                <th class="univ">Moi               </th>
-                <th class="univ">SoB               </th>
+                <th class="univ">Tau
+                    <br/> <input type="checkbox" class="checksearch" data-col="6"></th>
+                <th class="univ">NL
+                    <br/> <input type="checkbox" class="checksearch" data-col="7"></th>
+                <th class="univ">Moi
+                    <br/> <input type="checkbox" class="checksearch" data-col="8"></th>
+                <th class="univ">SoB
+                    <br/> <input type="checkbox" class="checksearch" data-col="9"></th>
+                <th class="centered">Done</th>
             </tr>
         </thead>
         <tbody>
@@ -95,21 +111,26 @@
                         </td>
                         <td>[% row.duration | html %]</td>
                         <td>[% row.cost | html %]</td>
-                        <td>[% IF row.tau; THEN %]<i class="fas fa-check"></i>[% END; %]</td>
-                        <td>[% IF row.nl ; THEN %]<i class="fas fa-check"></i>[% END; %]</td>
-                        <td>[% IF row.moi; THEN %]<i class="fas fa-check"></i>[% END; %]</td>
-                        <td>[% IF row.sob; THEN %]<i class="fas fa-check"></i>[% END; %]</td>
-
+                        <td>[% IF row.tau; THEN %]✔[% END; %]</td>
+                        <td>[% IF row.nl ; THEN %]✔[% END; %]</td>
+                        <td>[% IF row.moi; THEN %]✔[% END; %]</td>
+                        <td>[% IF row.sob; THEN %]✔[% END; %]</td>
+                        <td class="done"></td>
                     </tr>
                 [% END; %]
             [% END %]
         </tbody>
     </table>
 
+    <textarea id="education-input" placeholder="Paste the contents of the Education section of your character page here"></textarea>
+    <button id="education-input-button">Apply</button>
+
+
     <p>Source and data is <a href="https://github.com/taustation-fan/university">on GitHub</a>.</p>
 
     <script type="text/javascript" src="assets/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="assets/jquery.dynatable.js"></script>
+    <script type="text/javascript" src="assets/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="assets/jquery.tablesorter.widgets.js"></script>
     <script type="text/javascript" src="assets/toposort.js"></script>
     <script type="text/javascript" src="assets/univ.js"></script>
     <script type="text/javascript">
@@ -139,6 +160,7 @@
                 </tr>
             </tbody>
         </table>
+
 
         <div id="course_details_prerequisites_container">
             <h3>All Prerequisites</h3>
