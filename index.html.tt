@@ -122,7 +122,7 @@
         </tbody>
     </table>
 
-    <textarea id="education-input" placeholder="Paste the contents of the Education section of your character page here"></textarea>
+    <textarea id="education-input" placeholder="Paste the contents of the Education section of your character page here" cols=40></textarea>
     <button id="education-input-button">Apply</button>
 
 
