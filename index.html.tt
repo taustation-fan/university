@@ -61,7 +61,12 @@
        and <a href="https://tauguide.de/">Tau guide</a> for context.</p>
 
     <p>
-        Search: <input class="search" data-column="0,1" type="search"> (Matches module and course)
+        Search: <input class="search" data-column="0,1" type="search"> (Matches module and course)<br>
+        Show: <select id="donedeps">
+            <option value="all" selected=1>all</option>
+            <option value="open">courses I have not done yet</option>
+            <option value="done">courses I have finished</option>
+        </select> (you can paste your <a href="#education-input">completed courses below</a>)
     </p>
 
     <table id="univ">
@@ -81,6 +86,7 @@
                     <br/> <input type="checkbox" class="checksearch" data-col="8"></th>
                 <th class="univ">SoB
                     <br/> <input type="checkbox" class="checksearch" data-col="9"></th>
+                <th class="centered">Done</th>
             </tr>
         </thead>
         <tbody>
@@ -109,12 +115,16 @@
                         <td>[% IF row.nl ; THEN %]✔[% END; %]</td>
                         <td>[% IF row.moi; THEN %]✔[% END; %]</td>
                         <td>[% IF row.sob; THEN %]✔[% END; %]</td>
-
+                        <td class="done"></td>
                     </tr>
                 [% END; %]
             [% END %]
         </tbody>
     </table>
+
+    <textarea id="education-input" placeholder="Paste the contents of the Education section of your character page here"></textarea>
+    <button id="education-input-button">Apply</button>
+
 
     <p>Source and data is <a href="https://github.com/taustation-fan/university">on GitHub</a>.</p>
 
@@ -150,6 +160,7 @@
                 </tr>
             </tbody>
         </table>
+
 
         <div id="course_details_prerequisites_container">
             <h3>All Prerequisites</h3>

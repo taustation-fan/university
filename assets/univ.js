@@ -1,5 +1,42 @@
 "use strict";
 
+function course_slug(name) {
+    var slug = name.toLowerCase().replace( /[^a-z0-9]+/g, '-' );
+    return 'course-' + slug;
+}
+
+var courses_done = {};
+
+function process_education_input() {
+    var candidates = $('#education-input').val().split(/[\n\t+]/);
+    var courses = [];
+    candidates.forEach(function(c) {
+        var trimmed = c.trim();
+        if (!trimmed.match(/^\d\d\d\.\d\d\/\s*GCT/)){
+            courses.push(trimmed)
+        }
+    });
+    courses.forEach(function(c) {
+        var slug = course_slug(c);
+        $('#' + slug).find('.done').html('✔');
+        courses_done[slug] = true;
+    });
+    $('#univ').trigger('updateAll');
+}
+
+function get_filter(mode) {
+    if (mode === 'all') {
+        return '';
+    }
+    else if (mode == 'open') {
+        return '!✔';
+    }
+    else if (mode == 'done') {
+        return '✔';
+    }
+}
+
+
 function topo_sorted_slugs() {
     if (document.univ_courses_sorted) {
         return document.univ_courses_sorted;
@@ -134,11 +171,18 @@ $(document).ready(function() {
             filter_matchType : { 'input': 'match', 'select': 'match' },
             filter_placeholder: { search : 'Search...' },
             filter_saveFilters : true,
+            filter_functions: {
+                10: {
+                    all: function() { return true },
+                    done: get_filter('done'),
+                    open: get_filter('open'),
+                }
+            }
             
         }
     });
 
-    $('.checksearch').on('change', function() {
+    $('.checksearch, #donedeps').on('change', function() {
         var filter = [];
         $('.checksearch').each(function() {
             var $s = $(this);
@@ -146,11 +190,14 @@ $(document).ready(function() {
                 filter[$s.data('col')] = '✔';
             }
         });
+        var doneness = $('#donedeps').prop('value');
+        filter[10] = get_filter(doneness);
         $('#univ').trigger('search', [ filter ]);
 
     });
 
     $('.course-link').click(show_details);
+    $('#education-input-button').click(process_education_input)
     $(document).keyup(function(e) {
         if (e.keyCode == 27) {
             // ESCape key pressed => hide popup
