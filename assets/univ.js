@@ -16,11 +16,28 @@ function process_education_input() {
             courses.push(trimmed)
         }
     });
+    var found = 0;
+    var not_found = [];
     courses.forEach(function(c) {
         var slug = course_slug(c);
-        $('#' + slug).find('.done').html('✔');
-        courses_done[slug] = true;
+        var $dom = $('#' + slug).find('.done');
+        if ($dom.length) {
+            found ++;
+            $dom.html('✔');
+            courses_done[slug] = true;
+        }
+        else {
+            not_found.push(c);
+            console.log("Not found '" + c + "' with slug '" + slug + "'");
+        }
     });
+    var total = Object.keys(document.univ_courses).length;
+    var msg = 'You finished ' + found + ' courses out of ' + total + '.';
+    if (not_found) {
+        msg += "<br>You also finished the following courses that I know nothing about: " + not_found.join(', ');
+
+    }
+    $('#education-status').html(msg);
     $('#univ').trigger('updateAll');
 }
 

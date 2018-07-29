@@ -125,11 +125,17 @@
         </tbody>
     </table>
 
+    <p>
     <textarea id="education-input" placeholder="Paste the contents of the Education section of your character page here" cols=40></textarea>
     <button id="education-input-button">Apply</button>
+    <br>
+    <span id="education-status"></span>
+    </p>
 
 
-    <p>Source and data is <a href="https://github.com/taustation-fan/university">on GitHub</a>.</p>
+    <footer>
+        <p>Source and data is <a href="https://github.com/taustation-fan/university">on GitHub</a>.</p>
+    </footer>
 
     <script type="text/javascript" src="assets/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="assets/jquery.tablesorter.min.js"></script>
