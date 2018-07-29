@@ -16,7 +16,10 @@
             text-align: left;
         }
         tr:hover {
-          background-color: #ffff99;
+          background-color: #ffff99 !important;
+        }
+        .even {
+            background-color: #eee;
         }
         table {
           border: 1px solid #000000;
