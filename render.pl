@@ -2,6 +2,7 @@ use strict;
 use warnings;
 use 5.014;
 use utf8;
+binmode STDOUT, ':encoding(UTF-8)';
 
 use YAML::XS qw(LoadFile);
 use JSON::XS qw(encode_json);
@@ -38,6 +39,7 @@ sub munge_course {
     $p = [$p] unless ref($p);
     $c->{prerequisites} = [map +{ name => $_, slug => slug($_) }, @$p];
     $c->{slug} = slug($c->{course});
+    $c->{available} = 1 if @$av;
     return $c;
 }
 
@@ -50,7 +52,7 @@ for my $filename (glob 'data/*.yaml') {
 
 @all_courses = map munge_course($_), @all_courses;
 my %courses;
-for (@all_courses) {
+for (grep $_->{available}, @all_courses) {
     $courses{$_->{slug}} = $_;
 }
 
