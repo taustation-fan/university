@@ -51,8 +51,18 @@ for my $filename (glob 'data/*.yaml') {
 }
 
 @all_courses = map munge_course($_), @all_courses;
+if ($ENV{VERBOSE}) {
+    my @unavailable = grep !$_->{available}, @all_courses;
+    if (@unavailable) {
+        say "Unavailable: ";
+        say "    $_" for  map $_->{course}, @unavailable;
+    }
+}
+
+my @available_courses = grep $_->{available}, @all_courses;
+
 my %courses;
-for (grep $_->{available}, @all_courses) {
+for (@available_courses) {
     $courses{$_->{slug}} = $_;
 }
 
@@ -61,7 +71,7 @@ my $template = Template->new();
 
 
 my %vars = (
-    courses => \@all_courses,
+    courses => \@available_courses,
     courses_json => decode_utf8 encode_json(\%courses),
 );
 
