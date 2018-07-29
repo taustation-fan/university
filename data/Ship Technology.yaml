@@ -19,7 +19,6 @@
   level: 4
   module: Ship Technology
   prerequisites:
-  - Basic Space Navigation
   - Basic Ship Technology
   time: 2100
   title: Advanced Ship Technology
