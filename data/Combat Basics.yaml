@@ -10,10 +10,12 @@
 - availability:
   - Tau
   - SoB
+  cost: 40
   description: Allows use of all close combat weapons
   level: 2
   module: Combat Basics
   prerequisites: Combat
+  time: 10
   title: Close Combat Basics
 - availability:
   - Tau
