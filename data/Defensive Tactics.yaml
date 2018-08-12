@@ -55,6 +55,8 @@
   title: Evasive Tactics Master
 - availability:
   - Tau
+  cost: 11200
+  time: 1400
   description: Master damage avoidance from energy weapon attacks
   level: 4
   module: Defensive Tactics
@@ -62,6 +64,8 @@
   title: Armor Master, energy
 - availability:
   - Tau
+  cost: 11200
+  time: 1400
   description: Master damage avoidance from impact weapon attacks
   level: 4
   module: Defensive Tactics
@@ -69,6 +73,8 @@
   title: Armor Master, impact
 - availability:
   - Tau
+  cost: 11200
+  time: 1400
   description: Master damage avoidance from piercing weapon attacks
   level: 4
   module: Defensive Tactics
