@@ -10,21 +10,21 @@
 - availability:
   - NL
   cost: 2800
-  description: Understand Gaule history and motivations
-  level: 2
-  module: International Relations
-  prerequisites: Social Skills
-  time: 700
-  title: Introduction to the Gaule Protectorate
-- availability:
-  - NL
-  cost: 2800
   description: Understand Consortium history and motivations
   level: 2
   module: International Relations
   prerequisites: Social Skills
   time: 700
   title: Introduction to the Consortium
+- availability:
+  - NL
+  cost: 2800
+  description: Understand Gaule history and motivations
+  level: 2
+  module: International Relations
+  prerequisites: Social Skills
+  time: 700
+  title: Introduction to the Gaule Protectorate
 - availability:
   - NL
   cost: 8400
