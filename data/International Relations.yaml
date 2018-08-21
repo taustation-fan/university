@@ -45,15 +45,19 @@
   title: Gaule Reputation
 - availability:
   - NL
+  cost: 16800
   description: Learn the mysteries of Consortium psychology
   level: 4
   module: International Relations
   prerequisites: Consortium Reputation
+  time: 2100
   title: Consortium Psychology
 - availability:
   - NL
+  cost: 16800
   description: Learn the mysteries of Gaule psychology
   level: 4
   module: International Relations
   prerequisites: Gaule Reputation
+  time: 2100
   title: Gaule Psychology
