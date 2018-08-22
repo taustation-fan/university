@@ -128,6 +128,7 @@ function show_details() {
     $cont.find('#course_details_level').text(course.level);
     $cont.find('#course_details_duration').text(course.duration);
     $cont.find('#course_details_cost').text(course.cost);
+    $cont.find('#course_details_description').text(course.description);
 
     var universities = {
         tau: 'Tau Station (Sol)',
