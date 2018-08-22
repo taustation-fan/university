@@ -5,7 +5,8 @@
   module: Advanced Ship Engineering
   prerequisites: Introduction to Ship Engineering
   title: Basic Navigation Systems
-- availability: []
+- availability:
+    - Tau
   description: Understand jump gate construction to increase jump gate travel speed.
   level: 5
   module: Advanced Ship Engineering
