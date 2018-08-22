@@ -1,0 +1,47 @@
+---
+- availability:
+    - SoB
+    - Moi
+  description: Learn the basics of ship engineering and unlock ship engineering courses.
+  level: 3
+  module: Ship Engineering
+  prerequisites: Item Repair 3
+  title: Introduction to Ship Engineering
+- availability: []
+  description: Slightly reduce the fuel consumption of your ship.
+  level: 4
+  module: Ship Engineering
+  prerequisites: Introduction to Ship Engineering
+  title: Basic Fuel Efficiency
+- availability: []
+  description: Slightly reduce the chance of your ship taking damage in flight
+  level: 4
+  module: Ship Engineering
+  prerequisites: Introduction to Ship Engineering
+  title: Basic Ship Maintenance
+- availability:
+    - Moi
+  description: Reduce the fuel consumption of your ship
+  level: 5
+  module: Ship Engineering
+  prerequisites: Basic Fuel Efficiency
+  title: Advanced Fuel Efficiency
+- availability:
+    - SoB
+  title: Advanced Ship Maintenance
+  description: Reduce the chance of your ship taking damage in flight.
+  module: Ship Engineering
+  level: 5
+  prerequisites: Basic Ship Maintenance
+- availability: []
+  title: Fuel Efficiency Master
+  description: Greatly reduce the fuel consumption of your ship.
+  module: Ship Engineering
+  level: 6
+  prerequisites: Advanced Fuel Efficiency
+- availability: []
+  description: Greatly reduce the chance of your ship taking damage in flight.
+  level: 6
+  module: Ship Engineering
+  prerequisites: Advanced Ship Maintenance
+  title: Ship Maintenance Master

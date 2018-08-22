@@ -1,0 +1,13 @@
+- availability:
+   - Moi
+  description: Learn the basics of ship navigation and unlock further navigation courses. 
+  level: 4
+  module: Advanced Ship Engineering
+  prerequisites: Introduction to Ship Engineering
+  title: Basic Navigation Systems
+- availability: []
+  description: Understand jump gate construction to increase jump gate travel speed.
+  level: 5
+  module: Advanced Ship Engineering
+  prerequisites: Basic Navigation Systems
+  title: Jump Gate Navigation
