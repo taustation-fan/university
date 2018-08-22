@@ -81,7 +81,7 @@ function recursive_prerequisties(course) {
     function visit(prereqs) {
         for (var idx in prereqs) {
             var p = document.univ_courses[prereqs[idx].slug];
-            if (!seen[p.slug]) {
+            if (p && !seen[p.slug]) {
                 all_prereqs.push(p);
                 visit(p.prerequisites);
                 seen[p.slug] = 1;
