@@ -12,8 +12,8 @@ function process_education_input() {
     var courses = [];
     candidates.forEach(function(c) {
         var trimmed = c.trim();
-        if (!trimmed.match(/^\d\d\d\.\d\d\/\s*GCT/)){
-            courses.push(trimmed)
+        if (trimmed != '' && !trimmed.match(/^\d\d\d\.\d\d\/\s*GCT/)){
+            courses.push(trimmed);
         }
     });
     var found = 0;
