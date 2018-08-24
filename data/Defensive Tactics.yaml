@@ -61,6 +61,7 @@
   level: 4
   module: Defensive Tactics
   prerequisites: Armor specialization, energy
+  time: 1400
   title: Armor Master, energy
 - availability:
   - Tau
