@@ -13,17 +13,21 @@
   title: Introduction to Ship Engineering
 - availability:
     - NL
+  cost: 5600
   description: Slightly reduce the fuel consumption of your ship.
   level: 4
   module: Ship Engineering
   prerequisites: Introduction to Ship Engineering
+  time: 700
   title: Basic Fuel Efficiency
 - availability:
     - Tau
+  cost: 5600
   description: Slightly reduce the chance of your ship taking damage in flight
   level: 4
   module: Ship Engineering
   prerequisites: Introduction to Ship Engineering
+  time: 700
   title: Basic Ship Maintenance
 - availability:
     - Moi
