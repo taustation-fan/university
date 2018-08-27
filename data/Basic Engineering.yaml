@@ -25,7 +25,7 @@
   description: Item Repair Specialist
   level: 3
   module: Basic Engineering
-  prerequisites: Item Repair 1
+  prerequisites: Item repair 1
   time: 700
   title: Item repair 2
 - availability:
@@ -35,6 +35,6 @@
   description: Item Repair Mastery
   level: 4
   module: Basic Engineering
-  prerequisites: Item Repair 2
+  prerequisites: Item repair 2
   time: 2100
   title: Item repair 3
