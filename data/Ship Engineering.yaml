@@ -31,18 +31,22 @@
   title: Basic Ship Maintenance
 - availability:
     - Moi
+  cost: 14000
   description: Reduce the fuel consumption of your ship
   level: 5
   module: Ship Engineering
   prerequisites: Basic Fuel Efficiency
+  time: 1400
   title: Advanced Fuel Efficiency
 - availability:
     - SoB
+  cost: 14000
   title: Advanced Ship Maintenance
   description: Reduce the chance of your ship taking damage in flight.
   module: Ship Engineering
   level: 5
   prerequisites: Basic Ship Maintenance
+  time: 1400
 - availability:
     - Tau
   title: Fuel Efficiency Master
