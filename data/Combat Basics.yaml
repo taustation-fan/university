@@ -4,6 +4,7 @@
   - SoB
   cost: 20
   description: Learn the basics of hand-to-hand combat
+  duration: 10
   level: 1
   module: Combat Basics
   title: Combat
