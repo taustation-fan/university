@@ -12,8 +12,8 @@ function process_education_input() {
     var courses = [];
     candidates.forEach(function(c) {
         var trimmed = c.trim();
-        if (!trimmed.match(/^\d\d\d\.\d\d\/\s*GCT/)){
-            courses.push(trimmed)
+        if (trimmed != '' && !trimmed.match(/^\d\d\d\.\d\d\/\s*GCT/)){
+            courses.push(trimmed);
         }
     });
     var found = 0;
@@ -31,6 +31,30 @@ function process_education_input() {
             console.log("Not found '" + c + "' with slug '" + slug + "'");
         }
     });
+
+    // Mark eligible courses (all prerequisites done)
+    $('#univ tbody tr').each(function(idx) {
+        var $tr = $(this);
+        var $dom = $tr.find('.done');
+        if ($dom.html() === '✔') {
+            return; // Already taken, not eligible
+        }
+
+        var prereqs = $tr.find('.prereqs .course-link');
+        var prereqs_met = true;
+        prereqs.each(function(idx) {
+            if (!($(this).attr('data-slug') in courses_done)) {
+                prereqs_met = false;
+            }
+        });
+        if (prereqs_met) {
+            var $dom = $tr.find('.eligible');
+            if ($dom.length) {
+                $dom.html('✔');
+            }
+        }
+    });
+
     var total = Object.keys(document.univ_courses).length;
     var msg = 'You finished ' + found + ' courses out of ' + total + '.';
     if (not_found) {
@@ -49,6 +73,9 @@ function get_filter(mode) {
         return '!✔';
     }
     else if (mode == 'done') {
+        return '✔';
+    }
+    else if (mode === 'eligible') {
         return '✔';
     }
 }
@@ -209,7 +236,11 @@ $(document).ready(function() {
             }
         });
         var doneness = $('#donedeps').prop('value');
-        filter[10] = get_filter(doneness);
+        if (doneness === 'eligible') {
+            filter[11] = get_filter(doneness);
+        } else {
+            filter[10] = get_filter(doneness);
+        }
         $('#univ').trigger('search', [ filter ]);
 
     });

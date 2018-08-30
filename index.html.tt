@@ -69,6 +69,7 @@
             <option value="all" selected=1>all</option>
             <option value="open">courses I have not done yet</option>
             <option value="done">courses I have finished</option>
+            <option value="eligible">courses I am eligible for</option>
         </select> (you can paste your <a href="#education-input">completed courses below</a>)
     </p>
 
@@ -90,6 +91,7 @@
                 <th class="univ">SoB
                     <br/> <input type="checkbox" class="checksearch" data-col="9"></th>
                 <th class="centered">Done</th>
+                <th class="centered">Eligible</th>
             </tr>
         </thead>
         <tbody>
@@ -99,7 +101,7 @@
                         <td>[% row.module | html %]</td>
                         <td><a href="#" class="course-link" data-slug="[% row.slug %]">[% row.course | html %]</a></td>
                         <td>[% row.level  | html %]</td>
-                        <td>
+                        <td class="prereqs">
                             [% IF row.prerequisites.size == 1; THEN %]
                                 [% p = row.prerequisites.0 %]
                                 <a href="#" class="course-link" data-slug="[% p.slug %]">[% p.name | html %]</a>
@@ -119,6 +121,7 @@
                         <td>[% IF row.moi; THEN %]✔[% END; %]</td>
                         <td>[% IF row.sob; THEN %]✔[% END; %]</td>
                         <td class="done"></td>
+                        <td class="eligible"></td>
                     </tr>
                 [% END; %]
             [% END %]
