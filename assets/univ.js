@@ -10,6 +10,7 @@ var courses_done = {};
 function process_education_input() {
     var candidates = $('#education-input').val().split(/[\n\t+]/);
     var course_in_progress = null;
+    var slug_course_in_progress = null;
     var courses = [];
     var enrolled_regex = /Enrolled in (.+?)\./;
     candidates.forEach(function(c) {
@@ -22,7 +23,8 @@ function process_education_input() {
         }
     });
     if (course_in_progress) {
-        var course = document.univ_courses[course_slug(course_in_progress)];
+        slug_course_in_progress = course_slug(course_in_progress);
+        var course = document.univ_courses[slug_course_in_progress];
         if (course) {
             course.status = 'In progress';
         }
@@ -57,7 +59,9 @@ function process_education_input() {
         var prereqs = $tr.find('.prereqs .course-link');
         var prereqs_met = true;
         prereqs.each(function(idx) {
-            if (!($(this).attr('data-slug') in courses_done)) {
+            var slug = $(this).attr('data-slug');
+            if (!(slug in courses_done)
+                    && !(slug === slug_course_in_progress)) {
                 prereqs_met = false;
             }
         });
