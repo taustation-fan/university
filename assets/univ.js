@@ -9,17 +9,32 @@ var courses_done = {};
 
 function process_education_input() {
     var candidates = $('#education-input').val().split(/[\n\t+]/);
+    var course_in_progress = null;
     var courses = [];
+    var enrolled_regex = /Enrolled in (.+?)\./;
     candidates.forEach(function(c) {
         var trimmed = c.trim();
-        if (trimmed != '' && !trimmed.match(/^\d\d\d\.\d\d\/\s*GCT/)){
+        var match = enrolled_regex.exec(trimmed);
+        if (match) {
+            course_in_progress = match[1];
+        } else if (trimmed != '' && !trimmed.match(/^\d\d\d\.\d\d\/\s*GCT/)){
             courses.push(trimmed);
         }
     });
+    if (course_in_progress) {
+        var course = document.univ_courses[course_slug(course_in_progress)];
+        if (course) {
+            course.status = 'In progress';
+        }
+    }
     var found = 0;
     var not_found = [];
     courses.forEach(function(c) {
         var slug = course_slug(c);
+        var course = document.univ_courses[slug];
+        if (course) {
+            course.status = 'Done';
+        }
         var $dom = $('#' + slug).find('.done');
         if ($dom.length) {
             found ++;
@@ -28,7 +43,6 @@ function process_education_input() {
         }
         else {
             not_found.push(c);
-            console.log("Not found '" + c + "' with slug '" + slug + "'");
         }
     });
 
@@ -136,8 +150,13 @@ function recursive_prerequisties(course) {
 function fill_ul($ul, prereq) {
     $ul.html('');
     for (var idx in prereq) {
+        var title = (prereq[idx].name || prereq[idx].course);
+        var status = prereq[idx].status;
+        if (status) {
+            title += ' [' + status + ']';
+        }
         var $a = $('<a>', {
-            text: (prereq[idx].name || prereq[idx].course),
+            text: title,
             href: '#',
             data: {'slug': prereq[idx].slug},
             click: show_details,
