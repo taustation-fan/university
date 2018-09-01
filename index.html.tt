@@ -120,8 +120,8 @@
                         <td class="centered">[% IF row.nl ; THEN %]✔[% END; %]</td>
                         <td class="centered">[% IF row.moi; THEN %]✔[% END; %]</td>
                         <td class="centered">[% IF row.sob; THEN %]✔[% END; %]</td>
-                        <td class="centered" class="done"></td>
-                        <td class="centered" class="eligible"></td>
+                        <td class="centered done"></td>
+                        <td class="centered eligible"></td>
                     </tr>
                 [% END; %]
             [% END %]
