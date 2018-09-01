@@ -116,12 +116,12 @@
                         </td>
                         <td>[% row.duration | html %]</td>
                         <td>[% row.cost | html %]</td>
-                        <td>[% IF row.tau; THEN %]✔[% END; %]</td>
-                        <td>[% IF row.nl ; THEN %]✔[% END; %]</td>
-                        <td>[% IF row.moi; THEN %]✔[% END; %]</td>
-                        <td>[% IF row.sob; THEN %]✔[% END; %]</td>
-                        <td class="done"></td>
-                        <td class="eligible"></td>
+                        <td class="centered">[% IF row.tau; THEN %]✔[% END; %]</td>
+                        <td class="centered">[% IF row.nl ; THEN %]✔[% END; %]</td>
+                        <td class="centered">[% IF row.moi; THEN %]✔[% END; %]</td>
+                        <td class="centered">[% IF row.sob; THEN %]✔[% END; %]</td>
+                        <td class="centered" class="done"></td>
+                        <td class="centered" class="eligible"></td>
                     </tr>
                 [% END; %]
             [% END %]
