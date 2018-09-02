@@ -1,9 +1,11 @@
 - availability:
    - Moi
+  cost: 5600
   description: Learn the basics of ship navigation and unlock further navigation courses. 
   level: 4
   module: Advanced Ship Engineering
   prerequisites: Introduction to Ship Engineering
+  time: 700
   title: Basic Navigation Systems
 - availability:
     - Tau
