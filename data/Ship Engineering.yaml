@@ -1,9 +1,9 @@
 ---
 - availability:
-    - SoB
-    - Moi
-    - Tau
-    - NL
+  - SoB
+  - Moi
+  - Tau
+  - NL
   cost: 4200
   description: Learn the basics of ship engineering and unlock ship engineering courses.
   level: 3
@@ -12,7 +12,7 @@
   time: 700
   title: Introduction to Ship Engineering
 - availability:
-    - NL
+  - NL
   cost: 5600
   description: Slightly reduce the fuel consumption of your ship.
   level: 4
@@ -21,7 +21,7 @@
   time: 700
   title: Basic Fuel Efficiency
 - availability:
-    - Tau
+  - Tau
   cost: 5600
   description: Slightly reduce the chance of your ship taking damage in flight
   level: 4
@@ -30,7 +30,7 @@
   time: 700
   title: Basic Ship Maintenance
 - availability:
-    - Moi
+  - Moi
   cost: 14000
   description: Reduce the fuel consumption of your ship
   level: 5
@@ -39,23 +39,23 @@
   time: 1400
   title: Advanced Fuel Efficiency
 - availability:
-    - SoB
+  - SoB
   cost: 14000
-  title: Advanced Ship Maintenance
   description: Reduce the chance of your ship taking damage in flight.
-  module: Ship Engineering
   level: 5
+  module: Ship Engineering
   prerequisites: Basic Ship Maintenance
   time: 1400
+  title: Advanced Ship Maintenance
 - availability:
-    - Tau
-  title: Fuel Efficiency Master
+  - Tau
   description: Greatly reduce the fuel consumption of your ship.
-  module: Ship Engineering
   level: 6
+  module: Ship Engineering
   prerequisites: Advanced Fuel Efficiency
+  title: Fuel Efficiency Master
 - availability:
-    - NL
+  - NL
   description: Greatly reduce the chance of your ship taking damage in flight.
   level: 6
   module: Ship Engineering

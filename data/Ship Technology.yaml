@@ -13,7 +13,7 @@
   time: 1400
   title: Basic Ship Technology
 - availability:
-   - Moi
+  - Moi
   cost: 16800
   description: Advanced Ship Technology
   level: 4

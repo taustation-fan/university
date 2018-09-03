@@ -56,7 +56,6 @@
 - availability:
   - Tau
   cost: 11200
-  time: 1400
   description: Master damage avoidance from energy weapon attacks
   level: 4
   module: Defensive Tactics
@@ -66,18 +65,18 @@
 - availability:
   - Tau
   cost: 11200
-  time: 1400
   description: Master damage avoidance from impact weapon attacks
   level: 4
   module: Defensive Tactics
   prerequisites: Armor specialization, impact
+  time: 1400
   title: Armor Master, impact
 - availability:
   - Tau
   cost: 11200
-  time: 1400
   description: Master damage avoidance from piercing weapon attacks
   level: 4
   module: Defensive Tactics
   prerequisites: Armor specialization, piercing
+  time: 1400
   title: Armor Master, piercing

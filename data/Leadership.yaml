@@ -1,22 +1,22 @@
---- 
+---
 - availability:
-      - Tau
-      - NL
-      - Moi
-      - SoB
+  - Tau
+  - NL
+  - Moi
+  - SoB
   cost: 200
   level: 1
+  module: Leadership
   time: 100
   title: Introduction to Leadership
-  module: Leadership
 - availability:
-    - Tau
-    - Moi
-    - SoB
+  - Tau
+  - Moi
+  - SoB
   cost: 2800
   level: 2
-  time: 700
-  title: Syndicate Basics
   module: Leadership
   prerequisites:
-    - Introduction to Leadership
+  - Introduction to Leadership
+  time: 700
+  title: Syndicate Basics
