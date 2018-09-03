@@ -49,15 +49,19 @@
   title: Advanced Ship Maintenance
 - availability:
   - Tau
+  cost: 25200
   description: Greatly reduce the fuel consumption of your ship.
   level: 6
   module: Ship Engineering
   prerequisites: Advanced Fuel Efficiency
+  time: 2100
   title: Fuel Efficiency Master
 - availability:
   - NL
+  cost: 25200
   description: Greatly reduce the chance of your ship taking damage in flight.
   level: 6
   module: Ship Engineering
   prerequisites: Advanced Ship Maintenance
+  time: 2100
   title: Ship Maintenance Master
