@@ -31,6 +31,11 @@ function process_education_input() {
     }
     var found = 0;
     var not_found = [];
+    // these are headings that we do not want to list as unknown courses
+    var blacklist = {
+        Course: 1,
+        Completed: 1
+    };
     courses.forEach(function(c) {
         var slug = course_slug(c);
         var course = document.univ_courses[slug];
@@ -43,7 +48,7 @@ function process_education_input() {
             $dom.html('✔');
             courses_done[slug] = true;
         }
-        else {
+        else if (! blacklist[c]) {
             not_found.push(c);
         }
     });
