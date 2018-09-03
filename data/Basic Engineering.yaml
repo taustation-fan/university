@@ -4,9 +4,9 @@
   - NL
   cost: 20
   description: Learn basic engineering concepts
-  time: 10
   level: 1
   module: Basic Engineering
+  time: 10
   title: Introduction to Engineering
 - availability:
   - Tau

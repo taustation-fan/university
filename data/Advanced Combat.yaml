@@ -1,57 +1,64 @@
 ---
-- availability: [SoB]
+- availability:
+  - SoB
   cost: 16800
   description: Master the use of knives for maximum damage
-  time: 2100
   level: 4
   module: Advanced Combat
   prerequisites: Knife Specialist
-  title: 'Assassin, Knife Master'
-- availability: [SoB]
+  time: 2100
+  title: Assassin, Knife Master
+- availability:
+  - SoB
   cost: 16800
   description: Master the use of rifles for maximum damage
-  time: 2100
   level: 4
   module: Advanced Combat
   prerequisites: Rifle Specialist
-  title: 'Assault, Rifle Master'
-- availability: [SoB]
+  time: 2100
+  title: Assault, Rifle Master
+- availability:
+  - SoB
   cost: 16800
   description: Master the use of clubs for maximum damage
-  time: 2100
   level: 4
   module: Advanced Combat
   prerequisites: Club Specialist
+  time: 2100
   title: Club Master
-- availability: [SoB]
+- availability:
+  - SoB
   cost: 16800
   description: Master the use of short barrel rifles for maximum damage
-  time: 2100
   level: 4
   module: Advanced Combat
   prerequisites: Short barrel rifle Specialist
-  title: 'Enforcer, Short barrel rifle Master'
-- availability: [SoB]
+  time: 2100
+  title: Enforcer, Short barrel rifle Master
+- availability:
+  - SoB
   cost: 16800
   description: Master the use of hand guns for maximum damage
-  time: 2100
   level: 4
   module: Advanced Combat
   prerequisites: Handgun Specialist
-  title: 'Intimidator, handgun Master'
-- availability: [SoB]
+  time: 2100
+  title: Intimidator, handgun Master
+- availability:
+  - SoB
   cost: 16800
   description: Master the use of shotguns for maximum damage
-  time: 2100
   level: 4
   module: Advanced Combat
   prerequisites: Shotgun Specialist
-  title: 'Regulator, shotgun Master'
-- availability: [SoB]
+  time: 2100
+  title: Regulator, shotgun Master
+- availability:
+  - SoB
   cost: 16800
   description: Master the use of sniper rifles for maximum damage
-  time: 2100
   level: 4
   module: Advanced Combat
   prerequisites: Sniper rifle Specialist
-  title: 'Sharpshooter, Sniper Master'
+  time: 2100
+  title: Sharpshooter, Sniper Master
