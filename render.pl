@@ -72,7 +72,7 @@ my $template = Template->new();
 
 my %vars = (
     courses => \@available_courses,
-    courses_json => decode_utf8 encode_json(\%courses),
+    courses_json => decode_utf8( JSON::XS->new->utf8->pretty->canonical->encode(\%courses) ),
 );
 
 $template->process('index.html.tt', \%vars, 'index.html', { binmode => ':utf8' })
