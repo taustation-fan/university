@@ -88,6 +88,19 @@ function process_education_input() {
     $('#univ').trigger('updateAll');
 }
 
+// Persist completed courses in localStorage
+function process_education_remember() {
+    let losto_courses_name = 'edu_courses_completed';
+    let losto_when_name    = 'edu_courses_stored_when';
+    let pasted_by_user     = $('#education-input').val();
+    let when_pasted        = new Date().toISOString();
+    console.log(pasted_by_user);
+    console.log(when_pasted);
+    localStorage.setItem( losto_courses_name, pasted_by_user );
+    localStorage.setItem( losto_when_name, when_pasted );
+    return;
+}
+
 function get_filter(mode) {
     if (mode === 'all') {
         return '';
@@ -274,7 +287,8 @@ $(document).ready(function() {
     });
 
     $('.course-link').click(show_details);
-    $('#education-input-button').click(process_education_input)
+    $('#education-input-button').click(process_education_input);
+    $('#education-remember-button').click(process_education_remember);
     $(document).keyup(function(e) {
         if (e.keyCode == 27) {
             // ESCape key pressed => hide popup
