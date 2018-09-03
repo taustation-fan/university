@@ -88,8 +88,16 @@ function process_education_input() {
     $('#univ').trigger('updateAll');
 }
 
+// Clear user input area
+function process_education_clear() {
+    $('#education-input').val('');
+    $('#education-timestamp').text('');
+    $('#education-status').text('');
+    return;
+}
+
 // Persist completed courses in localStorage
-function process_education_remember() {
+function process_education_store() {
     let losto_courses_name = 'edu_courses_completed';
     let losto_when_name    = 'edu_courses_stored_when';
     let pasted_by_user     = $('#education-input').val();
@@ -98,6 +106,39 @@ function process_education_remember() {
     console.log(when_pasted);
     localStorage.setItem( losto_courses_name, pasted_by_user );
     localStorage.setItem( losto_when_name, when_pasted );
+    return;
+}
+
+// Read completed courses from localStorage
+function process_education_recall() {
+    let losto_courses_name = 'edu_courses_completed';
+    let losto_when_name    = 'edu_courses_stored_when';
+    let recalled_courses   = localStorage.getItem( losto_courses_name );
+    console.log( typeof(recalled_courses) );
+    if (   recalled_courses === null
+        || recalled_courses === undefined
+        ||  (
+                typeof(recalled_courses) === 'string'
+                && recalled_courses.trim().length === 0
+            )
+    ) {
+        //console.log('returning');
+        return;
+    }
+    //console.log('still here');
+    $('#education-input').val( localStorage.getItem( losto_courses_name ) );
+    $('#education-timestamp').html( 'Recalled from ' + localStorage.getItem( losto_when_name ) + '<br>' );
+    process_education_input();
+    return;
+}
+
+// Clear completed courses from localStorage
+function process_education_forget() {
+    let losto_courses_name = 'edu_courses_completed';
+    let losto_when_name    = 'edu_courses_stored_when';
+    localStorage.removeItem( losto_courses_name );
+    localStorage.removeItem( losto_when_name );
+    process_education_clear();
     return;
 }
 
@@ -288,7 +329,11 @@ $(document).ready(function() {
 
     $('.course-link').click(show_details);
     $('#education-input-button').click(process_education_input);
-    $('#education-remember-button').click(process_education_remember);
+    $('#education-clear-button').click(process_education_clear);
+    $('#education-store-button').click(process_education_store);
+    $('#education-recall-button').click(process_education_recall);
+    $('#education-forget-button').click(process_education_forget);
+    process_education_recall();
     $(document).keyup(function(e) {
         if (e.keyCode == 27) {
             // ESCape key pressed => hide popup
