@@ -21,10 +21,12 @@
 - availability:
   - Tau
   - SoB
+  cost: 40
   description: Allows use of all ranged combat weapons
   level: 2
   module: Combat Basics
   prerequisites: Combat
+  time: 10
   title: Ranged Combat Basics
 - availability:
   - Tau

@@ -1,9 +1,11 @@
 ---
 - availability:
   - Tau
+  cost: 200
   description: Introduction to Business
   level: 1
   module: Bureaucracy
+  time: 100
   title: Introduction to Business
 - coming_soon: 1
   description: Bureaucracy for Beginners
