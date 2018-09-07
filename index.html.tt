@@ -33,6 +33,9 @@
           background: #DBDBDB;
           border-bottom: 0.5px solid #000000;
         }
+        .strong-left-border {
+            border-left: 2px solid black;
+        }
         #course_details {
             position: fixed;
             left: 0;
@@ -96,7 +99,7 @@
                     <br/> <input type="checkbox" class="checksearch" data-col="8"></th>
                 <th class="univ">SoB
                     <br/> <input type="checkbox" class="checksearch" data-col="9"></th>
-                <th class="centered">Done</th>
+                <th class="centered strong-left-border">Done</th>
                 <th class="centered">Eligible</th>
             </tr>
         </thead>
@@ -126,7 +129,7 @@
                         <td class="centered">[% IF row.nl ; THEN %]✔[% END; %]</td>
                         <td class="centered">[% IF row.moi; THEN %]✔[% END; %]</td>
                         <td class="centered">[% IF row.sob; THEN %]✔[% END; %]</td>
-                        <td class="centered done"></td>
+                        <td class="centered done strong-left-border"></td>
                         <td class="centered eligible"></td>
                     </tr>
                 [% END; %]
