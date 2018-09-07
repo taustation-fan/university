@@ -102,8 +102,6 @@ function process_education_store() {
     let losto_when_name    = 'edu_courses_stored_when';
     let pasted_by_user     = $('#education-input').val().trim();
     let when_pasted        = new Date().toISOString();
-    console.log(pasted_by_user);
-    console.log(when_pasted);
     if ( pasted_by_user.length ) {
         localStorage.setItem( losto_courses_name, pasted_by_user );
         localStorage.setItem( losto_when_name, when_pasted );
@@ -116,7 +114,6 @@ function process_education_recall() {
     let losto_courses_name = 'edu_courses_completed';
     let losto_when_name    = 'edu_courses_stored_when';
     let recalled_courses   = localStorage.getItem( losto_courses_name );
-    console.log( typeof(recalled_courses) );
     if (   recalled_courses === null
         || recalled_courses === undefined
         ||  (
@@ -124,10 +121,8 @@ function process_education_recall() {
                 && recalled_courses.trim().length === 0
             )
     ) {
-        //console.log('returning');
         return;
     }
-    //console.log('still here');
     $('#education-input').val( localStorage.getItem( losto_courses_name ) );
     $('#education-timestamp').html( 'Recalled from ' + localStorage.getItem( losto_when_name ) + '<br>' );
     process_education_input();
