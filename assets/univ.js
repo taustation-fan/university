@@ -285,7 +285,7 @@ $(document).ready(function() {
             4: {sorter: 'digit'},
             5: {sorter: 'digit'}
         },
-        widgets: ["zebra", "filter"],
+        widgets: ["zebra", "filter", "stickyHeaders"],
         ignoreCase: true,
         widgetOptions: {
             filter_columnFilters : false,
