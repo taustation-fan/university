@@ -33,7 +33,6 @@
   level: 4
   module: Bureaucracy
   prerequisites:
-  - Bureaucracy for Beginners
   - Building Enterprises
   title: Accounting
 - coming_soon: 1
@@ -41,7 +40,6 @@
   level: 4
   module: Bureaucracy
   prerequisites:
-  - Bureaucracy for Beginners
   - Building Enterprises
   title: Human Resources
 - coming_soon: 1
@@ -49,7 +47,6 @@
   level: 4
   module: Bureaucracy
   prerequisites:
-  - Bureaucracy for Beginners
   - Building Enterprises
   title: Logistics
 - coming_soon: 1
@@ -57,6 +54,5 @@
   level: 4
   module: Bureaucracy
   prerequisites:
-  - Bureaucracy for Beginners
   - Building Enterprises
   title: Management

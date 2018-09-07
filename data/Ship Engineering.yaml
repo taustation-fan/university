@@ -8,7 +8,7 @@
   description: Learn the basics of ship engineering and unlock ship engineering courses.
   level: 3
   module: Ship Engineering
-  prerequisites: Item Repair 3
+  prerequisites: Item repair 3
   time: 700
   title: Introduction to Ship Engineering
 - availability:
