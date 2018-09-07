@@ -52,6 +52,12 @@
           border-bottom: 1px solid #333333;
           border-left: 1px solid #CCCCCC;
         }
+        .danger {
+          margin-left: 3rem;
+        }
+        .lmarg {
+          margin-left: 0.5rem;
+        }
 
 
     </style>
@@ -129,9 +135,14 @@
     </table>
 
     <p>
-    <textarea id="education-input" placeholder="Paste the contents of the Education section of your character page here" cols=40></textarea>
+    <textarea id="education-input" placeholder="Paste the contents of the Education section of your character page here" cols="40"></textarea>
     <button id="education-input-button">Apply</button>
+    <button id="education-clear-button">Clear</button>
+    <button id="education-store-button" class="lmarg">Store</button>
+    <button id="education-recall-button">Recall</button>
+    <button id="education-forget-button" class="danger">Forget</button>
     <br>
+    <span id="education-timestamp"></span>
     <span id="education-status"></span>
     </p>
 
