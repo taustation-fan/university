@@ -100,12 +100,14 @@ function process_education_clear() {
 function process_education_store() {
     let losto_courses_name = 'edu_courses_completed';
     let losto_when_name    = 'edu_courses_stored_when';
-    let pasted_by_user     = $('#education-input').val();
+    let pasted_by_user     = $('#education-input').val().trim();
     let when_pasted        = new Date().toISOString();
     console.log(pasted_by_user);
     console.log(when_pasted);
-    localStorage.setItem( losto_courses_name, pasted_by_user );
-    localStorage.setItem( losto_when_name, when_pasted );
+    if ( pasted_by_user.length ) {
+        localStorage.setItem( losto_courses_name, pasted_by_user );
+        localStorage.setItem( losto_when_name, when_pasted );
+    }
     return;
 }
 
