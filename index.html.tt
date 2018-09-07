@@ -163,6 +163,7 @@
     <div id="course_details" style="display: none">
         <h2 id="course_details_name"></h2>
         <p id="course_details_description"></p>
+        <p id="course_details_measurement"></p>
         <table>
             <tbody>
                 <tr>

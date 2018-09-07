@@ -35,7 +35,7 @@
   cost: 14000
   description: Reduce the fuel consumption of your ship
   level: 5
-  measurement: 'Reduces fuel consumption by 5%'
+  measurement: 'Reduces fuel consumption by 10%'
   module: Ship Engineering
   prerequisites: Basic Fuel Efficiency
   time: 1400
