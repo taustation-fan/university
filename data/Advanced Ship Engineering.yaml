@@ -13,6 +13,7 @@
   cost: 7000
   description: Understand jump gate construction to increase jump gate travel speed.
   level: 5
+  measurement: 'Reduces Jump Gate travel time by 20%. Leaves fuel consumption constant.'
   module: Advanced Ship Engineering
   prerequisites: Basic Navigation Systems
   time: 700
