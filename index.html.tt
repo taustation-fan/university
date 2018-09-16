@@ -82,7 +82,7 @@
         </select> (you can paste your <a href="#education-input">completed courses below</a>)
     </p>
 
-    <p><a href="images/full_tree.png">Graph of prerequisites</a> for all courses (large).</p>
+    <p><a href="assets/images/full_tree.png">Graph of prerequisites</a> for all courses (large).</p>
 
     <table id="univ">
         <thead>
