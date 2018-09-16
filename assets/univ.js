@@ -5,8 +5,6 @@ function course_slug(name) {
     return 'course-' + slug;
 }
 
-var courses_done = {};
-
 function process_education_input() {
     var candidates = $('#education-input').val().split(/[\n\t+]/);
     var course_in_progress = null;
@@ -44,14 +42,8 @@ function process_education_input() {
         if (course) {
             course.status = 'Done';
             course_credits += parseInt(course.cost || 0);
-        }
-        var $dom = $('#' + slug).find('.done');
-        if ($dom.length) {
             found ++;
-            $dom.html('✔');
-            courses_done[slug] = true;
-        }
-        else if (! blacklist[c]) {
+        } else if (! blacklist[c]) {
             not_found.push(c);
         }
     });
@@ -60,23 +52,30 @@ function process_education_input() {
     $('#univ tbody tr').each(function(idx) {
         var $tr = $(this);
         var $dom = $tr.find('.done');
-        if ($dom.html() === '✔') {
-            return; // Already taken, not eligible
-        }
+        if (!$dom.length) { return; }
 
-        var prereqs = $tr.find('.prereqs .course-link');
-        var prereqs_met = true;
-        prereqs.each(function(idx) {
-            var slug = $(this).attr('data-slug');
-            if (!(slug in courses_done)
-                    && !(slug === slug_course_in_progress)) {
-                prereqs_met = false;
-            }
-        });
-        if (prereqs_met) {
-            var $dom = $tr.find('.eligible');
-            if ($dom.length) {
+        var course = document.univ_courses[this.id];
+        if (course) {
+            if (course.status == 'Done') {
                 $dom.html('✔');
+            }
+            else if (course.status == 'In progress') {
+                $dom.html('⏲');
+            }
+
+            // Check if prerequisites completed:
+            else {
+                var prereqs = $tr.find('.prereqs .course-link');
+                var prereqs_met = true;
+                prereqs.each(function(idx) {
+                    var slug = $(this).attr('data-slug');
+                    var prereq = document.univ_courses[slug];
+                    if (!(prereq && (prereq.status === 'Done' || prereq.status === 'In progress'))) {
+                        prereqs_met = false;
+                    }
+                });
+
+                $dom.html(prereqs_met ? '' : '✖');
             }
         }
     });
@@ -152,10 +151,10 @@ function get_filter(mode) {
         return '!✔';
     }
     else if (mode == 'done') {
-        return '✔';
+        return '✔ or ⏲';
     }
     else if (mode === 'eligible') {
-        return '✔';
+        return "!✔ and !⏲ and !✖";
     }
 }
 
@@ -321,11 +320,7 @@ $(document).ready(function() {
             }
         });
         var doneness = $('#donedeps').prop('value');
-        if (doneness === 'eligible') {
-            filter[11] = get_filter(doneness);
-        } else {
-            filter[10] = get_filter(doneness);
-        }
+        filter[10] = get_filter(doneness);
         $('#univ').trigger('search', [ filter ]);
 
     });
