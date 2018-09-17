@@ -5,21 +5,43 @@ function course_slug(name) {
     return 'course-' + slug;
 }
 
+function reduce_to_courses(ray) {
+    let EDU = 'EDUCATION';
+    let CLO = 'CLONES';
+    if ( ray.includes(EDU) ) {
+        let where = ray.indexOf(EDU);
+        ray.splice( 0, where + 1 );
+    }
+    if ( ray.includes(CLO) ) {
+        let where = ray.indexOf(CLO);
+        ray.splice( where );
+    }
+    ray = ray
+        .filter( line => !line.match( /^\d\d\d\.\d\d\/\s*GCT/     ) )
+        .filter( line => !line.match( /^(?:Course|Completed)\s*$/ ) )
+        .filter( line => !line.match( /^You are not enrolled /    ) )
+        .map( line => line.trim() )
+        .filter( line => !line.match( /^$/ ) )
+        ;
+    $('#education-input').val(ray.join('\n'));
+    return;
+}
+
 var courses_done = {};
 
 function process_education_input() {
-    var candidates = $('#education-input').val().split(/[\n\t+]/);
+    var candidates = $('#education-input').val().split(/[\n\t]+/);
+    reduce_to_courses(candidates);
     var course_in_progress = null;
     var slug_course_in_progress = null;
     var courses = [];
     var enrolled_regex = /Enrolled in (.+?)\./;
     candidates.forEach(function(c) {
-        var trimmed = c.trim();
-        var match = enrolled_regex.exec(trimmed);
+        var match = enrolled_regex.exec(c);
         if (match) {
             course_in_progress = match[1];
-        } else if (trimmed != '' && !trimmed.match(/^\d\d\d\.\d\d\/\s*GCT/)){
-            courses.push(trimmed);
+        } else {
+            courses.push(c);
         }
     });
     if (course_in_progress) {
@@ -125,7 +147,7 @@ function process_education_recall() {
     }
     $('#education-input').val( localStorage.getItem( losto_courses_name ) );
     $('#education-timestamp').html( 'Recalled from ' + localStorage.getItem( losto_when_name ) + '<br>' );
-    process_education_input();
+    //process_education_input();
     return;
 }
 
