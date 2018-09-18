@@ -1,13 +1,53 @@
 "use strict";
 
+window.edutau = {}; // Private namespace
+edutau.enrolled_prefix = 'Enrolled in ';
+
+// Teach Storage to handle Objects
+Storage.prototype.setObject = function(key, value) {
+    this.setItem(key, JSON.stringify(value));
+};
+
+Storage.prototype.getObject = function(key) {
+    var value = this.getItem(key);
+    return value && JSON.parse(value);
+};
+
+
 function course_slug(name) {
     var slug = name.toLowerCase().replace( /[^a-z0-9]+/g, '-' );
     return 'course-' + slug;
 }
 
-function reduce_to_courses(ray) {
-    let EDU = 'EDUCATION';
-    let CLO = 'CLONES';
+function Course(name, state) {
+    this.states = {
+        1: 'Not Done',
+        2: 'In Progress',
+        3: 'Done',
+    };
+    this.name = name;
+    this.current_state = 1;
+    this.next_state = function(cs) {
+        let state_now = cs.current_state + 1;
+        if ( state_now > Math.max( ... Object.keys(this.states).map( x => parseInt(x) ) ) ) {
+            state_now = 1;
+        }
+        cs.current_state = state_now;
+    };
+    this.get_state = function(cs) {
+        let my_state = cs.current_state;
+        return my_state;
+    };
+    this.get_state_value = function(cs) {
+        let my_state = this.states[ cs.current_state ];
+        return my_state;
+    };
+}
+
+function reduce_to_courses() {
+    let ray = $('#education-input').val().split(/[\n\t]+/);
+    const EDU = 'EDUCATION';
+    const CLO = 'CLONES';
     if ( ray.includes(EDU) ) {
         let where = ray.indexOf(EDU);
         ray.splice( 0, where + 1 );
@@ -24,45 +64,64 @@ function reduce_to_courses(ray) {
         .filter( line => !line.match( /^$/ ) )
         ;
     $('#education-input').val(ray.join('\n'));
+    return ray;
+}
+
+function courses_to_objects() {
+    let ray = $('#education-input').val().split(/[\n\t]+/);
+    edutau.all_courses = []; // Accessible from everywhere in the script
+    const enrolled_regex = /Enrolled in (.+?)\./;
+    var course_in_progress = null;
+    ray.forEach(function(c) {
+        var the_course = new Course;
+        console.log(the_course);
+        var match_enrolled = enrolled_regex.exec(c);
+        if (match_enrolled) {
+            // Currently active course
+            course_in_progress = match_enrolled[1];
+            the_course.current_state = 2; // in progress
+            the_course.name = course_in_progress;
+        } else {
+            the_course.current_state = 3; // done
+            the_course.name = c;
+        }
+        the_course.slug = course_slug( the_course.name );
+        edutau.all_courses.push( the_course );
+    });
     return;
+}
+
+function lite_courses() {
+    let lite = {}, course;
+    for ( course of edutau.all_courses ) {
+        lite[ course.name ] = course.current_state;
+    }
+    console.log(lite);
+    return lite;
 }
 
 var courses_done = {};
 
 function process_education_input() {
-    var candidates = $('#education-input').val().split(/[\n\t]+/);
-    reduce_to_courses(candidates);
-    var course_in_progress = null;
-    var slug_course_in_progress = null;
-    var courses = [];
-    var enrolled_regex = /Enrolled in (.+?)\./;
-    candidates.forEach(function(c) {
-        var match = enrolled_regex.exec(c);
-        if (match) {
-            course_in_progress = match[1];
-        } else {
-            courses.push(c);
-        }
-    });
+    reduce_to_courses();
+    courses_to_objects();
+    var course_in_progress = null; // look for course with state "in progress"
+    var slug_course_in_progress = null; // turn its name into slug
+    var courses = []; // all courses with state "done"
     if (course_in_progress) {
         slug_course_in_progress = course_slug(course_in_progress);
-        var course = document.univ_courses[slug_course_in_progress];
-        if (course) {
-            course.status = 'In progress';
+        var course_row = document.univ_courses[slug_course_in_progress];
+        if (course_row) {
+            course_row.status = 'In progress';
         }
     }
     var found = 0;
     var not_found = [];
-    // these are headings that we do not want to list as unknown courses
-    var blacklist = {
-        Course: 1,
-        Completed: 1
-    };
     courses.forEach(function(c) {
         var slug = course_slug(c);
-        var course = document.univ_courses[slug];
-        if (course) {
-            course.status = 'Done';
+        var course_row = document.univ_courses[slug];
+        if (course_row) {
+            course_row.status = 'Done';
         }
         var $dom = $('#' + slug).find('.done');
         if ($dom.length) {
@@ -70,7 +129,7 @@ function process_education_input() {
             $dom.html('✔');
             courses_done[slug] = true;
         }
-        else if (! blacklist[c]) {
+        else {
             not_found.push(c);
         }
     });
@@ -120,22 +179,24 @@ function process_education_clear() {
 
 // Persist completed courses in localStorage
 function process_education_store() {
-    let losto_courses_name = 'edu_courses_completed';
-    let losto_when_name    = 'edu_courses_stored_when';
-    let pasted_by_user     = $('#education-input').val().trim();
-    let when_pasted        = new Date().toISOString();
-    if ( pasted_by_user.length ) {
-        localStorage.setItem( losto_courses_name, pasted_by_user );
-        localStorage.setItem( losto_when_name, when_pasted );
+    const losto_courses_name = 'edu_courses_completed';
+    const losto_when_name    = 'edu_courses_stored_when';
+    let pasted_by_user       = lite_courses();
+    let when_stored          = new Date().toISOString();
+    if ( Object.keys(pasted_by_user).length ) {
+        localStorage.setObject( losto_courses_name, pasted_by_user );
+        localStorage.setItem( losto_when_name, when_stored );
     }
     return;
 }
 
 // Read completed courses from localStorage
 function process_education_recall() {
-    let losto_courses_name = 'edu_courses_completed';
-    let losto_when_name    = 'edu_courses_stored_when';
-    let recalled_courses   = localStorage.getItem( losto_courses_name );
+    const losto_courses_name = 'edu_courses_completed';
+    const losto_when_name    = 'edu_courses_stored_when';
+    let recalled_courses     = localStorage.getObject( losto_courses_name );
+    console.log(recalled_courses);
+    /*
     if (   recalled_courses === null
         || recalled_courses === undefined
         ||  (
@@ -145,7 +206,18 @@ function process_education_recall() {
     ) {
         return;
     }
-    $('#education-input').val( localStorage.getItem( losto_courses_name ) );
+    */
+    // Look for dataset with a current_state of 2 (in progress), get its name
+    let course_still_in_progress = Object.entries(recalled_courses).filter( row => row[1] === 2 )[0][0];
+    if ( course_still_in_progress ) {
+        delete recalled_courses[course_still_in_progress];
+        course_still_in_progress = edutau.enrolled_prefix + course_still_in_progress + '.';
+        console.log( course_still_in_progress);
+        recalled_courses = Object.assign( { [course_still_in_progress]: undefined }, recalled_courses );
+    }
+    console.log(recalled_courses);
+    let recalled_text = Object.keys(recalled_courses).join('\n');
+    $('#education-input').val( recalled_text );
     $('#education-timestamp').html( 'Recalled from ' + localStorage.getItem( losto_when_name ) + '<br>' );
     //process_education_input();
     return;
