@@ -75,10 +75,10 @@ function courses_to_objects() {
     }
     edutau.all_courses = []; // Accessible from everywhere in the script
     const enrolled_regex = /Enrolled in (.+?)\./;
-    var course_in_progress = null;
+    let course_in_progress = null;
     ray.forEach(function(c) {
         var the_course = new Course;
-        console.log(the_course);
+        //console.log(the_course);
         var match_enrolled = enrolled_regex.exec(c);
         if (match_enrolled) {
             // Currently active course
@@ -110,6 +110,31 @@ function lite_courses() {
     return lite;
 }
 
+function get_course_in_progress_name(all_courses) {
+    if ( all_courses === null ) {
+        return '';
+    }
+    let courses_in_progress = Object.entries(all_courses).filter( row => row[1] === 2 );
+    if ( courses_in_progress.length ) {
+        let single_course_in_progress = courses_in_progress[0][0];
+        return single_course_in_progress;
+    }
+    return '';
+}
+
+function get_courses_done_name(all_courses) {
+    if ( all_courses === null ) {
+        return [];
+    }
+    let courses_done = Object.entries(all_courses).filter( row => row[1] === 3 );
+    if ( courses_done.length ) {
+        let all_courses_done = courses_done.map( x => x[0] );
+        console.log( all_courses_done );
+        return all_courses_done;
+    }
+    return [];
+}
+
 var courses_done = {};
 
 function process_education_input() {
@@ -118,9 +143,13 @@ function process_education_input() {
     if ( ! edutau.all_courses ) {
         return;
     }
-    var course_in_progress = null; // look for course with state "in progress"
-    var slug_course_in_progress = null; // turn its name into slug
-    var courses = []; // all courses with state "done"
+    let the_lite_courses = lite_courses();
+    // look for course with state "in progress"
+    let course_in_progress = get_course_in_progress_name( the_lite_courses );
+    console.log( course_in_progress );
+    let slug_course_in_progress = null; // turn its name into slug
+    // all courses with state "done"
+    var courses = get_courses_done_name( the_lite_courses );
     if (course_in_progress) {
         slug_course_in_progress = course_slug(course_in_progress);
         var course_row = document.univ_courses[slug_course_in_progress];
@@ -230,15 +259,7 @@ function process_education_recall() {
     }
     */
     // Look for dataset with a current_state of 2 (in progress), get its name
-    let course_still_in_progress;
-    if ( recalled_courses ) {
-        let ray_of_courses_in_progress = Object.entries(recalled_courses).filter( row => row[1] === 2 );
-        console.log(ray_of_courses_in_progress);
-        console.log( typeof(ray_of_courses_in_progress) );
-        if ( ray_of_courses_in_progress.length ) {
-            course_still_in_progress = ray_of_courses_in_progress[0][0];
-        }
-    }
+    let course_still_in_progress = get_course_in_progress_name(recalled_courses);
     if ( course_still_in_progress ) {
         delete recalled_courses[course_still_in_progress];
         course_still_in_progress = edutau.enrolled_prefix + course_still_in_progress + '.';
