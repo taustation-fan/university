@@ -2,6 +2,11 @@
 
 window.edutau = {}; // Private namespace
 edutau.enrolled_prefix = 'Enrolled in ';
+edutau.global_course_states = {
+    1: 'Not Done',
+    2: 'In Progress',
+    3: 'Done',
+};
 
 // Teach Storage to handle Objects
 Storage.prototype.setObject = function(key, value) {
@@ -20,11 +25,7 @@ function course_slug(name) {
 }
 
 function Course(name, state) {
-    this.states = {
-        1: 'Not Done',
-        2: 'In Progress',
-        3: 'Done',
-    };
+    this.states = edutau.global_course_states;
     this.name = name;
     this.current_state = 1;
     this.next_state = function(cs) {
@@ -69,6 +70,9 @@ function reduce_to_courses() {
 
 function courses_to_objects() {
     let ray = $('#education-input').val().split(/[\n\t]+/);
+    if ( ! ray[0].length ) {
+        return;
+    }
     edutau.all_courses = []; // Accessible from everywhere in the script
     const enrolled_regex = /Enrolled in (.+?)\./;
     var course_in_progress = null;
@@ -81,8 +85,11 @@ function courses_to_objects() {
             course_in_progress = match_enrolled[1];
             the_course.current_state = 2; // in progress
             the_course.name = course_in_progress;
-        } else {
+        } else if ( document.univ_courses[ course_slug(c) ] ) {
             the_course.current_state = 3; // done
+            the_course.name = c;
+        } else {
+            the_course.current_state = 0; // unknown
             the_course.name = c;
         }
         the_course.slug = course_slug( the_course.name );
@@ -93,6 +100,9 @@ function courses_to_objects() {
 
 function lite_courses() {
     let lite = {}, course;
+    if ( ! edutau.all_courses ) {
+        return;
+    }
     for ( course of edutau.all_courses ) {
         lite[ course.name ] = course.current_state;
     }
@@ -105,6 +115,9 @@ var courses_done = {};
 function process_education_input() {
     reduce_to_courses();
     courses_to_objects();
+    if ( ! edutau.all_courses ) {
+        return;
+    }
     var course_in_progress = null; // look for course with state "in progress"
     var slug_course_in_progress = null; // turn its name into slug
     var courses = []; // all courses with state "done"
@@ -183,6 +196,11 @@ function process_education_store() {
     const losto_when_name    = 'edu_courses_stored_when';
     let pasted_by_user       = lite_courses();
     let when_stored          = new Date().toISOString();
+    if (   pasted_by_user === null
+        || pasted_by_user === undefined
+    ) {
+        return;
+    }
     if ( Object.keys(pasted_by_user).length ) {
         localStorage.setObject( losto_courses_name, pasted_by_user );
         localStorage.setItem( losto_when_name, when_stored );
@@ -196,6 +214,10 @@ function process_education_recall() {
     const losto_when_name    = 'edu_courses_stored_when';
     let recalled_courses     = localStorage.getObject( losto_courses_name );
     console.log(recalled_courses);
+    if (   recalled_courses === null
+    ) {
+        return;
+    }
     /*
     if (   recalled_courses === null
         || recalled_courses === undefined
@@ -208,7 +230,15 @@ function process_education_recall() {
     }
     */
     // Look for dataset with a current_state of 2 (in progress), get its name
-    let course_still_in_progress = Object.entries(recalled_courses).filter( row => row[1] === 2 )[0][0];
+    let course_still_in_progress;
+    if ( recalled_courses ) {
+        let ray_of_courses_in_progress = Object.entries(recalled_courses).filter( row => row[1] === 2 );
+        console.log(ray_of_courses_in_progress);
+        console.log( typeof(ray_of_courses_in_progress) );
+        if ( ray_of_courses_in_progress.length ) {
+            course_still_in_progress = ray_of_courses_in_progress[0][0];
+        }
+    }
     if ( course_still_in_progress ) {
         delete recalled_courses[course_still_in_progress];
         course_still_in_progress = edutau.enrolled_prefix + course_still_in_progress + '.';
