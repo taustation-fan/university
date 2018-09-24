@@ -152,9 +152,10 @@ function process_education_input() {
     var courses = get_courses_done_name( the_lite_courses );
     if (course_in_progress) {
         slug_course_in_progress = course_slug(course_in_progress);
-        var course_row = document.univ_courses[slug_course_in_progress];
+        let course_row = document.univ_courses[slug_course_in_progress];
         if (course_row) {
             course_row.status = 'In progress';
+            $('#' + slug_course_in_progress).addClass('in-progress');
         }
     }
     var found = 0;
@@ -379,6 +380,7 @@ function show_details() {
     $cont.find('#course_details_level').text(course.level);
     $cont.find('#course_details_duration').text(course.duration);
     $cont.find('#course_details_cost').text(course.cost);
+    $cont.find('#course_details_status').text(course.status || '');
     $cont.find('#course_details_description').text(course.description || '');
     $cont.find('#course_details_measurement').text(course.measurement || '');
 

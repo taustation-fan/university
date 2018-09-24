@@ -30,11 +30,14 @@
           padding: 1ex;
         }
         table thead {
-          background: #DBDBDB;
+          background: silver;
           border-bottom: 0.5px solid #000000;
         }
         .strong-left-border {
             border-left: 2px solid black;
+        }
+        tr.in-progress {
+            background-color: #ffa50066;
         }
         #course_details {
             position: fixed;
@@ -43,7 +46,9 @@
             top: 0;
             padding: 2em;
             margin: 2em;
-            background-color: lightgray;
+            background-color: gainsboro;
+            z-index: 20;
+            box-shadow: 0px 0px 30px darkgray;
         }
         .button {
           text-decoration: none;
@@ -182,8 +187,12 @@
                     <td><span id="course_details_cost"></span> Credits</td>
                 </tr>
                 <tr>
-                    <th>Available at</th id="course_details_universities"></td>
+                    <th>Available at</th></td>
                     <td id="course_details_universities"></td>
+                </tr>
+                <tr>
+                    <th>Status</th></td>
+                    <td id="course_details_status"></td>
                 </tr>
             </tbody>
         </table>
