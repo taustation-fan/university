@@ -87,7 +87,7 @@ function process_education_input() {
         msg += "<br>You also finished the following courses that I know nothing about: " + not_found.join(', ');
     }
     if (course_credits) {
-        msg += "<br>Your coursework cost at least " + course_credits + " credits.";
+        msg += "<br>You have spent at least " + course_credits + " credits on your education.";
     }
     $('#education-status').html(msg);
     $('#univ').trigger('updateAll');
