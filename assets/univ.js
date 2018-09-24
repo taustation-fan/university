@@ -6,6 +6,7 @@ function course_slug(name) {
 }
 
 var courses_done = {};
+var course_credits = 0;
 
 function process_education_input() {
     var candidates = $('#education-input').val().split(/[\n\t+]/);
@@ -27,6 +28,7 @@ function process_education_input() {
         var course = document.univ_courses[slug_course_in_progress];
         if (course) {
             course.status = 'In progress';
+            course_credits += course.cost || 0;
         }
     }
     var found = 0;
@@ -41,6 +43,7 @@ function process_education_input() {
         var course = document.univ_courses[slug];
         if (course) {
             course.status = 'Done';
+            course_credits += course.cost || 0;
         }
         var $dom = $('#' + slug).find('.done');
         if ($dom.length) {
@@ -80,9 +83,11 @@ function process_education_input() {
 
     var total = Object.keys(document.univ_courses).length;
     var msg = 'You finished ' + found + ' courses out of ' + total + '.';
-    if (not_found) {
+    if (not_found.length()) {
         msg += "<br>You also finished the following courses that I know nothing about: " + not_found.join(', ');
-
+    }
+    if (course_credits) {
+        msg += "<br>You have spent at least " + course_credits + " credits on your education.";
     }
     $('#education-status').html(msg);
     $('#univ').trigger('updateAll');
@@ -272,7 +277,7 @@ function show_details() {
         $cont.hide();
         return false;
     });
-    
+
     $cont.show();
     return false;
 }
@@ -303,7 +308,7 @@ $(document).ready(function() {
                     open: get_filter('open'),
                 }
             }
-            
+
         }
     });
 
