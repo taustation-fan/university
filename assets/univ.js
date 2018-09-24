@@ -83,7 +83,7 @@ function process_education_input() {
 
     var total = Object.keys(document.univ_courses).length;
     var msg = 'You finished ' + found + ' courses out of ' + total + '.';
-    if (not_found.length()) {
+    if (not_found.length) {
         msg += "<br>You also finished the following courses that I know nothing about: " + not_found.join(', ');
     }
     if (course_credits) {
