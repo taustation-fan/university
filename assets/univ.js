@@ -6,7 +6,6 @@ function course_slug(name) {
 }
 
 var courses_done = {};
-var course_credits = 0;
 
 function process_education_input() {
     var candidates = $('#education-input').val().split(/[\n\t+]/);
@@ -14,6 +13,7 @@ function process_education_input() {
     var slug_course_in_progress = null;
     var courses = [];
     var enrolled_regex = /Enrolled in (.+?)\./;
+    var course_credits = 0;
     candidates.forEach(function(c) {
         var trimmed = c.trim();
         var match = enrolled_regex.exec(trimmed);
