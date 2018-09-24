@@ -28,7 +28,7 @@ function process_education_input() {
         var course = document.univ_courses[slug_course_in_progress];
         if (course) {
             course.status = 'In progress';
-            course_credits += course.cost;
+            course_credits += course.cost || 0;
         }
     }
     var found = 0;
@@ -43,7 +43,7 @@ function process_education_input() {
         var course = document.univ_courses[slug];
         if (course) {
             course.status = 'Done';
-            course_credits += course.cost;
+            course_credits += course.cost || 0;
         }
         var $dom = $('#' + slug).find('.done');
         if ($dom.length) {
