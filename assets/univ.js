@@ -23,6 +23,10 @@ function course_slug(name) {
     return 'course-' + slug;
 }
 
+function commify(val) {
+    return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 function Course(name, state) {
     this.states = edutau.global_course_states;
     this.name = name;
@@ -176,6 +180,7 @@ function update_user_provided_list() {
 }
 
 var courses_done = {};
+var course_credits = 0;
 
 function process_education_input() {
     reduce_to_courses();
@@ -196,6 +201,7 @@ function process_education_input() {
         if (course_row) {
             course_row.status = 'In Progress';
             $('#' + slug_course_in_progress).addClass('in-progress');
+            course_credits += course_row.cost;
         }
     }
     var found = 0;
@@ -205,6 +211,7 @@ function process_education_input() {
         var course_row = document.univ_courses[slug];
         if (course_row) {
             course_row.status = 'Done';
+            course_credits += course_row.cost;
         }
         var $dom = $('#' + slug).find('.done');
         if ($dom.length) {

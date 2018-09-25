@@ -33,8 +33,11 @@ sub munge_course {
     for my $k (sort keys %translate) {
         $c->{ $translate{$k} } = delete $c->{$k};
     }
+    $c->{duration} += 0;    # Turn into JSON numbers
     $c->{duration} //= '';
+    $c->{cost} += 0;        # Turn into JSON numbers
     $c->{cost} //= '';
+    $c->{level} += 0;       # Turn into JSON numbers
     my $p = $c->{prerequisites} // [];
     $p = [$p] unless ref($p);
     $c->{prerequisites} = [map +{ name => $_, slug => slug($_) }, @$p];
@@ -67,7 +70,6 @@ for (@available_courses) {
 }
 
 my $template = Template->new();
-
 
 
 my %vars = (
