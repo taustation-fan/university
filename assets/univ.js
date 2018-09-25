@@ -154,7 +154,7 @@ function get_filter(mode) {
         return '✔ or ⏲';
     }
     else if (mode === 'eligible') {
-        return "!✔ and !⏲ and !✖";
+        return "!✔ and !✖";
     }
 }
 
