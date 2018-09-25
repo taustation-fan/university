@@ -18,7 +18,6 @@ Storage.prototype.getObject = function(key) {
     return value && JSON.parse(value);
 };
 
-
 function course_slug(name) {
     var slug = name.toLowerCase().replace( /[^a-z0-9]+/g, '-' );
     return 'course-' + slug;
@@ -28,19 +27,27 @@ function Course(name, state) {
     this.states = edutau.global_course_states;
     this.name = name;
     this.current_state = 1;
-    this.next_state = function(cs) {
-        let state_now = cs.current_state + 1;
+    this.next_state = function() {
+        let state_now = this.current_state + 1;
         if ( state_now > Math.max( ... Object.keys(this.states).map( x => parseInt(x) ) ) ) {
             state_now = 1;
         }
-        cs.current_state = state_now;
+        this.current_state = state_now;
     };
-    this.get_state = function(cs) {
-        let my_state = cs.current_state;
+    this.get_state = function() {
+        let my_state = this.current_state;
         return my_state;
     };
-    this.get_state_value = function(cs) {
-        let my_state = this.states[ cs.current_state ];
+    this.get_state_value = function() {
+        let my_state = this.states[ this.current_state ];
+        return my_state;
+    };
+    this.get_next_state_value = function() {
+        let next_state = this.current_state + 1;
+        if ( next_state > Math.max( ... Object.keys(this.states).map( x => parseInt(x) ) ) ) {
+            next_state = 1;
+        }
+        let my_state = this.states[ next_state ];
         return my_state;
     };
 }
@@ -135,6 +142,39 @@ function get_courses_done_name(all_courses) {
     return [];
 }
 
+function get_course_by_name(name) {
+    let the_course = edutau.all_courses.filter( row => row.name === name )[0];
+    console.log( typeof the_course );
+    console.log(the_course);
+    // Create the course if it's not in edutau.all_courses yet
+    if( the_course === undefined ) {
+        let new_entry = new Course;
+        new_entry.current_state = 1; // not done
+        new_entry.name = name;
+        new_entry.slug = course_slug( name );
+        edutau.all_courses.unshift( new_entry );
+        return new_entry;
+    }
+    return the_course;
+}
+
+function update_user_provided_list() {
+    let input_field = $('#education-input');
+    let courses_taken = {};
+    Object.entries( lite_courses() ).filter( x => x[1] > 1 ).map( x => courses_taken[ x[0] ] = x[1] )
+    console.log( courses_taken );
+    // TODO refactor into separate function, also see process_education_recall()
+    let course_still_in_progress = get_course_in_progress_name(courses_taken);
+    if ( course_still_in_progress ) {
+        delete courses_taken[course_still_in_progress];
+        course_still_in_progress = edutau.enrolled_prefix + course_still_in_progress + '.';
+        courses_taken = Object.assign( { [course_still_in_progress]: 2 }, courses_taken );
+    }
+    let taken_text = Object.keys(courses_taken).join('\n');
+    input_field.val( taken_text );
+    return;
+}
+
 var courses_done = {};
 
 function process_education_input() {
@@ -154,7 +194,7 @@ function process_education_input() {
         slug_course_in_progress = course_slug(course_in_progress);
         let course_row = document.univ_courses[slug_course_in_progress];
         if (course_row) {
-            course_row.status = 'In progress';
+            course_row.status = 'In Progress';
             $('#' + slug_course_in_progress).addClass('in-progress');
         }
     }
@@ -300,7 +340,6 @@ function get_filter(mode) {
     }
 }
 
-
 function topo_sorted_slugs() {
     if (document.univ_courses_sorted) {
         return document.univ_courses_sorted;
@@ -380,9 +419,29 @@ function show_details() {
     $cont.find('#course_details_level').text(course.level);
     $cont.find('#course_details_duration').text(course.duration);
     $cont.find('#course_details_cost').text(course.cost);
-    $cont.find('#course_details_status').text(course.status || '');
+    //$cont.find('#course_details_status').text( course.status || 'Not Done' );
     $cont.find('#course_details_description').text(course.description || '');
     $cont.find('#course_details_measurement').text(course.measurement || '');
+
+    let course_name = course.course;
+    let course_obj  = get_course_by_name(course_name);
+
+    function show_state_on_detail_page() {
+        let next_state = course_obj.get_next_state_value();
+        console.log( 'next state: ' + next_state );
+        $cont.find('#course_next_state').text( next_state || '' );
+        $cont.find('#course_details_status').text( course.status || 'Not Done' );
+    }
+
+    show_state_on_detail_page();
+    $('#change_course_state > a.button').click(function() {
+        // TODO make sure there is at most one and only one course in progress
+        course_obj.next_state();
+        course.status = course_obj.get_state_value();
+        show_state_on_detail_page();
+        update_user_provided_list();
+        return false;
+    });
 
     var universities = {
         tau: 'Tau Station (Sol)',
