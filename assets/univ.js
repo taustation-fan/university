@@ -14,12 +14,12 @@ Storage.prototype.setObject = function(key, value) {
 };
 
 Storage.prototype.getObject = function(key) {
-    var value = this.getItem(key);
+    let value = this.getItem(key);
     return value && JSON.parse(value);
 };
 
 function course_slug(name) {
-    var slug = name.toLowerCase().replace( /[^a-z0-9]+/g, '-' );
+    let slug = name.toLowerCase().replace( /[^a-z0-9]+/g, '-' );
     return 'course-' + slug;
 }
 
@@ -88,8 +88,8 @@ function courses_to_objects() {
     const enrolled_regex = /Enrolled in (.+?)\./;
     let course_in_progress = null;
     ray.forEach(function(c) {
-        var the_course = new Course;
-        var match_enrolled = enrolled_regex.exec(c);
+        let the_course = new Course;
+        let match_enrolled = enrolled_regex.exec(c);
         if (match_enrolled) {
             // Currently active course
             course_in_progress = match_enrolled[1];
@@ -173,8 +173,6 @@ function update_user_provided_list() {
     return;
 }
 
-var courses_done = {};
-var course_credits = 0;
 
 function process_education_input() {
     reduce_to_courses();
@@ -187,7 +185,9 @@ function process_education_input() {
     let course_in_progress = get_course_in_progress_name( the_lite_courses );
     let slug_course_in_progress = null; // turn its name into slug
     // all courses with state "done"
-    var courses = get_courses_done_name( the_lite_courses );
+    let courses = get_courses_done_name( the_lite_courses );
+    let courses_done = {};
+    let course_credits = 0;
     if (course_in_progress) {
         slug_course_in_progress = course_slug(course_in_progress);
         let course_row = document.univ_courses[slug_course_in_progress];
@@ -197,16 +197,16 @@ function process_education_input() {
             course_credits += course_row.cost;
         }
     }
-    var found = 0;
-    var not_found = [];
+    let found = 0;
+    let not_found = [];
     courses.forEach(function(c) {
-        var slug = course_slug(c);
-        var course_row = document.univ_courses[slug];
+        let slug = course_slug(c);
+        let course_row = document.univ_courses[slug];
         if (course_row) {
             course_row.status = 'Done';
             course_credits += course_row.cost;
         }
-        var $dom = $('#' + slug).find('.done');
+        let $dom = $('#' + slug).find('.done');
         if ($dom.length) {
             found ++;
             $dom.html('✔');
@@ -219,26 +219,26 @@ function process_education_input() {
 
     // Mark eligible courses (all prerequisites done)
     $('#univ tbody tr').each(function(idx) {
-        var $tr = $(this);
-        var $dom = $tr.find('.done');
+        let $tr = $(this);
+        let $dom = $tr.find('.done');
         if (!$dom.length) { return; }
 
-        var course = document.univ_courses[this.id];
+        let course = document.univ_courses[this.id];
         if (course) {
             if (course.status == 'Done') {
                 $dom.html('<span title="completed">✔</span>');
             }
             else if (course.status == 'In progress') {
-                $dom.html('<span title="in progress">⏲</span>');
+                $dom.html('<span title="in progress">⌚</span>');
             }
 
             // Check if prerequisites completed:
             else {
-                var prereqs = $tr.find('.prereqs .course-link');
-                var prereqs_met = true;
+                let prereqs = $tr.find('.prereqs .course-link');
+                let prereqs_met = true;
                 prereqs.each(function(idx) {
-                    var slug = $(this).attr('data-slug');
-                    var prereq = document.univ_courses[slug];
+                    let slug = $(this).attr('data-slug');
+                    let prereq = document.univ_courses[slug];
                     if (!(prereq && (prereq.status === 'Done' || prereq.status === 'In progress'))) {
                         prereqs_met = false;
                     }
@@ -249,8 +249,8 @@ function process_education_input() {
         }
     });
 
-    var total = Object.keys(document.univ_courses).length;
-    var msg = 'You finished ' + found + ' courses out of ' + total + '.';
+    let total = Object.keys(document.univ_courses).length;
+    let msg = 'You finished ' + found + ' courses out of ' + total + '.';
     if (not_found.length) {
         msg += "<br>You also finished the following courses that I know nothing about: " + not_found.join(', ');
     }
@@ -339,7 +339,7 @@ function get_filter(mode) {
         return '!✔';
     }
     else if (mode == 'done') {
-        return '✔ or ⏲';
+        return '✔ or ⌚';
     }
     else if (mode === 'eligible') {
         return "!✔ and !✖";
@@ -352,15 +352,15 @@ function topo_sorted_slugs() {
     }
 
     // build a list of all edges in the graph
-    var edges = []
-    for (var course_idx in document.univ_courses) {
-        var course = document.univ_courses[course_idx];
-        for (var p_idx in course.prerequisites) {
+    let edges = []
+    for (let course_idx in document.univ_courses) {
+        let course = document.univ_courses[course_idx];
+        for (let p_idx in course.prerequisites) {
             edges.push([course.slug, course.prerequisites[p_idx].slug]);
         }
     }
     // tsort from file assets/toposort.js
-    var sorted = tsort(edges);
+    let sorted = tsort(edges);
     sorted.reverse();
     document.univ_courses_sorted = sorted;
     return sorted;
@@ -368,11 +368,11 @@ function topo_sorted_slugs() {
 
 function recursive_prerequisties(course) {
     // find all recursive prerequisites, in any order:
-    var all_prereqs = [];
-    var seen = {};
+    let all_prereqs = [];
+    let seen = {};
     function visit(prereqs) {
-        for (var idx in prereqs) {
-            var p = document.univ_courses[prereqs[idx].slug];
+        for (let idx in prereqs) {
+            let p = document.univ_courses[prereqs[idx].slug];
             if (p && !seen[p.slug]) {
                 all_prereqs.push(p);
                 visit(p.prerequisites);
@@ -384,11 +384,11 @@ function recursive_prerequisties(course) {
 
     // now join it with the topological sorted list of all
     // course slugs to get the ordering sensible:
-    var r_obj = {}
+    let r_obj = {}
     all_prereqs.forEach(function(r) {
         r_obj[r.slug] = r;
     });
-    var sorted_prereqs = [];
+    let sorted_prereqs = [];
     topo_sorted_slugs().forEach(function (r) {
         if (r_obj.hasOwnProperty(r)) {
             sorted_prereqs.push(r_obj[r]);
@@ -400,27 +400,27 @@ function recursive_prerequisties(course) {
 
 function fill_ul($ul, prereq) {
     $ul.html('');
-    for (var idx in prereq) {
-        var title = (prereq[idx].name || prereq[idx].course);
-        var status = prereq[idx].status;
+    for (let idx in prereq) {
+        let title = (prereq[idx].name || prereq[idx].course);
+        let status = prereq[idx].status;
         if (status) {
             title += ' [' + status + ']';
         }
-        var $a = $('<a>', {
+        let $a = $('<a>', {
             text: title,
             href: '#',
             data: {'slug': prereq[idx].slug},
             click: show_details,
         });
-        var $li = $('<li>').html($a);
+        let $li = $('<li>').html($a);
         $ul.append($li)
     }
 }
 
 function show_details() {
-    var slug   = $(this).data('slug');
-    var course = document.univ_courses[slug];
-    var $cont  = $('#course_details');
+    let slug   = $(this).data('slug');
+    let course = document.univ_courses[slug];
+    let $cont  = $('#course_details');
     $cont.find('#course_details_name').text(course.course);
     $cont.find('#course_details_level').text(course.level);
     $cont.find('#course_details_duration').text(course.duration);
@@ -448,17 +448,17 @@ function show_details() {
         return false;
     });
 
-    var universities = {
+    let universities = {
         tau: 'Tau Station (Sol)',
         nl:  'Nouveau Limoges (Sol)',
         moi: 'Moissan (Alpha Centauri)',
         sob: 'Spirit of Botswana (Alpha Centauri)',
     };
 
-    var avail = [];
-    var keys = Object.keys(universities);
+    let avail = [];
+    let keys = Object.keys(universities);
     keys.sort();
-    for (var idx in keys) {
+    for (let idx in keys) {
         if (course[keys[idx]]) {
             avail.push(universities[keys[idx]]);
         }
@@ -472,7 +472,7 @@ function show_details() {
 
     if (course.prerequisites) {
         $cont.find('#course_details_prerequisites_cont').show();
-        var rp = recursive_prerequisties(course);
+        let rp = recursive_prerequisties(course);
         fill_ul($('#course_details_all_prerequisites'), rp);
     }
     else {
@@ -519,14 +519,14 @@ $(document).ready(function() {
     });
 
     $('.checksearch, #donedeps').on('change', function() {
-        var filter = [];
+        let filter = [];
         $('.checksearch').each(function() {
-            var $s = $(this);
+            let $s = $(this);
             if ($s.prop('checked')) {
                 filter[$s.data('col')] = '✔';
             }
         });
-        var doneness = $('#donedeps').prop('value');
+        let doneness = $('#donedeps').prop('value');
         filter[10] = get_filter(doneness);
         $('#univ').trigger('search', [ filter ]);
 
