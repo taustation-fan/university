@@ -57,10 +57,10 @@ function process_education_input() {
         var course = document.univ_courses[this.id];
         if (course) {
             if (course.status == 'Done') {
-                $dom.html('✔');
+                $dom.html('<span title="completed">✔</span>');
             }
             else if (course.status == 'In progress') {
-                $dom.html('⏲');
+                $dom.html('<span title="in progress">⏲</span>');
             }
 
             // Check if prerequisites completed:
@@ -75,7 +75,7 @@ function process_education_input() {
                     }
                 });
 
-                $dom.html(prereqs_met ? '' : '✖');
+                $dom.html(prereqs_met ? '' : '<span title="missing prerequisites">✖</span>');
             }
         }
     });
