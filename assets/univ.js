@@ -143,6 +143,18 @@ function get_courses_done_name(all_courses) {
     return [];
 }
 
+function get_courses_not_found_name(all_courses) {
+    if ( all_courses === null ) {
+        return [];
+    }
+    let courses_done = Object.entries(all_courses).filter( row => row[1] === 0 );
+    if ( courses_done.length ) {
+        let all_courses_done = courses_done.map( x => x[0] );
+        return all_courses_done;
+    }
+    return [];
+}
+
 function get_course_by_name(name) {
     let the_course = edutau.all_courses.filter( row => row.name === name )[0];
     // Create the course if it's not in edutau.all_courses yet
@@ -173,7 +185,6 @@ function update_user_provided_list() {
     return;
 }
 
-
 function process_education_input() {
     reduce_to_courses();
     courses_to_objects();
@@ -198,21 +209,15 @@ function process_education_input() {
         }
     }
     let found = 0;
-    let not_found = [];
+    let not_found = get_courses_not_found_name( the_lite_courses );
     courses.forEach(function(c) {
         let slug = course_slug(c);
         let course_row = document.univ_courses[slug];
         if (course_row) {
             course_row.status = 'Done';
             course_credits += course_row.cost;
-        }
-        let $dom = $('#' + slug).find('.done');
-        if ($dom.length) {
             found ++;
-            $dom.html('✔');
-            courses_done[slug] = true;
-        }
-        else {
+        } else {
             not_found.push(c);
         }
     });
@@ -228,7 +233,7 @@ function process_education_input() {
             if (course.status == 'Done') {
                 $dom.html('<span title="completed">✔</span>');
             }
-            else if (course.status == 'In progress') {
+            else if (course.status == 'In Progress') {
                 $dom.html('<span title="in progress">⌚</span>');
             }
 
@@ -239,7 +244,7 @@ function process_education_input() {
                 prereqs.each(function(idx) {
                     let slug = $(this).attr('data-slug');
                     let prereq = document.univ_courses[slug];
-                    if (!(prereq && (prereq.status === 'Done' || prereq.status === 'In progress'))) {
+                    if (!(prereq && (prereq.status === 'Done' || prereq.status === 'In Progress'))) {
                         prereqs_met = false;
                     }
                 });
@@ -317,7 +322,7 @@ function process_education_recall() {
     let recalled_text = Object.keys(recalled_courses).join('\n');
     $('#education-input').val( recalled_text );
     $('#education-timestamp').html( 'Recalled from ' + localStorage.getItem( losto_when_name ) + '<br>' );
-    //process_education_input();
+    process_education_input();
     return;
 }
 
