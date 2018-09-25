@@ -89,7 +89,6 @@ function courses_to_objects() {
     let course_in_progress = null;
     ray.forEach(function(c) {
         var the_course = new Course;
-        //console.log(the_course);
         var match_enrolled = enrolled_regex.exec(c);
         if (match_enrolled) {
             // Currently active course
@@ -117,7 +116,6 @@ function lite_courses() {
     for ( course of edutau.all_courses ) {
         lite[ course.name ] = course.current_state;
     }
-    console.log(lite);
     return lite;
 }
 
@@ -140,7 +138,6 @@ function get_courses_done_name(all_courses) {
     let courses_done = Object.entries(all_courses).filter( row => row[1] === 3 );
     if ( courses_done.length ) {
         let all_courses_done = courses_done.map( x => x[0] );
-        console.log( all_courses_done );
         return all_courses_done;
     }
     return [];
@@ -148,8 +145,6 @@ function get_courses_done_name(all_courses) {
 
 function get_course_by_name(name) {
     let the_course = edutau.all_courses.filter( row => row.name === name )[0];
-    console.log( typeof the_course );
-    console.log(the_course);
     // Create the course if it's not in edutau.all_courses yet
     if( the_course === undefined ) {
         let new_entry = new Course;
@@ -166,7 +161,6 @@ function update_user_provided_list() {
     let input_field = $('#education-input');
     let courses_taken = {};
     Object.entries( lite_courses() ).filter( x => x[1] > 1 ).map( x => courses_taken[ x[0] ] = x[1] )
-    console.log( courses_taken );
     // TODO refactor into separate function, also see process_education_recall()
     let course_still_in_progress = get_course_in_progress_name(courses_taken);
     if ( course_still_in_progress ) {
@@ -191,7 +185,6 @@ function process_education_input() {
     let the_lite_courses = lite_courses();
     // look for course with state "in progress"
     let course_in_progress = get_course_in_progress_name( the_lite_courses );
-    console.log( course_in_progress );
     let slug_course_in_progress = null; // turn its name into slug
     // all courses with state "done"
     var courses = get_courses_done_name( the_lite_courses );
@@ -299,7 +292,6 @@ function process_education_recall() {
     const losto_courses_name = 'edu_courses_completed';
     const losto_when_name    = 'edu_courses_stored_when';
     let recalled_courses     = localStorage.getObject( losto_courses_name );
-    console.log(recalled_courses);
     if (   recalled_courses === null
     ) {
         return;
@@ -320,10 +312,8 @@ function process_education_recall() {
     if ( course_still_in_progress ) {
         delete recalled_courses[course_still_in_progress];
         course_still_in_progress = edutau.enrolled_prefix + course_still_in_progress + '.';
-        console.log( course_still_in_progress);
         recalled_courses = Object.assign( { [course_still_in_progress]: undefined }, recalled_courses );
     }
-    console.log(recalled_courses);
     let recalled_text = Object.keys(recalled_courses).join('\n');
     $('#education-input').val( recalled_text );
     $('#education-timestamp').html( 'Recalled from ' + localStorage.getItem( losto_when_name ) + '<br>' );
@@ -444,7 +434,6 @@ function show_details() {
 
     function show_state_on_detail_page() {
         let next_state = course_obj.get_next_state_value();
-        console.log( 'next state: ' + next_state );
         $cont.find('#course_next_state').text( next_state || '' );
         $cont.find('#course_details_status').text( course.status || 'Not Done' );
     }
