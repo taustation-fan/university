@@ -3,6 +3,9 @@
     <meta charset="utf-8" /> 
     <title>Tau Station University Courses</title>
     <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
         .tablesorter .filtered {
             display: none;
         }
@@ -16,25 +19,28 @@
             text-align: left;
         }
         tr:hover {
-          background-color: #ffff99 !important;
+            background-color: #ffff99 !important;
         }
         .even {
             background-color: #eee;
         }
         table {
-          border: 1px solid #000000;
-          border-collapse: collapse;
+            border: 1px solid #000000;
+            border-collapse: collapse;
         }
         table td, table th {
-          border: 1px solid #000000;
-          padding: 1ex;
+            border: 1px solid #000000;
+            padding: 1ex;
         }
         table thead {
-          background: #DBDBDB;
-          border-bottom: 0.5px solid #000000;
+            background: silver;
+            border-bottom: 0.5px solid #000000;
         }
         .strong-left-border {
             border-left: 2px solid black;
+        }
+        tr.in-progress {
+            background-color: #ffa50066;
         }
         #course_details {
             position: fixed;
@@ -43,23 +49,30 @@
             top: 0;
             padding: 2em;
             margin: 2em;
-            background-color: lightgray;
+            background-color: whitesmoke;
+            z-index: 20;
+            box-shadow: 0px 0px 30px 10px darkgray;
+            border: 2px solid darkgray;
+            border-radius: 10px;
         }
         .button {
-          text-decoration: none;
-          background-color: #EEEEEE;
-          color: #333333;
-          padding: 2px 6px 2px 6px;
-          border-top: 1px solid #CCCCCC;
-          border-right: 1px solid #333333;
-          border-bottom: 1px solid #333333;
-          border-left: 1px solid #CCCCCC;
+            text-decoration: none;
+            background-color: #EEEEEE;
+            color: #333333;
+            padding: 2px 6px 2px 6px;
+            border-top: 1px solid #CCCCCC;
+            border-right: 1px solid #333333;
+            border-bottom: 1px solid #333333;
+            border-left: 1px solid #CCCCCC;
         }
         .danger {
-          margin-left: 3rem;
+            margin-left: 3rem;
         }
         .lmarg {
-          margin-left: 0.5rem;
+            margin-left: 0.5rem;
+        }
+        .hidden {
+            display: none;
         }
 
 
@@ -163,7 +176,7 @@
         document.univ_courses = [% courses_json %];
     </script>
     
-    <div id="course_details" style="display: none">
+    <div id="course_details" class="hidden">
         <h2 id="course_details_name"></h2>
         <p id="course_details_description"></p>
         <p id="course_details_measurement"></p>
@@ -182,11 +195,19 @@
                     <td><span id="course_details_cost"></span> Credits</td>
                 </tr>
                 <tr>
-                    <th>Available at</th id="course_details_universities"></td>
+                    <th>Available at</th></td>
                     <td id="course_details_universities"></td>
+                </tr>
+                <tr>
+                    <th>Status</th></td>
+                    <td id="course_details_status"></td>
                 </tr>
             </tbody>
         </table>
+
+        <p id="change_course_state">
+            <a href="#" class="button">Change to "<span id="course_next_state"></span>"</a>
+        </p>
 
 
         <div id="course_details_prerequisites_container">
