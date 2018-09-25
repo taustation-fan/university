@@ -5,6 +5,10 @@ function course_slug(name) {
     return 'course-' + slug;
 }
 
+function commify(val) {
+    return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 function process_education_input() {
     var candidates = $('#education-input').val().split(/[\n\t+]/);
     var course_in_progress = null;
@@ -86,7 +90,7 @@ function process_education_input() {
         msg += "<br>You also finished the following courses that I know nothing about: " + not_found.join(', ');
     }
     if (course_credits) {
-        msg += "<br>You have spent at least " + course_credits + " credits on your education.";
+        msg += "<br>You have spent at least " + commify(course_credits) + " credits on your education.";
     }
     $('#education-status').html(msg);
     $('#univ').trigger('updateAll');
