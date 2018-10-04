@@ -114,7 +114,9 @@ function lite_courses() {
         return;
     }
     for ( course of edutau.all_courses ) {
-        lite[ course.name ] = course.current_state;
+        if ( course.current_state > 1 ) {
+            lite[ course.name ] = course.current_state;
+        }
     }
     return lite;
 }
@@ -199,6 +201,7 @@ function process_education_input() {
     let courses = get_courses_done_name( the_lite_courses );
     let courses_done = {};
     let course_credits = 0;
+    $('tr.in-progress').removeClass('in-progress');
     if (course_in_progress) {
         slug_course_in_progress = course_slug(course_in_progress);
         let course_row = document.univ_courses[slug_course_in_progress];
@@ -450,6 +453,8 @@ function show_details() {
         course.status = course_obj.get_state_value();
         show_state_on_detail_page();
         update_user_provided_list();
+        process_education_store();
+        process_education_input();
         return false;
     });
 
@@ -543,7 +548,7 @@ $(document).ready(function() {
     $('#education-store-button').click(process_education_store);
     $('#education-recall-button').click(process_education_recall);
     $('#education-forget-button').click(process_education_forget);
-    process_education_recall();
+    process_education_recall(); // Run on page load
     $(document).keyup(function(e) {
         if (e.keyCode == 27) {
             // ESCape key pressed => hide popup
