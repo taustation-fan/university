@@ -147,9 +147,9 @@ function get_courses_not_found_name(all_courses) {
     if ( all_courses === null ) {
         return [];
     }
-    let courses_done = Object.entries(all_courses).filter( row => row[1] === 0 );
-    if ( courses_done.length ) {
-        let all_courses_done = courses_done.map( x => x[0] );
+    let courses_not_found = Object.entries(all_courses).filter( row => row[1] === 0 );
+    if ( courses_not_found.length ) {
+        let all_courses_done = courses_not_found.map( x => x[0] );
         return all_courses_done;
     }
     return [];
