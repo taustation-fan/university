@@ -444,7 +444,7 @@ function show_details() {
     }
 
     show_state_on_detail_page();
-    $('#change_course_state > a.button').click(function() {
+    $('#change_course_state > a.button').off('click').on( 'click', function() {
         // TODO make sure there is at most one and only one course in progress
         course_obj.next_state();
         course.status = course_obj.get_state_value();
