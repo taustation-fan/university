@@ -52,10 +52,12 @@
   title: Combat Utilities 3
 - availability:
   - Tau
+  cost: 7000
   description: Unlock 6th combat belt slot
   level: 5
   module: Intermediate Combat
   prerequisites: Combat Utilities 3
+  time: 700
   title: Combat Utilities 4
 - availability:
   - Tau
