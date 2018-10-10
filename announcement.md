@@ -88,10 +88,9 @@ and data contributions from
 * moritz
 * Dotsent
 * duelafn
+* Azure-Wolf
 
 ... and possibly others whose contributions I forgot to track. My apologies.
 
 The [source code lives on GitHub](https://github.com/taustation-fan/university/), and
 we welcome contributions from everybody.
-
-* Azure-Wolf
