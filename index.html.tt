@@ -84,7 +84,8 @@
     <h1>Tau Station University Courses</h1>
 
     <p>See <a href="https://taustation.space">Tau Station, official website</a>
-       and <a href="https://tauguide.de/">Tau guide</a> for context.</p>
+       and <a href="https://tauguide.de/">Tau guide</a> for context, and
+       <a href="https://alpha.taustation.space/forum/discussions/topic/197-04-88-143-please-use-this-thread/post/199-86-26-245-announcing-the-tau-station-education-manager">this announcement for some use cases</a>.</p>
 
     <p>
         Search: <input class="search" data-column="0,1" type="search"> (Matches module and course)<br>
