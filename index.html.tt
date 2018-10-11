@@ -165,7 +165,7 @@
 
 
     <footer>
-        <p>Source and data is <a href="https://github.com/taustation-fan/university">on GitHub</a>.</p>
+        <p>Source and data is <a href="https://github.com/taustation-fan/university">on GitHub</a>. Please submit bug reports and feature reports <a href="https://github.com/taustation-fan/university/issues">in the issue tracker</a>.</p>
     </footer>
 
     <script type="text/javascript" src="assets/jquery-3.3.1.min.js"></script>
