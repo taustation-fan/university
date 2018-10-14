@@ -66,3 +66,4 @@
   module: Intermediate Combat
   prerequisites: Combat Utilities 4
   title: Combat Utilities 5
+  time: 700

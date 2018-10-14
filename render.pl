@@ -8,6 +8,7 @@ use YAML::XS qw(LoadFile);
 use JSON::XS qw(encode_json);
 use Template;
 use Encode qw(decode_utf8);
+use List::Util qw(sum);
 
 use Data::Dumper;
 
@@ -68,6 +69,8 @@ my %courses;
 for (@available_courses) {
     $courses{$_->{slug}} = $_;
 }
+say 'Total duration in days: ', (sum map $_->{duration}, @available_courses) / 100
+    if $ENV{VERBOSE};
 
 my $template = Template->new();
 
