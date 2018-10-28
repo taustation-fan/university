@@ -1,7 +1,7 @@
 ﻿<html>
   <head>
     <meta charset="utf-8" /> 
-    <title>Tau Station University Courses</title>
+    <title>Tau Station Education Manager and Courses List</title>
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
@@ -81,11 +81,14 @@
   </head>
   <body>
 
-    <h1>Tau Station University Courses</h1>
+    <h1>Tau Station Education Manager and Courses List</h1>
 
-    <p>See <a href="https://taustation.space">Tau Station, official website</a>
-       and <a href="https://tauguide.de/">Tau guide</a> for context, and
-       <a href="https://alpha.taustation.space/forum/discussions/topic/197-04-88-143-please-use-this-thread/post/199-86-26-245-announcing-the-tau-station-education-manager">this announcement for some use cases</a>.</p>
+    <p>This page lists all available University courses from the
+       <a href="https://taustation.space">Tau Station</a> text-based MMORPG.</p>
+
+    <p>By entering your current course state, you can also filter courses
+       by availability to you, and let you manage your education.
+       Please see <a href="https://alpha.taustation.space/forum/discussions/topic/197-04-88-143-please-use-this-thread/post/199-86-26-245-announcing-the-tau-station-education-manager">this announcement for some use cases and instruction</a>, and the <a href="https://tauguide.de/">Tau Guide</a> for some context.</p>
 
     <p>
         Search: <input class="search" data-column="0,1" type="search"> (Matches module and course)<br>
