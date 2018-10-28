@@ -10,4 +10,4 @@ The data is pre-processed by the Perl script `render.pl`, which inserts
 it as JSON into the template `index.html.tt`, and generates `index.html`.
 
 The Javascript application is in `assets/univ.js`, and uses jQuery and the
-[Dynatable.js](https://www.dynatable.com/) extension.
+[Tablesorter](https://mottie.github.io/tablesorter/docs/) extension.
