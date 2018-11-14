@@ -48,6 +48,7 @@
   cost: 16800
   description: Learn the mysteries of Consortium psychology
   level: 4
+  measurement: 'Reduce public market listing fee to 9% on Consortium stations'
   module: International Relations
   prerequisites: Consortium Reputation
   time: 2100
@@ -57,6 +58,7 @@
   cost: 16800
   description: Learn the mysteries of Gaule psychology
   level: 4
+  measurement: 'Reduce public market listing fee to 9% on Gaule stations'
   module: International Relations
   prerequisites: Gaule Reputation
   time: 2100
