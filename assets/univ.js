@@ -339,6 +339,33 @@ function process_education_forget() {
     return;
 }
 
+// Recall filter from local storage
+function filter_recall() {
+    let ls_name  = 'tablesorter-filters';
+    let ls_value = localStorage.getItem(ls_name);
+    let select_map = { // See get_filter() further down
+        'undefined': 'all',
+        '!✔':        'open',
+        '✔ or ⌚':   'done',
+        '!✔ and !✖': 'eligible'
+    };
+    if ( ls_value === null ) {
+        return;
+    }
+    let struct;
+    try {
+        struct = JSON.parse(ls_value);
+    }
+    catch {
+        return;
+    }
+    let beef      = struct[window.location.pathname]['univ'][10];
+    let beef_utf8 = decodeURIComponent(beef);
+    let selected  = select_map[beef_utf8];
+    $('#donedeps').val(selected);
+    return;
+}
+
 function get_filter(mode) {
     if (mode === 'all') {
         return '';
@@ -549,6 +576,7 @@ $(document).ready(function() {
     $('#education-recall-button').click(process_education_recall);
     $('#education-forget-button').click(process_education_forget);
     process_education_recall(); // Run on page load
+    filter_recall();
     $(document).keyup(function(e) {
         if (e.keyCode == 27) {
             // ESCape key pressed => hide popup

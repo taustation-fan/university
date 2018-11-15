@@ -93,7 +93,7 @@
     <p>
         Search: <input class="search" data-column="0,1" type="search"> (Matches module and course)<br>
         Show: <select id="donedeps">
-            <option value="all" selected=1>all</option>
+            <option value="all" selected>all</option>
             <option value="open">courses I have not done yet</option>
             <option value="done">courses I have finished</option>
             <option value="eligible">courses I am eligible for</option>
