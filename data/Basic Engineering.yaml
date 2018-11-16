@@ -14,6 +14,7 @@
   cost: 400
   description: Learn to repair simple items
   level: 2
+  measurement: 'Enables you to repair items (weapons and armor) on your own'
   module: Basic Engineering
   prerequisites: Introduction to Engineering
   time: 100
@@ -24,6 +25,7 @@
   cost: 4200
   description: Item Repair Specialist
   level: 3
+  measurement: 'Speeds up item repairs'
   module: Basic Engineering
   prerequisites: Item repair 1
   time: 700
@@ -34,6 +36,7 @@
   cost: 16800
   description: Item Repair Mastery
   level: 4
+  measurement: 'Speeds up item repairs'
   module: Basic Engineering
   prerequisites: Item repair 2
   time: 2100
