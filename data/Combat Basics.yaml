@@ -54,7 +54,7 @@
   cost: 4200
   description: Learn knife fighting techniques
   level: 3
-  measurement: 'Improve chances to hit with a weapon of category Knife'
+  measurement: 'Improve chances to hit with a weapon of category Blade'
   module: Combat Basics
   prerequisites: Close Combat Basics
   time: 700
