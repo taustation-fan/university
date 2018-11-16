@@ -18,6 +18,7 @@
   cost: 2800
   description: Learn how to reduce taxes and fees
   level: 2
+  measurement: 'Seems to do nothing.'
   module: Bureaucracy
   prerequisites: Introduction to Business
   time: 700

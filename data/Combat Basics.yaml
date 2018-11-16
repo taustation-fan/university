@@ -54,6 +54,7 @@
   cost: 4200
   description: Learn knife fighting techniques
   level: 3
+  measurement: 'Improve chances to hit with a weapon of category Knife'
   module: Combat Basics
   prerequisites: Close Combat Basics
   time: 700
@@ -64,6 +65,7 @@
   cost: 4200
   description: Learn how to shoot a rifle effectively
   level: 3
+  measurement: 'Improve chances to hit with a weapon of category Rifle'
   module: Combat Basics
   prerequisites: Ranged Combat Basics
   time: 700
@@ -74,6 +76,7 @@
   cost: 4200
   description: Learn how to handle short-barrel rifles
   level: 3
+  measurement: 'Improve chances to hit with a weapon of category Short-Barrel Rifle'
   module: Combat Basics
   prerequisites: Ranged Combat Basics
   time: 700
@@ -84,6 +87,7 @@
   cost: 4200
   description: Learn how to wield a shotgun
   level: 3
+  measurement: 'Improve chances to hit with a weapon of category Shotgun'
   module: Combat Basics
   prerequisites: Ranged Combat Basics
   time: 700
@@ -94,6 +98,7 @@
   cost: 4200
   description: 'The most delicate of specialties: sniping'
   level: 3
+  measurement: 'Improve chances to hit with a weapon of category Sniper Rifle'
   module: Combat Basics
   prerequisites: Ranged Combat Basics
   time: 700
