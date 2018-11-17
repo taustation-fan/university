@@ -356,7 +356,7 @@ function filter_recall() {
     try {
         struct = JSON.parse(ls_value);
     }
-    catch {
+    catch (e) {
         return;
     }
     let beef      = struct[window.location.pathname]['univ'][10];
