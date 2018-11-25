@@ -34,7 +34,7 @@
   module: Advanced Combat
   prerequisites: Short barrel rifle Specialist
   time: 2100
-  title: Enforcer, Short barrel rifle Master
+  title: Enforcer, Short-barrel Master
 - availability:
   - SoB
   cost: 16800
