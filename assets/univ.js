@@ -359,7 +359,7 @@ function filter_recall() {
     catch (e) {
         return;
     }
-    let beef      = struct[window.location.pathname]['univ'][10];
+    let beef      = struct[window.location.pathname]['univ'][11];
     let beef_utf8 = decodeURIComponent(beef);
     let selected  = select_map[beef_utf8];
     $('#donedeps').val(selected);
@@ -490,6 +490,7 @@ function show_details() {
         nl:  'Nouveau Limoges (Sol)',
         moi: 'Moissan (Alpha Centauri)',
         sob: 'Spirit of Botswana (Alpha Centauri)',
+        cvs: 'Cape Verdi Stronghold (YZ Ceti)',
     };
 
     let avail = [];
@@ -545,7 +546,7 @@ $(document).ready(function() {
             filter_placeholder: { search : 'Search...' },
             filter_saveFilters : true,
             filter_functions: {
-                10: {
+                11: {
                     all: function() { return true },
                     done: get_filter('done'),
                     open: get_filter('open'),
@@ -564,7 +565,7 @@ $(document).ready(function() {
             }
         });
         let doneness = $('#donedeps').prop('value');
-        filter[10] = get_filter(doneness);
+        filter[11] = get_filter(doneness);
         $('#univ').trigger('search', [ filter ]);
 
     });
