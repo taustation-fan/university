@@ -29,10 +29,13 @@
   prerequisites:
   - Basic Space Navigation
   title: Advanced Space Navigation
-- coming_soon: 1
-  description: Space Docking
+- availability:
+    - CVS
+  cost: 8400
+  description: Enables 2 consecutive jumps for small ships (e.g. Private Shuttle). Unlocks higher level Multi-Jump Ship Navigation Courses
   level: 4
   module: Space Navigation
   prerequisites:
   - Advanced Space Navigation
-  title: Space Docking
+  time: 1400
+  title: Basic Multi-Jump Ship Navigation

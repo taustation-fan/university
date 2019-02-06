@@ -119,6 +119,8 @@
                     <br/> <input type="checkbox" class="checksearch" data-col="8"></th>
                 <th class="univ">SoB
                     <br/> <input type="checkbox" class="checksearch" data-col="9"></th>
+                <th class="univ">CVS
+                    <br/> <input type="checkbox" class="checksearch" data-col="10"></th>
                 <th class="centered strong-left-border">Status</th>
             </tr>
         </thead>
@@ -148,6 +150,7 @@
                         <td class="centered">[% IF row.nl ; THEN %]✔[% END; %]</td>
                         <td class="centered">[% IF row.moi; THEN %]✔[% END; %]</td>
                         <td class="centered">[% IF row.sob; THEN %]✔[% END; %]</td>
+                        <td class="centered">[% IF row.cvs; THEN %]✔[% END; %]</td>
                         <td class="centered done strong-left-border"></td>
                     </tr>
                 [% END; %]
