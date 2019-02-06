@@ -39,3 +39,11 @@
   - Advanced Space Navigation
   time: 1400
   title: Basic Multi-Jump Ship Navigation
+- availability:
+    - CVS
+  description: 'Increased number of consecutive jumps for small and medium ships. Small ship (e.g. Private Shuttle): 3, medium ship (e.g. Razorback): 2'
+  level: 6
+  module: Space Navigation
+  prerequisites:
+  - Basic Multi-Jump Ship Navigation
+  title: Intermediate Multi-Jump Ship Navigation
