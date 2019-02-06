@@ -47,3 +47,13 @@
   prerequisites:
   - Basic Multi-Jump Ship Navigation
   title: Intermediate Multi-Jump Ship Navigation
+- availability:
+    - CVS
+  
+  description: 'Increased number of consecutive jumps depending on ship size. Small ship: 4, medium ship: 3'
+  level: 7
+  module: Space Navigation
+  prerequisites:
+  - Intermediate Multi-Jump Ship Navigation
+  title: Advanced Multi-Jump Ship Navigation
+  
