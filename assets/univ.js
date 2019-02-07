@@ -490,7 +490,7 @@ function show_details() {
         nl:  'Nouveau Limoges (Sol)',
         moi: 'Moissan (Alpha Centauri)',
         sob: 'Spirit of Botswana (Alpha Centauri)',
-        cvs: 'Cape Verdi Stronghold (YZ Ceti)',
+        cvs: 'Cape Verde Stronghold (YZ Ceti)',
     };
 
     let avail = [];
