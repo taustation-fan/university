@@ -203,11 +203,11 @@
                     <td><span id="course_details_cost"></span> Credits</td>
                 </tr>
                 <tr>
-                    <th>Available at</th></td>
+                    <th>Available at</th>
                     <td id="course_details_universities"></td>
                 </tr>
                 <tr>
-                    <th>Status</th></td>
+                    <th>Status</th>
                     <td id="course_details_status"></td>
                 </tr>
             </tbody>
