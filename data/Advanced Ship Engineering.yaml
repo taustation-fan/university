@@ -20,6 +20,7 @@
   title: Jump Gate Navigation
 - availability:
     - CVS
+    - Moi
   cost: 5600
   description: Repair your engines sligthly faster.
   level: 4
@@ -34,7 +35,6 @@
   module: Advanced Ship Engineering
   time: 700
   title: Basic Ship Hull Maintenance
-
 - availability:
     - CVS
   cost: 5600
@@ -43,12 +43,57 @@
   module: Advanced Ship Engineering
   time: 700
   title: Basic Ship Life Support Maintenance
-
 - availability:
     - CVS
+    - Tau
   cost: 14000
   description: Repair your navigation computers faster.
   level: 5
   module: Advanced Ship Engineering
   time: 700
   title: Advanced Navigation Systems
+- availability:
+  - Tau
+  description: Repair your engines faster
+  level: 5
+  module: Advanced Ship Engineering
+  prerequisites: Basic Ship Engines
+  title: Advanced Ship Engines
+- availability: []
+  description: Repair your hull faster
+  level: 5
+  module: Advanced Ship Engineering
+  prerequisites: Basic Ship Hull Maintenance
+  title: Advanced Ship Hull Maintenance
+- availability: []
+  description: Repair your life support faster
+  level: 5
+  module: Advanced Ship Engineering
+  prerequisites: Basic Ship Life Support Maintenance
+  title: Advanced Ship Life Support Maintenance
+- availability:
+    - SoB
+  description: Repair your navigation computers much faster
+  level: 6
+  module: Advanced Ship Engineering
+  prerequisites: Advanced Navigation Systems
+  title: Navigation Systems Master
+- availability:
+    - SoB
+  description: Repair your engines much faster
+  level: 6
+  module: Advanced Ship Engineering
+  prerequisites: Advanced Ship Engines
+  title: Ship Engines Master
+- availability: []
+  description: Repair your hull much faster
+  level: 6
+  module: Advanced Ship Engineering
+  prerequisites: Advanced Ship Hull Maintenance
+  title: Ship Hull Maintenance Master
+- availability: []
+  description: Repair your life support much faster
+  level: 6
+  module: Advanced Ship Engineering
+  prerequisites: Advanced Ship Life Support Maintenance
+  title: Ship Life Support Maintenance Master

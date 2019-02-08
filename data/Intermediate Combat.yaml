@@ -14,24 +14,29 @@
   module: Intermediate Combat
   prerequisites: Combat Utilities 1
   title: Advanced Grenades
-- coming_soon: 1
-  description: Effective agility stim use during combat
+- availability:
+  - Tau
+  cost: 12000
+  description: Learn to consume a stim with a small chance to still attack in the same round
   level: 3
   module: Intermediate Combat
   prerequisites: Combat Utilities 1
-  title: Combat Stims—Agility
-- coming_soon: 1
-  description: Effective stamina stim use during combat
-  level: 3
+  time: 2000
+  title: Combat Stims, Basic
+- availability:
+  - Tau
+  description: Learn to consume a stim with a significant chance to still attack in the same round
+  level: 4
   module: Intermediate Combat
-  prerequisites: Combat Utilities 1
-  title: Combat Stims—Stamina
-- coming_soon: 1
-  description: Effective strength stim use during combat
-  level: 3
+  prerequisites: Combat Stims, Basic
+  title: Combat Stims, Advanced
+- availability:
+  - Tau
+  description: Learn to consume a stim and attack in the same round
+  level: 5
   module: Intermediate Combat
-  prerequisites: Combat Utilities 1
-  title: Combat Stims—Strength
+  prerequisites: Combat Stims, Advanced
+  title: Combat Stims, Expert
 - availability:
   - Tau
   cost: 4200
