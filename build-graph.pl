@@ -12,8 +12,9 @@ our %OPT = (
 );
 our @OPT_SPEC =
 qw/ help|h version
-    finished|f=s
+    coming|coming-soon!
     datadir=s
+    finished|f=s
     tree|t=s
   /;
 sub USAGE { <<"__USAGE__" };
@@ -22,7 +23,8 @@ usage: $_[0] [options] DOTFILE [PNGFILE]
 OPTIONS
 
  --finished, -f <file>    file containing list of completed courses
- --tree, -t <name>        Generate graph for just named course family
+ --tree, -t <name>        generate graph for just named course family
+ --coming-soon            include "coming soon" courses
 
  --datadir <path>         directory containing course YAML files ($OPT{datadir})
 
@@ -136,6 +138,7 @@ sub graph {
         my $slug = slug($$course{title});
         my $title = title($$course{title});
         my %style = ( label => $title );
+        next if $$course{coming_soon} and !$OPT{coming};
         add_styles(\%style, $$styles{coming_soon}) if $$course{coming_soon};
         add_styles(\%style, $$styles{completed})   if $$completed{$slug} and $$completed{$slug} > 0;
         add_styles(\%style, $$styles{enrolled})    if $$completed{$slug} and $$completed{$slug} < 0;
