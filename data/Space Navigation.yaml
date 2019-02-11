@@ -49,11 +49,13 @@
   title: Intermediate Multi-Jump Ship Navigation
 - availability:
     - CVS
+  cost: 16800
   description: 'Increased number of consecutive jumps depending on ship size. Small ship: 4, medium ship: 3'
   level: 7
   module: Space Navigation
   prerequisites:
   - Intermediate Multi-Jump Ship Navigation
+  time: 2100
   title: Advanced Multi-Jump Ship Navigation
 - availability: []
   description: "Increased number of consecutive jumps depending on ship size. Small ship: 9, medium ship: 7, large ship: 4."
