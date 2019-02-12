@@ -61,13 +61,15 @@
   prerequisites: Basic Ship Engines
   title: Advanced Ship Engines
   time: 1400
-- availability: []
+- availability:
+  - CVS
   description: Repair your hull faster
   level: 5
   module: Advanced Ship Engineering
   prerequisites: Basic Ship Hull Maintenance
   title: Advanced Ship Hull Maintenance
-- availability: []
+- availability:
+  - CVS
   cost: 14000
   description: Repair your life support faster
   level: 5
