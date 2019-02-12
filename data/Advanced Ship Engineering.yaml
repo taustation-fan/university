@@ -54,11 +54,13 @@
   title: Advanced Navigation Systems
 - availability:
   - Tau
+  cost: 14000
   description: Repair your engines faster
   level: 5
   module: Advanced Ship Engineering
   prerequisites: Basic Ship Engines
   title: Advanced Ship Engines
+  time: 1400
 - availability: []
   description: Repair your hull faster
   level: 5
@@ -66,10 +68,12 @@
   prerequisites: Basic Ship Hull Maintenance
   title: Advanced Ship Hull Maintenance
 - availability: []
+  cost: 14000
   description: Repair your life support faster
   level: 5
   module: Advanced Ship Engineering
   prerequisites: Basic Ship Life Support Maintenance
+  time: 1400
   title: Advanced Ship Life Support Maintenance
 - availability:
     - SoB
