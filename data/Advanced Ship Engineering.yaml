@@ -63,11 +63,13 @@
   time: 1400
 - availability:
   - CVS
+  cost: 14000
   description: Repair your hull faster
   level: 5
   module: Advanced Ship Engineering
   prerequisites: Basic Ship Hull Maintenance
   title: Advanced Ship Hull Maintenance
+  time: 1400
 - availability:
   - CVS
   cost: 14000
