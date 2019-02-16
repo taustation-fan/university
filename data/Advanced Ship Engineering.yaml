@@ -25,6 +25,7 @@
   description: Repair your engines slightly faster.
   level: 4
   module: Advanced Ship Engineering
+  prerequisites: Introduction to Ship Engineering
   time: 700
   title: Basic Ship Engines
 - availability:
@@ -33,6 +34,7 @@
   description: Repair your hull slightly faster.
   level: 4
   module: Advanced Ship Engineering
+  prerequisites: Introduction to Ship Engineering
   time: 700
   title: Basic Ship Hull Maintenance
 - availability:
@@ -41,6 +43,7 @@
   description: Repair your life support slightly faster.
   level: 4
   module: Advanced Ship Engineering
+  prerequisites: Introduction to Ship Engineering
   time: 700
   title: Basic Ship Life Support Maintenance
 - availability:
@@ -50,6 +53,7 @@
   description: Repair your navigation computers faster.
   level: 5
   module: Advanced Ship Engineering
+  prerequisites: Basic Navigation Systems
   time: 1400
   title: Advanced Navigation Systems
 - availability:
