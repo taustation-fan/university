@@ -188,7 +188,10 @@ sub slug { return (lc($_[0]) =~ s/[^a-zA-Z0-9]+/-/gr); }
 sub title {
     local $_ = shift;
     s/Introduction to\K\s+/\\n/i;
-    s/\s*[-–—,]\s*/\\n/;
+    s/\s*[-–—,](?!Jump)\s*/\\n/;
+    s/\s+(?=Ship Navigation)/\\n/;
+    s/\s+(?=Specialist)/\\n/;
+    s/(?:Ship Hull|Life Support)\K\s+(?=Maintenance)/\\n/;
     return $_;
 }
 
