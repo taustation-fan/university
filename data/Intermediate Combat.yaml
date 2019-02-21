@@ -25,6 +25,7 @@
   title: Combat Stims, Basic
 - availability:
   - Tau
+  cost: 32000
   description: Learn to consume a stim with a significant chance to still attack in the same round
   cost: 32000
   level: 4
