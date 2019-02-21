@@ -58,6 +58,7 @@
   title: Advanced Navigation Systems
 - availability:
   - Tau
+  - CVS
   cost: 14000
   description: Repair your engines faster
   level: 5
@@ -85,6 +86,7 @@
   title: Advanced Ship Life Support Maintenance
 - availability:
     - SoB
+    - CVS
   description: Repair your navigation computers much faster
   level: 6
   module: Advanced Ship Engineering
@@ -92,18 +94,21 @@
   title: Navigation Systems Master
 - availability:
     - SoB
+    - CVS
   description: Repair your engines much faster
   level: 6
   module: Advanced Ship Engineering
   prerequisites: Advanced Ship Engines
   title: Ship Engines Master
-- availability: []
+- availability:
+    - CVS
   description: Repair your hull much faster
   level: 6
   module: Advanced Ship Engineering
   prerequisites: Advanced Ship Hull Maintenance
   title: Ship Hull Maintenance Master
-- availability: []
+- availability:
+    - CVS
   description: Repair your life support much faster
   level: 6
   module: Advanced Ship Engineering

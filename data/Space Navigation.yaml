@@ -65,21 +65,24 @@
   time: 2800
   title: Advanced Multi-Jump Ship Navigation
 
-- availability: []
+- availability:
+    - CVS
   description: "Increased number of consecutive jumps depending on ship size. Small ship: 9, medium ship: 7, large ship: 4."
   level: 6
   module: Space Navigation
   prerequisites: Advanced Multi-Jump Ship Navigation
   title: Multi-Jump Small Ship Navigation Master
 
-- availability: []
+- availability:
+    - CVS
   description: "Enables maximum 9 consecutive jumps for medium ships. Also increases large ship limit to 7 jumps."
   level: 7
   module: Space Navigation
   prerequisites: Multi-Jump Small Ship Navigation Master
   title: Multi-Jump Medium Ship Navigation Master
 
-- availability: []
+- availability:
+    - CVS
   description: "Enables maximum 9 consecutive jumps for large ships."
   level: 8
   module: Space Navigation
