@@ -87,10 +87,12 @@
 - availability:
     - SoB
     - CVS
+  cost: 25200
   description: Repair your navigation computers much faster
   level: 6
   module: Advanced Ship Engineering
   prerequisites: Advanced Navigation Systems
+  time: 2100
   title: Navigation Systems Master
 - availability:
     - SoB
