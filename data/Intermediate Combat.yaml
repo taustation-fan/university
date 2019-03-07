@@ -35,10 +35,12 @@
   title: Combat Stims, Advanced
 - availability:
   - Tau
+  cost: 60000
   description: Learn to consume a stim and attack in the same round
   level: 5
   module: Intermediate Combat
   prerequisites: Combat Stims, Advanced
+  time: 6000
   title: Combat Stims, Expert
 - availability:
   - Tau
