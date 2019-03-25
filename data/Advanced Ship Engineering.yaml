@@ -97,22 +97,28 @@
 - availability:
     - SoB
     - CVS
+  cost: 25200
   description: Repair your engines much faster
   level: 6
   module: Advanced Ship Engineering
   prerequisites: Advanced Ship Engines
+  time: 2100
   title: Ship Engines Master
 - availability:
     - CVS
+  cost: 25200
   description: Repair your hull much faster
   level: 6
   module: Advanced Ship Engineering
   prerequisites: Advanced Ship Hull Maintenance
+  time: 2100
   title: Ship Hull Maintenance Master
 - availability:
     - CVS
+  cost: 25200
   description: Repair your life support much faster
   level: 6
   module: Advanced Ship Engineering
   prerequisites: Advanced Ship Life Support Maintenance
+  time: 2100
   title: Ship Life Support Maintenance Master
