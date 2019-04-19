@@ -1,0 +1,10 @@
+---
+- availability:
+  - CVS
+  cost: 200
+  description: Students will learn the basics of managing projects
+  level: 1
+  prerequisites: []
+  time: 100
+  title: Introduction to Project Management
+  
