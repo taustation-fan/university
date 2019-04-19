@@ -71,6 +71,8 @@ for (@available_courses) {
 }
 say 'Total duration in days: ', (sum map $_->{duration}, @available_courses) / 100
     if $ENV{VERBOSE};
+say 'Total course costs: ', (sum map $_->{cost} // 0, @available_courses)
+    if $ENV{VERBOSE};
 
 my $template = Template->new();
 

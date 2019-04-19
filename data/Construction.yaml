@@ -1,13 +1,13 @@
 ---
 - availability:
   - CVS
-  # cost: ???
+  cost: 2800
   description: Students will learn the basics of the construction industry, including construction matrix management.
   level: 2
   module: Construction
   prerequisites:
     - Introduction to Project Management
-  time: 200 # ???
+  time: 700 # ???
   title: Introduction to Construction
 - availability:
   - CVS
