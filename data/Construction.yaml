@@ -1,0 +1,143 @@
+---
+- availability:
+  - CVS
+  # cost: ???
+  description: Students will learn the basics of the construction industry, including construction matrix management.
+  level: 2
+  module: Construction
+  prerequisites:
+    - Introduction to Project Management
+  time: 200 # ???
+  title: Introduction to Construction
+- availability:
+  - CVS
+  # cost: ???
+  description: Learn tolerances in building construction.
+  level: 3
+  module: Construction
+  prerequisites:
+    - Introduction to Construction
+  # time: ???
+  title: Basic Building Construction
+ 
+- availability:
+  - CVS
+  # cost: ???
+  description: Learn how to install mesh networks in buildings.
+  level: 3
+  module: Construction
+  prerequisites:
+    - Introduction to Construction
+  # time: ???
+  title: Basic Mesh Networking
+ 
+- availability:
+  - CVS
+  # cost: ???
+  description: Learn how to install building power systems.
+  level: 3
+  module: Construction
+  prerequisites:
+    - Introduction to Construction
+  # time: ???
+  title: Basic Power Management
+ 
+- availability:
+  - CVS
+  # cost: ???
+  description: Learn how to install building water systems.
+  level: 3
+  module: Construction
+  prerequisites:
+    - Introduction to Construction
+  # time: ???
+  title: Basic Water Management
+ 
+- availability:
+  - CVS
+  # cost: ???
+  description: Learn tolerances in building construction.
+  level: 4
+  module: Construction
+  prerequisites:
+    - Basic Building Construction
+  # time: ???
+  title: Intermediate Building Construction
+ 
+- availability:
+  - CVS
+  # cost: ???
+  description: Learn how to install mesh networks in buildings.
+  level: 4
+  module: Construction
+  prerequisites:
+    -  Basic Mesh Networking
+  # time: ???
+  title: Intermediate Mesh Networking
+ 
+- availability: 
+  - CVS
+  # cost: ???
+  description: Learn how to install building power systems.
+  level: 4
+  module: Construction
+  prerequisites:
+    - Basic Power Management
+  # time: ???
+  title: Intermediate Power Management
+ 
+- availability:
+  - CVS
+  # cost: ???
+  description: Learn how to install building water systems.
+  level: 4
+  module: Construction
+  prerequisites:
+    - Basic Water Management
+  # time: ???
+  title: Intermediate Water Management
+ 
+- availability:
+  - CVS
+  # cost: ???
+  description: Learn tolerances in building construction.
+  level: 5
+  module: Construction
+  prerequisites:
+    - Intermediate Building Construction
+  # time: ???
+  title: Advanced Building Construction
+ 
+- availability:
+  - CVS
+  # cost: ???
+  description: Learn how to install mesh networks in buildings.
+  level: 5
+  module: Construction
+  prerequisites:
+    - Intermediate Mesh Networking
+  # time: ???
+  title: Advanced Mesh Networking
+ 
+- availability:
+  - CVS
+  # cost: ???
+  description: Learn how to install building power systems.
+  level: 5
+  module: Construction
+  prerequisites:
+    - Intermediate Power Management
+  # time: ???
+  title: Advanced Power Management
+ 
+- availability:
+  - CVS
+  # cost: ???
+  description: Learn how to install building water systems.
+  level: 5
+  module: Construction
+  prerequisites:
+    - Intermediate Water Management
+  # time: ???
+  title: Advanced Water Management
+ 
