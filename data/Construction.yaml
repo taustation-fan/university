@@ -11,46 +11,46 @@
   title: Introduction to Construction
 - availability:
   - CVS
-  # cost: ???
+  cost: 8400
   description: Learn tolerances in building construction.
   level: 3
   module: Construction
   prerequisites:
     - Introduction to Construction
-  # time: ???
+  time: 1400
   title: Basic Building Construction
  
 - availability:
   - CVS
-  # cost: ???
+  cost: 8400
   description: Learn how to install mesh networks in buildings.
   level: 3
   module: Construction
   prerequisites:
     - Introduction to Construction
-  # time: ???
+  time: 1400
   title: Basic Mesh Networking
  
 - availability:
   - CVS
-  # cost: ???
+  cost: 8400
   description: Learn how to install building power systems.
   level: 3
   module: Construction
   prerequisites:
     - Introduction to Construction
-  # time: ???
+  time: 1400
   title: Basic Power Management
  
 - availability:
   - CVS
-  # cost: ???
+  cost: 8400
   description: Learn how to install building water systems.
   level: 3
   module: Construction
   prerequisites:
     - Introduction to Construction
-  # time: ???
+  time: 1400
   title: Basic Water Management
  
 - availability:
@@ -61,7 +61,7 @@
   module: Construction
   prerequisites:
     - Basic Building Construction
-  # time: ???
+  time: 1400
   title: Intermediate Building Construction
  
 - availability:
@@ -72,7 +72,7 @@
   module: Construction
   prerequisites:
     -  Basic Mesh Networking
-  # time: ???
+  time: 1400
   title: Intermediate Mesh Networking
  
 - availability: 
