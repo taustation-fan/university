@@ -51,7 +51,7 @@
   module: Construction
   prerequisites:
     - Introduction to Construction
-  time: 2100
+  time: 1400
   title: Basic Water Management
  
 - availability:
