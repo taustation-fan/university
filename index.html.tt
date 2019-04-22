@@ -111,15 +111,15 @@
                 <th                 >Prerequisites     </th>
                 <th class="centered">Duration          </th>
                 <th class="centered">Cost              </th>
-                <th class="univ">Tau
+                <th class="univ"><abbr title="Tau Station (Sol; Consortium)">Tau</abbr>
                     <br/> <input type="checkbox" class="checksearch" data-col="6"></th>
-                <th class="univ">NL
+                <th class="univ"><abbr title="Nouveau Limoges (Sol; Gaule)">NL</abbr>
                     <br/> <input type="checkbox" class="checksearch" data-col="7"></th>
-                <th class="univ">Moi
+                <th class="univ"><abbr title="Moissan Station (Alpha Centauri; Gaule)">Moi</abbr>
                     <br/> <input type="checkbox" class="checksearch" data-col="8"></th>
-                <th class="univ">SoB
+                <th class="univ"><abbr title="Spirit of Botswana (Alpha Centauri, Consortium)">SoB</abbr>
                     <br/> <input type="checkbox" class="checksearch" data-col="9"></th>
-                <th class="univ">CVS
+                <th class="univ"><abbr title="Cape Verde Stronghold (YZ Ceti, reachable via L7)">CVS</abbr>
                     <br/> <input type="checkbox" class="checksearch" data-col="10"></th>
                 <th class="centered strong-left-border">Status</th>
             </tr>
