@@ -56,6 +56,11 @@ our %TREES = (
         "First Aid",
     ],
 
+    "Manufacturing" => [
+        "Project Management",
+        "Construction",
+    ],
+
     "Business" => [
         "Bureaucracy",
     ],
