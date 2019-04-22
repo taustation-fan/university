@@ -9,6 +9,7 @@
     - Introduction to Project Management
   time: 700 # ???
   title: Introduction to Construction
+
 - availability:
   - CVS
   cost: 8400
@@ -50,7 +51,7 @@
   module: Construction
   prerequisites:
     - Introduction to Construction
-  time: 1400
+  time: 2100
   title: Basic Water Management
  
 - availability:
@@ -61,7 +62,7 @@
   module: Construction
   prerequisites:
     - Basic Building Construction
-  time: 1400
+  time: 2100
   title: Intermediate Building Construction
  
 - availability:
@@ -83,7 +84,7 @@
   module: Construction
   prerequisites:
     - Basic Power Management
-  # time: ???
+  time: 2100
   title: Intermediate Power Management
  
 - availability:
