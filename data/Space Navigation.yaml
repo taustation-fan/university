@@ -87,8 +87,10 @@
 
 - availability:
     - CVS
+  cost: 56000
   description: "Enables maximum 9 consecutive jumps for large ships."
   level: 8
   module: Space Navigation
   prerequisites: Multi-Jump Medium Ship Navigation Master
+  time: 3500
   title: Multi-Jump Large Ship Navigation Master
