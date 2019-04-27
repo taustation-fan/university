@@ -73,7 +73,7 @@
   module: Construction
   prerequisites:
     -  Basic Mesh Networking
-  time: 1400
+  time: 2100
   title: Intermediate Mesh Networking
  
 - availability: 
