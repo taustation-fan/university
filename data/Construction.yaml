@@ -56,7 +56,7 @@
  
 - availability:
   - CVS
-  # cost: ???
+  cost: 16800
   description: Learn tolerances in building construction.
   level: 4
   module: Construction
@@ -67,7 +67,7 @@
  
 - availability:
   - CVS
-  # cost: ???
+  cost: 16800
   description: Learn how to install mesh networks in buildings.
   level: 4
   module: Construction
@@ -78,7 +78,7 @@
  
 - availability: 
   - CVS
-  # cost: ???
+  cost: 16800
   description: Learn how to install building power systems.
   level: 4
   module: Construction
@@ -89,13 +89,13 @@
  
 - availability:
   - CVS
-  # cost: ???
+  cost: 16800
   description: Learn how to install building water systems.
   level: 4
   module: Construction
   prerequisites:
     - Basic Water Management
-  # time: ???
+  time: 2100
   title: Intermediate Water Management
  
 - availability:
