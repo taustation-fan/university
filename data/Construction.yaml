@@ -100,45 +100,45 @@
  
 - availability:
   - CVS
-  # cost: ???
+  cost: 28000
   description: Learn tolerances in building construction.
   level: 5
   module: Construction
   prerequisites:
     - Intermediate Building Construction
-  # time: ???
+  time: 2800
   title: Advanced Building Construction
  
 - availability:
   - CVS
-  # cost: ???
+  cost: 28000
   description: Learn how to install mesh networks in buildings.
   level: 5
   module: Construction
   prerequisites:
     - Intermediate Mesh Networking
-  # time: ???
+  time: 2800
   title: Advanced Mesh Networking
  
 - availability:
   - CVS
-  # cost: ???
+  cost: 28000
   description: Learn how to install building power systems.
   level: 5
   module: Construction
   prerequisites:
     - Intermediate Power Management
-  # time: ???
+  time: 2800
   title: Advanced Power Management
  
 - availability:
   - CVS
-  # cost: ???
+  cost: 28000
   description: Learn how to install building water systems.
   level: 5
   module: Construction
   prerequisites:
     - Intermediate Water Management
-  # time: ???
+  time: 2800
   title: Advanced Water Management
  
