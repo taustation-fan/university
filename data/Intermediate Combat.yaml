@@ -20,7 +20,9 @@
   description: Learn to consume a stim with a small chance to still attack in the same round
   level: 3
   module: Intermediate Combat
-  prerequisites: Combat Utilities 1
+  prerequisites:
+    - Combat Utilities 1
+    - Medical Stims
   time: 2000
   title: Combat Stims, Basic
 - availability:
