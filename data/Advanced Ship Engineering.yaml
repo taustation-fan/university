@@ -1,5 +1,6 @@
 ---
 - availability:
+  - CVS
   - Moi
   cost: 5600
   description: Learn the basics of ship navigation and unlock further navigation courses.
