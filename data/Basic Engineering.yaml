@@ -23,7 +23,7 @@
   - Tau
   - NL
   cost: 4200
-  description: Item Repair Specialist
+  description: Intermediate Item Repair
   level: 3
   measurement: 'Speeds up item repairs'
   module: Basic Engineering
@@ -34,10 +34,24 @@
   - Tau
   - NL
   cost: 16800
-  description: Item Repair Mastery
+  description: Advanced Item Repair
   level: 4
   measurement: 'Speeds up item repairs'
   module: Basic Engineering
   prerequisites: Item repair 2
   time: 2100
   title: Item repair 3
+- availability:
+  - Tau
+  - NL
+  description: Item Repair Specialist
+  level: 5
+  prerequisites: Item repair 3
+  title: Item repair 4
+- availability:
+  - Tau
+  - NL
+  description: Item Repair Mastery
+  level: 6
+  prerequisites: Item repair 4
+  title: Item repair 5
