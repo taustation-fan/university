@@ -44,7 +44,9 @@
 - availability:
   - Tau
   - NL
+  cost: 2380
   description: Item Repair Specialist
+  duration: 28000
   level: 5
   module: Basic Engineering
   prerequisites: Item repair 3
