@@ -1,0 +1,11 @@
+---
+- availability:
+  - CVS
+  cost: 1400
+  description: Learn the basics of how to construct items
+  level: 1
+  module: Crafting
+  prerequisites: []
+  time: 700
+  title: Introduction to Crafting
+  
