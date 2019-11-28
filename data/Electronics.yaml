@@ -1,0 +1,10 @@
+---
+- availability:
+  - Tau
+  - SoB
+  cost: 400
+  description: Learn basic Electronics, practicing on security cameras
+  level: 2
+  module: Electronics
+  time: 100
+  title: Introduction to Electronics
