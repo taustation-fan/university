@@ -49,7 +49,7 @@
   level: 5
   module: Basic Engineering
   prerequisites: Item repair 3
-  time: 2380
+  time: 2800
   title: Item repair 4
 - availability:
   - Tau
