@@ -8,12 +8,14 @@
   prerequisites: Combat
   time: 700
   title: Combat Utilities 1
-- coming_soon: 1
-  description: Effective use of grenades, smoke bombs and explosives in combat
+- availability: [SoB]
+  cost: 4200
+  description: Gain basic knowledge of exothermic and concussion physics and the efficient use of grenades in combat situations. This first course will help mitigate the chance of taking damage by getting caught in your own blast.
   level: 3
   module: Intermediate Combat
   prerequisites: Combat Utilities 1
-  title: Advanced Grenades
+  time: 700
+  title: Basic Combat Explosives
 - availability:
   - Tau
   cost: 12000
@@ -62,6 +64,18 @@
   prerequisites: Combat Utilities 2
   time: 700
   title: Combat Utilities 3
+- availability: [SoB]
+  description: Learn special tactics and a deeper understanding of the use of grenades in combat situations. This course will improve grenade accuracy and damage, while further reducing the chance of suffering damage from your own explosives.
+  level: 4
+  module: Intermediate Combat
+  prerequisites: Basic Combat Explosives
+  title: Intermediate Combat Explosives
+- availability: [SoB]
+  description: Learn advanced tactics and strategies on the use of explosives in combat situations. This course details cutting-edge scenarios that will further improve grenade accuracy and damage, while reducing the chance of suffering accidental damage to the minimum.
+  level: 5
+  module: Intermediate Combat
+  prerequisites: Intermediate Combat Explosives
+  title: Advanced Combat Explosives
 - availability:
   - Tau
   cost: 7000
