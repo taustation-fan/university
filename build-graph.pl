@@ -48,6 +48,7 @@ our %TREES = (
     "Engineering" => [
         "Advanced Ship Engineering",
         "Basic Engineering",
+        "Electronics",
         "Ship Engineering",
     ],
 
@@ -59,6 +60,7 @@ our %TREES = (
     "Manufacturing" => [
         "Project Management",
         "Construction",
+        "Crafting",
     ],
 
     "Business" => [
