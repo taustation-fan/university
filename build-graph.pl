@@ -192,7 +192,9 @@ sub slug { return (lc($_[0]) =~ s/[^a-zA-Z0-9]+/-/gr); }
 
 sub title {
     local $_ = shift;
-    s/Introduction to\K\s+/\\n/i;
+    s/^(?:Introduction to|Basic|Intermediate|Advanced)\K\s+/\\n/i;
+    s/\s+(?=Master$)/\\n/i;
+    s/\s+(?=Mastery|Specialization)/\\n/i;
     s/\s*[-–—,](?!Jump)\s*/\\n/;
     s/\s+(?=Ship Navigation)/\\n/;
     s/\s+(?=Specialist)/\\n/;
