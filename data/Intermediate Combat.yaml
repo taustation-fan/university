@@ -65,10 +65,12 @@
   time: 700
   title: Combat Utilities 3
 - availability: [SoB]
+  cost: 11200
   description: Learn special tactics and a deeper understanding of the use of grenades in combat situations. This course will improve grenade accuracy and damage, while further reducing the chance of suffering damage from your own explosives.
   level: 4
   module: Intermediate Combat
   prerequisites: Basic Combat Explosives
+  time: 1400
   title: Intermediate Combat Explosives
 - availability: [SoB]
   description: Learn advanced tactics and strategies on the use of explosives in combat situations. This course details cutting-edge scenarios that will further improve grenade accuracy and damage, while reducing the chance of suffering accidental damage to the minimum.
