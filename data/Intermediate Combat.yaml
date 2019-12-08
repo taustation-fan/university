@@ -73,10 +73,12 @@
   time: 1400
   title: Intermediate Combat Explosives
 - availability: [SoB]
+  cost: 21000
   description: Learn advanced tactics and strategies on the use of explosives in combat situations. This course details cutting-edge scenarios that will further improve grenade accuracy and damage, while reducing the chance of suffering accidental damage to the minimum.
   level: 5
   module: Intermediate Combat
   prerequisites: Intermediate Combat Explosives
+  time: 2100
   title: Advanced Combat Explosives
 - availability:
   - Tau
