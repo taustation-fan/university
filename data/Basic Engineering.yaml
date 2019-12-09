@@ -54,8 +54,10 @@
 - availability:
   - Tau
   - NL
+  cost: 42000
   description: Item Repair Mastery
   level: 6
   module: Basic Engineering
   prerequisites: Item repair 4
+  time: 3500
   title: Item repair 5
