@@ -47,7 +47,7 @@
   cost: 28000
   description: Item Repair Specialist
   level: 5
-  measurement: 'Reduces repair time by 30% compared to Item Repair 3'
+  measurement: 'Reduces repair time by 30% compared to Item Repair 3, and 60% compared to Item Repair 1'
   module: Basic Engineering
   prerequisites: Item repair 3
   time: 2800
