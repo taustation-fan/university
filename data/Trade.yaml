@@ -1,0 +1,34 @@
+---
+- availability:
+  - SoB
+  cost: 2800
+  description: Learn the basic tenets of free enterprise, earning the ability to directly trade with fellow Citizens. The course certifies you for your first two trade slots.
+  level: 2
+  module: Trade
+  prerequisites: []
+  time: 700
+  title: Basic Trading
+- availability: []
+  description: Increase your standing as professional trader with expanded marketing and retail strategies. Your certificate will be upgraded, increasing your trade slots by two.
+  level: 3
+  module: Trade
+  prerequisites: [Basic Trading]
+  title: Trading Expanded
+- availability: []
+  description: Further increase your standing as professional trader with enhanced marchandising and brand tactics. Your certificate will be upgraded, increasing your trade slots by two.
+  level: 4
+  module: Trade
+  prerequisites: [Trading Expanded]
+  title: Trading Expanded Further
+- availability: [SoB]
+  description: Delve into the hidden secrets of the vendor gurus, attaining knowledge reserved for the highest retailers across the galaxy. Your certificate will be upgraded, increasing your trade slots by two.
+  level: 5
+  module: Trade
+  prerequisites: [Trading Expanded Further]
+  title: Advanced Trading
+- availability: []
+  description: Achieve the true enlightenment of zen marketing and venerable trading. High caliber sales strategies and merchandising tactics are revealed and upgraded your certificate to the highest level, increasing your trade slots by two.
+  level: 6
+  module: Trade
+  prerequisites: [Advanced Trading]
+  title: Advanced Trading Expanded
