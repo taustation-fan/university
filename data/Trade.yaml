@@ -8,7 +8,7 @@
   description: Learn the basic tenets of free enterprise, earning the ability to directly trade with fellow Citizens. The course certifies you for your first two trade slots.
   level: 2
   module: Trade
-  prerequisites: []
+  prerequisites: [Introduction to Business]
   time: 700
   title: Basic Trading
 
