@@ -65,6 +65,7 @@ our %TREES = (
 
     "Business" => [
         "Bureaucracy",
+        "Trade",
     ],
 
     "Social" => [
