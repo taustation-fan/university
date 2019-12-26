@@ -13,10 +13,12 @@
   title: Basic Trading
 
 - availability: [Moi]
+  cost: 8400
   description: Increase your standing as professional trader with expanded marketing and retail strategies. Your certificate will be upgraded, increasing your trade slots by two.
   level: 3
   module: Trade
   prerequisites: [Basic Trading]
+  time: 1400
   title: Trading Expanded
 
 - availability: [Tau]
