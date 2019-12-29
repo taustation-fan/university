@@ -478,6 +478,12 @@ function show_details() {
         // TODO make sure there is at most one and only one course in progress
         course_obj.next_state();
         course.status = course_obj.get_state_value();
+
+        for (let c of edutau.all_courses) {
+            if (c.name == course_name) {
+                c.current_state = course_obj.current_state;
+            }
+        }
         show_state_on_detail_page();
         update_user_provided_list();
         process_education_store();
