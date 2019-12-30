@@ -35,14 +35,20 @@ function Course(name, state) {
     this.states = edutau.global_course_states;
     this.name = name;
     this.current_state = 1;
-    this.next_state = function() {
-        let state_now = this.current_state + 1;
-        if ( state_now > Math.max( ... Object.keys(this.states).map( x => parseInt(x) ) ) ) {
-            state_now = 1;
+    this.get_next_state = function() {
+        /* returns the next state without altering this */
+        let state_after = this.current_state + 1;
+        if ( state_after > Math.max( ... Object.keys(this.states).map( x => parseInt(x) ) ) ) {
+            state_after = 1;
         }
-        this.current_state = state_now;
+        return state_after;
+    };
+    this.advance_state = function() {
+        /* move the state of this ahead by one */
+        this.current_state = this.get_next_state();
     };
     this.get_state = function() {
+        /* returns the current state in its numeric form */
         let my_state = this.current_state;
         return my_state;
     };
@@ -50,12 +56,9 @@ function Course(name, state) {
         let my_state = this.states[ this.current_state ];
         return my_state;
     };
-    this.get_next_state_value = function() {
-        let next_state = this.current_state + 1;
-        if ( next_state > Math.max( ... Object.keys(this.states).map( x => parseInt(x) ) ) ) {
-            next_state = 1;
-        }
-        let my_state = this.states[ next_state ];
+    this.get_next_state_label = function() {
+        /* returns the current state in its text form */
+        let my_state = this.states[ this.get_next_state() ];
         return my_state;
     };
 }
@@ -472,7 +475,7 @@ function show_details() {
     let course_obj  = get_course_by_name(course_name);
 
     function show_state_on_detail_page() {
-        let next_state = course_obj.get_next_state_value();
+        let next_state = course_obj.get_next_state_label();
         $cont.find('#course_next_state').text( next_state || '' );
         $cont.find('#course_details_status').text( course.status || 'Not Done' );
     }
@@ -480,7 +483,7 @@ function show_details() {
     show_state_on_detail_page();
     $('#change_course_state > a.button').off('click').on( 'click', function() {
         // TODO make sure there is at most one and only one course in progress
-        course_obj.next_state();
+        course_obj.advance_state();
         course.status = course_obj.get_state_value();
 
         for (let c of edutau.all_courses) {
