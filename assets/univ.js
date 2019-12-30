@@ -116,6 +116,8 @@ function courses_to_objects() {
 }
 
 function lite_courses() {
+    /* returns an object of all courses that are either in progress or done,
+     * with the course names as keys and the numeric state as values. */
     let lite = {}, course;
     if ( ! edutau.all_courses ) {
         return;
