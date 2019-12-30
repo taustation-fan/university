@@ -10,6 +10,8 @@ edutau.global_course_states = {
     3: 'Done',
 };
 
+// edutau.courses_by_slug is initialized in index.html
+
 // Teach Storage to handle Objects
 Storage.prototype.setObject = function(key, value) {
     this.setItem(key, JSON.stringify(value));
@@ -384,8 +386,8 @@ function get_filter(mode) {
 }
 
 function topo_sorted_slugs() {
-    if (edutau.courses_by_slug_sorted) {
-        return edutau.courses_by_slug_sorted;
+    if (edutau.courses_sorted) {
+        return edutau.courses_sorted;
     }
 
     // build a list of all edges in the graph
@@ -399,7 +401,7 @@ function topo_sorted_slugs() {
     // tsort from file assets/toposort.js
     let sorted = tsort(edges);
     sorted.reverse();
-    edutau.courses_by_slug_sorted = sorted;
+    edutau.courses_sorted = sorted;
     return sorted;
 }
 
