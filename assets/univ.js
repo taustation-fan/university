@@ -182,8 +182,8 @@ function get_course_by_name(name) {
 
 function update_user_provided_list() {
     let input_field = $('#education-input');
-    let courses_taken = {};
-    Object.entries( lite_courses() ).filter( x => x[1] > 1 ).map( x => courses_taken[ x[0] ] = x[1] )
+    let courses_taken = lite_courses();
+
     // TODO refactor into separate function, also see process_education_recall()
     let course_still_in_progress = get_course_in_progress_name(courses_taken);
     if ( course_still_in_progress ) {
