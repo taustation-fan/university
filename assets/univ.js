@@ -1,6 +1,8 @@
 "use strict";
 
-window.edutau = {}; // Private namespace
+if (!window.edutau) {
+    window.edutau = {}; // Private namespace
+}
 edutau.enrolled_prefix = 'Enrolled in ';
 edutau.global_course_states = {
     1: 'Not Done',
@@ -95,7 +97,7 @@ function courses_to_objects() {
             course_in_progress = match_enrolled[1];
             the_course.current_state = 2; // in progress
             the_course.name = course_in_progress;
-        } else if ( document.univ_courses[ course_slug(c) ] ) {
+        } else if ( edutau.courses_by_slug[ course_slug(c) ] ) {
             the_course.current_state = 3; // done
             the_course.name = c;
         } else {
@@ -204,7 +206,7 @@ function process_education_input() {
     $('tr.in-progress').removeClass('in-progress');
     if (course_in_progress) {
         slug_course_in_progress = course_slug(course_in_progress);
-        let course_row = document.univ_courses[slug_course_in_progress];
+        let course_row = edutau.courses_by_slug[slug_course_in_progress];
         if (course_row) {
             course_row.status = 'In Progress';
             $('#' + slug_course_in_progress).addClass('in-progress');
@@ -215,7 +217,7 @@ function process_education_input() {
     let not_found = get_courses_not_found_name( the_lite_courses );
     courses.forEach(function(c) {
         let slug = course_slug(c);
-        let course_row = document.univ_courses[slug];
+        let course_row = edutau.courses_by_slug[slug];
         if (course_row) {
             course_row.status = 'Done';
             course_credits += course_row.cost;
@@ -231,7 +233,7 @@ function process_education_input() {
         let $dom = $tr.find('.done');
         if (!$dom.length) { return; }
 
-        let course = document.univ_courses[this.id];
+        let course = edutau.courses_by_slug[this.id];
         if (course) {
             if (course.status == 'Done') {
                 $dom.html('<span title="completed">✔</span>');
@@ -246,7 +248,7 @@ function process_education_input() {
                 let prereqs_met = true;
                 prereqs.each(function(idx) {
                     let slug = $(this).attr('data-slug');
-                    let prereq = document.univ_courses[slug];
+                    let prereq = edutau.courses_by_slug[slug];
                     if (!(prereq && (prereq.status === 'Done' || prereq.status === 'In Progress'))) {
                         prereqs_met = false;
                     }
@@ -257,7 +259,7 @@ function process_education_input() {
         }
     });
 
-    let total = Object.keys(document.univ_courses).length;
+    let total = Object.keys(edutau.courses_by_slug).length;
     let msg = 'You finished ' + found + ' courses out of ' + total + '.';
     if (not_found.length) {
         msg += "<br>You also finished the following courses that I know nothing about: " + not_found.join(', ');
@@ -382,14 +384,14 @@ function get_filter(mode) {
 }
 
 function topo_sorted_slugs() {
-    if (document.univ_courses_sorted) {
-        return document.univ_courses_sorted;
+    if (edutau.courses_by_slug_sorted) {
+        return edutau.courses_by_slug_sorted;
     }
 
     // build a list of all edges in the graph
     let edges = []
-    for (let course_idx in document.univ_courses) {
-        let course = document.univ_courses[course_idx];
+    for (let course_idx in edutau.courses_by_slug) {
+        let course = edutau.courses_by_slug[course_idx];
         for (let p_idx in course.prerequisites) {
             edges.push([course.slug, course.prerequisites[p_idx].slug]);
         }
@@ -397,7 +399,7 @@ function topo_sorted_slugs() {
     // tsort from file assets/toposort.js
     let sorted = tsort(edges);
     sorted.reverse();
-    document.univ_courses_sorted = sorted;
+    edutau.courses_by_slug_sorted = sorted;
     return sorted;
 }
 
@@ -407,7 +409,7 @@ function recursive_prerequisties(course) {
     let seen = {};
     function visit(prereqs) {
         for (let idx in prereqs) {
-            let p = document.univ_courses[prereqs[idx].slug];
+            let p = edutau.courses_by_slug[prereqs[idx].slug];
             if (p && !seen[p.slug]) {
                 all_prereqs.push(p);
                 visit(p.prerequisites);
@@ -454,7 +456,7 @@ function fill_ul($ul, prereq) {
 
 function show_details() {
     let slug   = $(this).data('slug');
-    let course = document.univ_courses[slug];
+    let course = edutau.courses_by_slug[slug];
     let $cont  = $('#course_details');
     $cont.find('#course_details_name').text(course.course);
     $cont.find('#course_details_level').text(course.level);

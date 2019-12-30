@@ -181,7 +181,10 @@
     <script type="text/javascript" src="assets/toposort.js"></script>
     <script type="text/javascript" src="assets/univ.js"></script>
     <script type="text/javascript">
-        document.univ_courses = [% courses_json %];
+        if (!window.edutau) {
+            window.edutau = {}; // Private namespace
+        }
+        edutau.courses_by_slug = [% courses_json %];
     </script>
     
     <div id="course_details" class="hidden">
