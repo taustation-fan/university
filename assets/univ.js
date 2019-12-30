@@ -181,7 +181,6 @@ function get_course_by_name(name) {
 }
 
 function update_user_provided_list() {
-    let input_field = $('#education-input');
     let courses_taken = lite_courses();
 
     // TODO refactor into separate function, also see process_education_recall()
@@ -192,7 +191,8 @@ function update_user_provided_list() {
         courses_taken = Object.assign( { [course_still_in_progress]: 2 }, courses_taken );
     }
     let taken_text = Object.keys(courses_taken).join('\n');
-    input_field.val( taken_text );
+
+    $('#education-input').val( taken_text );
     return;
 }
 
