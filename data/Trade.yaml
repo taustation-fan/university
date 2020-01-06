@@ -22,10 +22,12 @@
   title: Trading Expanded
 
 - availability: [Tau]
+  cost: 16800
   description: Further increase your standing as professional trader with enhanced marchandising and brand tactics. Your certificate will be upgraded, increasing your trade slots by two.
   level: 4
   module: Trade
   prerequisites: [Trading Expanded]
+  time: 2100
   title: Trading Expanded Further
 
 - availability: [SoB]
