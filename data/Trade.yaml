@@ -31,10 +31,12 @@
   title: Trading Expanded Further
 
 - availability: [SoB]
+  cost: 28000
   description: Delve into the hidden secrets of the vendor gurus, attaining knowledge reserved for the highest retailers across the galaxy. Your certificate will be upgraded, increasing your trade slots by two.
   level: 5
   module: Trade
   prerequisites: [Trading Expanded Further]
+  time: 2800
   title: Advanced Trading
 
 - availability: [NL]
