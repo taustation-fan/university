@@ -40,8 +40,10 @@
   title: Advanced Trading
 
 - availability: [NL]
+  cost: 42000
   description: Achieve the true enlightenment of zen marketing and venerable trading. High caliber sales strategies and merchandising tactics are revealed and upgraded your certificate to the highest level, increasing your trade slots by two.
   level: 6
   module: Trade
   prerequisites: [Advanced Trading]
+  time: 3500
   title: Advanced Trading Expanded
