@@ -12,6 +12,7 @@
   - NL
   description: Learn intermediate ‘Rush’ and ‘Retreat’ tactics, allowing you to switch between long and short range combat. Completion of this course gives a 40% chance of success when attempting the switch.
   level: 3
+  module: Advanced Combat
   prerequisites:
     - Agile Combat 1
   title: Agile Combat 2
