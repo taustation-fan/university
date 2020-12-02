@@ -9,6 +9,13 @@
   time: 700
   title: Agile Combat 1
 - availability:
+  - NL
+  description: Learn intermediate ‘Rush’ and ‘Retreat’ tactics, allowing you to switch between long and short range combat. Completion of this course gives a 40% chance of success when attempting the switch.
+  level: 3
+  prerequisites:
+    - Agile Combat 1
+  title: Agile Combat 2
+- availability:
   - SoB
   cost: 16800
   description: Master the use of knives for maximum damage
