@@ -1,5 +1,14 @@
 ---
 - availability:
+  - NL
+  cost: 2800
+  description: Learn the basics of 'Rush' and 'Retreat', allowing you to switch between long and short range combat. Completion of this course gives you a 20% chance of success when attempting the switch.
+  level: 2
+  module: Advanced Combat
+  prerequisites: []
+  time: 700
+  title: Agile Combat 1
+- availability:
   - SoB
   cost: 16800
   description: Master the use of knives for maximum damage
