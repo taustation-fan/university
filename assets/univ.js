@@ -368,7 +368,7 @@ function filter_recall() {
     catch (e) {
         return;
     }
-    let beef      = struct[window.location.pathname]['univ'][11];
+    let beef      = struct[window.location.pathname]['univ'][12];
     let beef_utf8 = decodeURIComponent(beef);
     let selected  = select_map[beef_utf8];
     $('#donedeps').val(selected);
@@ -561,7 +561,7 @@ $(document).ready(function() {
             filter_placeholder: { search : 'Search...' },
             filter_saveFilters : true,
             filter_functions: {
-                11: {
+                12: {
                     all: function() { return true },
                     done: get_filter('done'),
                     open: get_filter('open'),
@@ -580,7 +580,7 @@ $(document).ready(function() {
             }
         });
         let doneness = $('#donedeps').prop('value');
-        filter[11] = get_filter(doneness);
+        filter[12] = get_filter(doneness);
         $('#univ').trigger('search', [ filter ]);
 
     });

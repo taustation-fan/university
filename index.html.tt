@@ -119,8 +119,10 @@
                     <br/> <input type="checkbox" class="checksearch" data-col="8"></th>
                 <th class="univ" title="Spirit of Botswana, Alpha Centauri system">SoB
                     <br/> <input type="checkbox" class="checksearch" data-col="9"></th>
-                <th class="univ" title="Cape Verde Stronghold, YZ Ceti system">CVS
+                <th class="univ" title="Sirius, Heinlein Stronghold">HS
                     <br/> <input type="checkbox" class="checksearch" data-col="10"></th>
+                <th class="univ" title="Cape Verde Stronghold, YZ Ceti system">CVS
+                    <br/> <input type="checkbox" class="checksearch" data-col="11"></th>
                 <th class="centered strong-left-border">Status</th>
             </tr>
         </thead>
@@ -150,6 +152,7 @@
                         <td class="centered">[% IF row.nl ; THEN %]✔[% END; %]</td>
                         <td class="centered">[% IF row.moi; THEN %]✔[% END; %]</td>
                         <td class="centered">[% IF row.sob; THEN %]✔[% END; %]</td>
+                        <td class="centered">[% IF row.hs;  THEN %]✔[% END; %]</td>
                         <td class="centered">[% IF row.cvs; THEN %]✔[% END; %]</td>
                         <td class="centered done strong-left-border"></td>
                     </tr>
