@@ -36,7 +36,7 @@
   module: Advanced Combat
   prerequisites:
     - Agile Combat 3
-  time: 2100
+  time: 2800
   title: Agile Combat 4
 - availability:
   - HS
