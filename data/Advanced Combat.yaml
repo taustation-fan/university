@@ -40,12 +40,14 @@
   title: Agile Combat 4
 - availability:
   - HS
+  cost: 42000
   description: Become a master of ‘Rush’ and ‘Retreat’, allowing you to switch between long and short range combat. Completion of this course gives a 100% chance of success when attempting the switch.
   level: 6
   module: Advanced Combat
   prerequisites:
     - Agile Combat 4
   title: Agile Combat 5
+  time: 3500
 
 - availability:
   - SoB
