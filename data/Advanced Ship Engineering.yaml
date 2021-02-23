@@ -20,6 +20,15 @@
   time: 700
   title: Jump Gate Navigation
 - availability:
+   - Syr
+  cost: 35000
+  description: Allows maximum level of repair when not in shipyard.
+  level: 5
+  prerequisites:
+    - Ship Engineering Specialist
+  time: 3500
+  title: Master Ship Engineer
+- availability:
     - CVS
     - Moi
   cost: 5600
@@ -47,6 +56,15 @@
   prerequisites: Introduction to Ship Engineering
   time: 700
   title: Basic Ship Life Support Maintenance
+- availability:
+    - Syr
+  cost: 22400
+  description: Allows higher than normal level of repair when not in shipyard.
+  level: 4
+  module: Advanced Ship Engineering
+  prerequisites: []
+  time: 2800
+  title: Ship Engineering Specialist
 - availability:
     - CVS
     - Tau
