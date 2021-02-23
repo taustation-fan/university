@@ -4,6 +4,7 @@
   - NL
   - Moi
   - SoB
+  - Syr
   cost: 200
   level: 1
   module: Leadership
@@ -13,6 +14,7 @@
   - Tau
   - Moi
   - SoB
+  - Syr
   cost: 2800
   level: 2
   module: Leadership

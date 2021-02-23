@@ -1,6 +1,7 @@
 ---
 - availability:
   - NL
+  - Syr
   cost: 2800
   description: Learn the basics of 'Rush' and 'Retreat', allowing you to switch between long and short range combat. Completion of this course gives you a 20% chance of success when attempting the switch.
   level: 2
@@ -10,6 +11,7 @@
   title: Agile Combat 1
 - availability:
   - NL
+  - Syr
   cost: 8400
   description: Learn intermediate ‘Rush’ and ‘Retreat’ tactics, allowing you to switch between long and short range combat. Completion of this course gives a 40% chance of success when attempting the switch.
   level: 3
@@ -20,6 +22,7 @@
   title: Agile Combat 2
 - availability:
   - HS
+  - Syr
   cost: 16800
   description: Learn advanced ‘Rush’ and ‘Retreat’ tactics, allowing you to switch between long and short range combat. Completion of this course gives a 60% chance of success when attempting the switch.
   level: 4
@@ -30,6 +33,7 @@
   title: Agile Combat 3
 - availability:
   - HS
+  - Syr
   cost: 28000
   description: Become an expert in ‘Rush’ and ‘Retreat’, allowing you to switch between long and short range combat. Completion of this course gives an 80% chance of success when attempting the switch.
   level: 5
@@ -40,6 +44,7 @@
   title: Agile Combat 4
 - availability:
   - HS
+  - Syr
   cost: 42000
   description: Become a master of ‘Rush’ and ‘Retreat’, allowing you to switch between long and short range combat. Completion of this course gives a 100% chance of success when attempting the switch.
   level: 6

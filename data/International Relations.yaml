@@ -1,6 +1,7 @@
 ---
 - availability:
   - NL
+  - Syr
   cost: 200
   description: Introduction to psychology and social skills
   level: 1
@@ -9,6 +10,7 @@
   title: Social Skills
 - availability:
   - NL
+  - Syr
   cost: 2800
   description: Understand Consortium history and motivations
   level: 2
@@ -18,6 +20,7 @@
   title: Introduction to the Consortium
 - availability:
   - NL
+  - Syr
   cost: 2800
   description: Understand Gaule history and motivations
   level: 2
@@ -27,6 +30,7 @@
   title: Introduction to the Gaule Protectorate
 - availability:
   - NL
+  - Syr
   cost: 8400
   description: Learn how to improve your reputation with the Consortium
   level: 3
@@ -36,6 +40,7 @@
   title: Consortium Reputation
 - availability:
   - NL
+  - Syr
   cost: 8400
   description: Learn how to improve your reputation with the Gaule Protectorate
   level: 3
@@ -45,6 +50,7 @@
   title: Gaule Reputation
 - availability:
   - NL
+  - Syr
   cost: 16800
   description: Learn the mysteries of Consortium psychology
   level: 4
@@ -55,6 +61,7 @@
   title: Consortium Psychology
 - availability:
   - NL
+  - Syr
   cost: 16800
   description: Learn the mysteries of Gaule psychology
   level: 4

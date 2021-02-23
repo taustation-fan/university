@@ -2,6 +2,7 @@
 - availability:
   - CVS
   - Moi
+  - Syr
   cost: 5600
   description: Learn the basics of ship navigation and unlock further navigation courses.
   level: 4
@@ -11,6 +12,7 @@
   title: Basic Navigation Systems
 - availability:
   - Tau
+  - Syr
   cost: 7000
   description: Understand jump gate construction to increase jump gate travel speed.
   level: 5
@@ -32,6 +34,7 @@
 - availability:
     - CVS
     - Moi
+    - Syr
   cost: 5600
   description: Repair your engines slightly faster.
   level: 4
@@ -41,6 +44,7 @@
   title: Basic Ship Engines
 - availability:
     - CVS
+    - Syr
   cost: 5600
   description: Repair your hull slightly faster.
   level: 4
@@ -50,6 +54,7 @@
   title: Basic Ship Hull Maintenance
 - availability:
     - CVS
+    - Syr
   cost: 5600
   description: Repair your life support slightly faster.
   level: 4
@@ -69,6 +74,7 @@
 - availability:
     - CVS
     - Tau
+    - Syr
   cost: 14000
   description: Repair your navigation computers faster.
   level: 5
@@ -79,6 +85,7 @@
 - availability:
   - Tau
   - CVS
+  - Syr
   cost: 14000
   description: Repair your engines faster
   level: 5
@@ -88,6 +95,7 @@
   time: 1400
 - availability:
   - CVS
+  - Syr
   cost: 14000
   description: Repair your hull faster
   level: 5
@@ -97,6 +105,7 @@
   time: 1400
 - availability:
   - CVS
+  - Syr
   cost: 14000
   description: Repair your life support faster
   level: 5
@@ -107,6 +116,7 @@
 - availability:
     - SoB
     - CVS
+    - Syr
   cost: 25200
   description: Repair your navigation computers much faster
   level: 6
@@ -117,6 +127,7 @@
 - availability:
     - SoB
     - CVS
+    - Syr
   cost: 25200
   description: Repair your engines much faster
   level: 6
@@ -126,6 +137,7 @@
   title: Ship Engines Master
 - availability:
     - CVS
+    - Syr
   cost: 25200
   description: Repair your hull much faster
   level: 6
@@ -135,6 +147,7 @@
   title: Ship Hull Maintenance Master
 - availability:
     - CVS
+    - Syr
   cost: 25200
   description: Repair your life support much faster
   level: 6
