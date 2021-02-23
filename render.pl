@@ -30,7 +30,7 @@ sub munge_course {
     for my $u (@$av) {
         $c->{lc $u} = 1;
     }
-    $c->{$_} //= 0 for qw(tau nl sob moi hs cvs);
+    $c->{$_} //= 0 for qw(tau nl sob moi hs syr cvs);
     for my $k (sort keys %translate) {
         $c->{ $translate{$k} } = delete $c->{$k};
     }

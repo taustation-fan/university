@@ -24,6 +24,7 @@
   cost: 35000
   description: Allows maximum level of repair when not in shipyard.
   level: 5
+  module: Advanced Ship Engineering
   prerequisites:
     - Ship Engineering Specialist
   time: 3500
