@@ -26,6 +26,7 @@
   cost: 35000
   description: Allows maximum level of repair when not in shipyard.
   level: 5
+  measurement: You can patch up ships to 85% health in each bar.
   module: Advanced Ship Engineering
   prerequisites:
     - Ship Engineering Specialist
@@ -67,6 +68,7 @@
   cost: 22400
   description: Allows higher than normal level of repair when not in shipyard.
   level: 4
+  measurement: You can patch up ships to 80% health in each bar.
   module: Advanced Ship Engineering
   prerequisites: []
   time: 2800
