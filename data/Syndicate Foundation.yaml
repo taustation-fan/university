@@ -1,0 +1,12 @@
+---
+- availability:
+  - Moi
+  - NL
+  - SoB
+  - Syr
+  - Tau
+  level: 2
+  module: Syndicate Foundation
+  prerequisites:
+  - Introduction to Leadership
+  title: Syndicate Basics

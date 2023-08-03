@@ -12,6 +12,7 @@
   time: 700
   title: Introduction to Ship Engineering
 - availability:
+  - HS
   - NL
   cost: 5600
   description: Slightly reduce the fuel consumption of your ship.
@@ -31,6 +32,7 @@
   time: 700
   title: Basic Ship Maintenance
 - availability:
+  - HS
   - Moi
   cost: 14000
   description: Reduce the fuel consumption of your ship
@@ -50,6 +52,7 @@
   time: 1400
   title: Advanced Ship Maintenance
 - availability:
+  - HS
   - Tau
   cost: 25200
   description: Greatly reduce the fuel consumption of your ship.
@@ -60,6 +63,7 @@
   time: 2100
   title: Fuel Efficiency Master
 - availability:
+  - HS
   - NL
   cost: 25200
   description: Greatly reduce the chance of your ship taking damage in flight.

@@ -13,7 +13,9 @@
   time: 1400
   title: Basic Ship Technology
 - availability:
+  - HS
   - Moi
+  - Syr
   cost: 16800
   description: Advanced Ship Technology
   level: 4

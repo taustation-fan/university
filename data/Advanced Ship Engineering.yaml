@@ -11,6 +11,8 @@
   time: 700
   title: Basic Navigation Systems
 - availability:
+  - CVS
+  - HS
   - Tau
   - Syr
   cost: 7000
@@ -34,6 +36,7 @@
   title: Master Ship Engineer
 - availability:
     - CVS
+    - HS
     - Moi
     - Syr
   cost: 5600
@@ -45,6 +48,7 @@
   title: Basic Ship Engines
 - availability:
     - CVS
+    - HS
     - Syr
   cost: 5600
   description: Repair your hull slightly faster.
@@ -55,6 +59,7 @@
   title: Basic Ship Hull Maintenance
 - availability:
     - CVS
+    - HS
     - Syr
   cost: 5600
   description: Repair your life support slightly faster.
@@ -77,6 +82,7 @@
     - CVS
     - Tau
     - Syr
+    - HS
   cost: 14000
   description: Repair your navigation computers faster.
   level: 5
@@ -88,6 +94,7 @@
   - Tau
   - CVS
   - Syr
+  - HS
   cost: 14000
   description: Repair your engines faster
   level: 5
@@ -97,6 +104,7 @@
   time: 1400
 - availability:
   - CVS
+  - HS
   - Syr
   cost: 14000
   description: Repair your hull faster
@@ -107,6 +115,7 @@
   time: 1400
 - availability:
   - CVS
+  - HS
   - Syr
   cost: 14000
   description: Repair your life support faster
@@ -119,6 +128,7 @@
     - SoB
     - CVS
     - Syr
+    - HS
   cost: 25200
   description: Repair your navigation computers much faster
   level: 6
@@ -130,6 +140,7 @@
     - SoB
     - CVS
     - Syr
+    - HS
   cost: 25200
   description: Repair your engines much faster
   level: 6
@@ -139,6 +150,7 @@
   title: Ship Engines Master
 - availability:
     - CVS
+    - HS
     - Syr
   cost: 25200
   description: Repair your hull much faster
@@ -149,6 +161,7 @@
   title: Ship Hull Maintenance Master
 - availability:
     - CVS
+    - HS
     - Syr
   cost: 25200
   description: Repair your life support much faster
