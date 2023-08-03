@@ -10,7 +10,9 @@
   time: 2100
   title: Basic Ship Handling
 - availability:
+  - HS
   - NL
+  - Syr
   cost: 28000
   description: Advanced Ship Handling
   level: 5

@@ -90,6 +90,7 @@ and data contributions from
 * Dotsent
 * duelafn
 * Azure-Wolf
+* MrAtoka
 
 ... and possibly others whose contributions I forgot to track. My apologies.
 

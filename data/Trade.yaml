@@ -12,7 +12,9 @@
   time: 700
   title: Basic Trading
 
-- availability: [Moi]
+- availability:
+  - HS
+  - Moi
   cost: 8400
   description: Increase your standing as professional trader with expanded marketing and retail strategies. Your certificate will be upgraded, increasing your trade slots by two.
   level: 3
@@ -21,7 +23,9 @@
   time: 1400
   title: Trading Expanded
 
-- availability: [Tau]
+- availability:
+  - HS
+  - Tau
   cost: 16800
   description: Further increase your standing as professional trader with enhanced marchandising and brand tactics. Your certificate will be upgraded, increasing your trade slots by two.
   level: 4
@@ -30,7 +34,9 @@
   time: 2100
   title: Trading Expanded Further
 
-- availability: [SoB]
+- availability:
+  - HS
+  - SoB
   cost: 28000
   description: Delve into the hidden secrets of the vendor gurus, attaining knowledge reserved for the highest retailers across the galaxy. Your certificate will be upgraded, increasing your trade slots by two.
   level: 5
@@ -39,7 +45,9 @@
   time: 2800
   title: Advanced Trading
 
-- availability: [NL]
+- availability:
+  - HS
+  - NL
   cost: 42000
   description: Achieve the true enlightenment of zen marketing and venerable trading. High caliber sales strategies and merchandising tactics are revealed and upgraded your certificate to the highest level, increasing your trade slots by two.
   level: 6

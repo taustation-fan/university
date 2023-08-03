@@ -34,6 +34,7 @@
 
 - availability:
     - CVS
+    - HS
     - Syr
   cost: 8400
   description: Enables 2 consecutive jumps for small ships (e.g. Private Shuttle). Unlocks higher level Multi-Jump Ship Navigation Courses
@@ -46,6 +47,7 @@
 
 - availability:
     - CVS
+    - HS
     - Syr
   cost: 16800
   description: 'Increased number of consecutive jumps for small and medium ships. Small ship (e.g. Private Shuttle): 3, medium ship (e.g. Razorback): 2'
@@ -58,6 +60,7 @@
 
 - availability:
     - CVS
+    - HS
     - Syr
   description: 'Increased number of consecutive jumps depending on ship size. Small ship: 4, medium ship: 3'
   cost: 28000
@@ -70,6 +73,8 @@
 
 - availability:
     - CVS
+    - HS
+    - Syr
   description: "Increased number of consecutive jumps depending on ship size. Small ship: 9, medium ship: 7, large ship: 4."
   cost: 42000
   level: 6
@@ -80,6 +85,7 @@
 
 - availability:
     - CVS
+    - HS
     - Syr
   cost: 49000
   description: "Enables maximum 9 consecutive jumps for medium ships. Also increases large ship limit to 7 jumps."
@@ -91,6 +97,7 @@
 
 - availability:
     - CVS
+    - HS
     - Syr
   cost: 56000
   description: "Enables maximum 9 consecutive jumps for large ships."
